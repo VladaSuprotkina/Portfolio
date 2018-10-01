@@ -1,1 +1,1 @@
-"# This is Vlada Suprotkina Portfolio repository"  
+# This is Vlada Suprotkina Portfolio repository
