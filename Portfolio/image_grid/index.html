@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="header">
+        <h1>Image Grid</h1>
+        <p>Click on the button to change the grid view</p>
+        <div class="icons">
+            <i class="fas fa-square" onclick="full()"></i>
+            <i class="fas fa-th-large" onclick="twoColumn()"></i>
+            <i class="fas fa-th" onclick="fourColumn()"></i>
+        </div>
+    </div>
+    <div class="row">
+        <div id="column1">
+            <img src="images/img-1.jpg" alt="">
+            <img src="images/img-2.jpg" alt="">
+            <img src="images/img-3.jpg" alt="">
+            <img src="images/img-4.jpg" alt="">
+            <img src="images/img-5.jpg" alt="">
+            <img src="images/img-6.jpg" alt="">
+            <img src="images/img-7.jpg" alt="">
+            <img src="images/img-8.jpg" alt="">
+            <img src="images/img-9.jpg" alt="">
+            <img src="images/img-10.jpg" alt="">
+            <img src="images/img-56.jpg" alt="">
+            <img src="images/img-57.jpg" alt="">
+            <img src="images/img-58.jpg" alt="">
+        </div>
+        <div id="column2">
+            <img src="images/img-11.jpg" alt="">
+            <img src="images/img-12.jpg" alt="">
+            <img src="images/img-13.jpg" alt="">
+            <img src="images/img-14.jpg" alt="">
+            <img src="images/img-15.jpg" alt="">
+            <img src="images/img-16.jpg" alt="">
+            <img src="images/img-17.jpg" alt="">
+            <img src="images/img-18.jpg" alt="">
+            <img src="images/img-19.jpg" alt="">
+            <img src="images/img-20.jpg" alt="">
+            <img src="images/img-41.jpg" alt="">
+            <img src="images/img-42.jpg" alt="">
+            <img src="images/img-43.jpg" alt="">
+            <img src="images/img-44.jpg" alt="">
+            <img src="images/img-45.jpg" alt="">
+        </div>
+        <div id="column3">
+            <img src="images/img-21.jpg" alt="">
+            <img src="images/img-22.jpg" alt="">
+            <img src="images/img-23.jpg" alt="">
+            <img src="images/img-24.jpg" alt="">
+            <img src="images/img-25.jpg" alt="">
+            <img src="images/img-26.jpg" alt="">
+            <img src="images/img-27.jpg" alt="">
+            <img src="images/img-28.jpg" alt="">
+            <img src="images/img-29.jpg" alt="">
+            <img src="images/img-30.jpg" alt="">
+            <img src="images/img-46.jpg" alt="">
+            <img src="images/img-47.jpg" alt="">
+            <img src="images/img-48.jpg" alt="">
+            <img src="images/img-49.jpg" alt="">
+            <img src="images/img-50.jpg" alt="">
+            <img src="images/img-51.jpg" alt="">
+        </div>
+        <div id="column4">
+            <img src="images/img-31.jpg" alt="">
+            <img src="images/img-32.jpg" alt="">
+            <img src="images/img-33.jpg" alt="">
+            <img src="images/img-34.jpg" alt="">
+            <img src="images/img-35.jpg" alt="">
+            <img src="images/img-36.jpg" alt="">
+            <img src="images/img-37.jpg" alt="">
+            <img src="images/img-38.jpg" alt="">
+            <img src="images/img-39.jpg" alt="">
+            <img src="images/img-40.jpg" alt="">
+            <img src="images/img-52.jpg" alt="">
+            <img src="images/img-53.jpg" alt="">
+            <img src="images/img-54.jpg" alt="">
+            <img src="images/img-55.jpg" alt="">
+        </div>
+    </div>
+    
+    <script>
+        function full() {
+            document.getElementById('column1').style.width = '100%';
+            document.getElementById('column2').style.width = '100%';
+            document.getElementById('column3').style.width = '100%';
+            document.getElementById('column4').style.width = '100%';
+        }
+        function twoColumn() {
+            document.getElementById('column1').style.width = '50%';
+            document.getElementById('column2').style.width = '50%';
+            document.getElementById('column3').style.width = '50%';
+            document.getElementById('column4').style.width = '50%';
+        }
+        function fourColumn() {
+            document.getElementById('column1').style.width = '25%';
+            document.getElementById('column2').style.width = '25%';
+            document.getElementById('column3').style.width = '25%';
+            document.getElementById('column4').style.width = '25%';
+        }
+    </script>
+</body>
+</html>

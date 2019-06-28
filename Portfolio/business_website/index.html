@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- Navigation  -->
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#team">Our team</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Testimonials</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                </ul>
+          </div>
+        </nav>
+    </section>
+<!--  Slider  -->
+    <div class="slider">
+        <div id="headerSlider" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+            <li data-target="#headerSlider" data-slide-to="1"></li>
+            <li data-target="#headerSlider" data-slide-to="2"></li>
+            <li data-target="#headerSlider" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url(img/img-0.jpg)">
+              <div class="carousel-caption">
+                  <h4>Propose</h4>
+              </div>
+            </div>
+            <div class="carousel-item" style="background-image: url(img/img-4.jpg)">
+              <div class="carousel-caption">
+                  <h4>Get Married</h4>
+              </div>
+            </div>
+            <div class="carousel-item" style="background-image: url(img/img-3.jpg)">
+              <div class="carousel-caption">
+                  <h4>Design &amp; Style</h4>
+              </div>
+            </div>
+            <div class="carousel-item" style="background-image: url(img/img-2.jpg)">
+              <div class="carousel-caption">
+                  <h4>Celebrate</h4>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+<!--  About  -->
+<section id="about">
+    <div class="container">
+        <div class="row justify-content-center">
+           <h1>WEDDING PLANNER OF CHOICE</h1>
+            <div class="col-md-6">
+                <div class="about-content">
+                <h2>For beauty lovers, travelers, adventurers with impeccable taste</h2>
+                <p>Dear brides and grooms, if you're thinking of getting married you are at the right place. We strongly believe that your wedding day must be all about you, and we go above and beyond to make your dream day more than you could have ever imagined. We are the wedding planning agency of choice for couples. We always have your interest at the center of our bespoke wedding concepts.</p>
+                </div>
+                <button type="button" class="btn btn-primary">Read more</button>
+            </div>
+            <div class="col-md-6 skills-bar">
+                <p>Decor &amp; Styling</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;">85%</div>
+                </div>
+                <p>Photo &amp; Video</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;">80%</div>
+                </div>
+                <p>Entertainment</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;">70%</div>
+                </div>
+                <p>Invitation &amp; Guest List</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 50%;">50%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Services-->
+<section id="services">
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="row services">
+            <div class="col-md-3 text-center">
+                <div class="icon" style="background-image: url(img/questionnaire.svg)">  
+                </div>
+                <h3>Checklist</h3>
+                <p>Your customisable wedding checklist includes all the key items you need to consider with tips &amp; recommendations.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="icon" style="background-image: url(img/accounting.svg)">  
+                </div>
+                <h3>Budget Calculator</h3>
+                <p>Tell us what your budget is, and we'll calculate how much you should spend on each item. You can add extra items, edit our suggestions and record your actual spend. Read our expert advice articles on prices.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="icon" style="background-image: url(img/meeting.svg)">  
+                </div>
+                <h3>Table Planner</h3>
+                <p>You can also plan who will sit where by arranging your guests into table groups. Both guest list and table planner are downloadable.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="icon" style="background-image: url(img/party.svg)">  
+                </div>
+                <h3>Gift List</h3>
+                <p>Setting up a Gift List makes things easier for friends and family who would like to mark the occasion with a special gift. You can build and manage your list online or in-store.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Team-->
+<section id="team">
+    <div class="container">
+        <h1>Our Team</h1>
+        <div class="row">
+            <div class="col-md-3 profile-pic text-center">
+                <div class="img-box">
+                    <img src="img/team-1.jpg" alt="" class="img-responsive">
+                    <ul>
+                        <a href="#" target="_blank"><li><i class="fab fa-facebook-f"></i></li></a>
+                        <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Rhonda Benton</h2>
+                <h3>CEO & Head Planner</h3>
+            </div>
+            <div class="col-md-3 profile-pic text-center">
+                <div class="img-box">
+                    <img src="img/team-2.jpg" alt="" class="img-responsive">
+                    <ul>
+                        <a href="#" target="_blank"><li><i class="fab fa-facebook-f"></i></li></a>
+                        <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Omer Harper</h2>
+                <h3>Market Manager</h3>
+            </div>
+            <div class="col-md-3 profile-pic text-center">
+                <div class="img-box">
+                    <img src="img/team-3.jpg" alt="" class="img-responsive">
+                    <ul>
+                        <a href="#" target="_blank"><li><i class="fab fa-facebook-f"></i></li></a>
+                        <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Ayaana Reilly</h2>
+                <h3>Decorator</h3>
+            </div>
+            <div class="col-md-3 profile-pic text-center">
+                <div class="img-box">
+                    <img src="img/team-4.jpg" alt="" class="img-responsive">
+                    <ul>
+                        <a href="#" target="_blank"><li><i class="fab fa-facebook-f"></i></li></a>
+                        <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Theon Logan</h2>
+                <h3>Photographer</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Portfolio-->
+<section id="portfolio">
+  <div class="video-wrap">
+       <video autoplay loop muted width="100%" src="img/portfolio-video.mp4"></video>
+  </div>
+  
+   <a href="#" target="_blank" class="btn">Portfolio</a>
+</section>
+<!--Testimonials-->
+<section id="testimonials">
+    <div class="container">
+        <h1>Our beautiful clients</h1>
+        <p class="text-center">Thanks to our experience in planning breathtaking weddings and our network of professional wedding vendors, no celebration is too big or too small for us.</p>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                    <img src="img/user-1.jpg" alt="" class="user">
+                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem natus ratione modi maxime at, quia delectus numquam officia beatae rem laboriosam!</blockquote>
+                    <h3>Sierra &amp; Christos Lam</h3>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                    <img src="img/user-2.jpg" alt="" class="user">
+                    <blockquote>Autem natus ratione modi maxime at, quia delectus numquam officia beatae rem laboriosam!</blockquote>
+                    <h3>Beatriz &amp; Kirk Hanson</h3>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                    <img src="img/user-3.jpg" alt="" class="user">
+                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem natus ratione modi maxime at, quia delectus numquam officia beatae rem laboriosam!</blockquote>
+                    <h3>Nora &amp; Raphael Olsen</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Contact-->
+<section class="contact" id="contact">
+    <div class="container">
+        <h1>Get In Touch</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Massage"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    
+                </form>
+            </div>
+            <div class="col-md-6 contact-info">
+                <div class="follow">Adress:<i class="fas fa-map-marker-alt"></i>Franziskanerpl. 5, Wien</div>
+                <div class="follow">Phone:<i class="fas fa-phone"></i>+0 123 456 78 90</div>
+                <div class="follow">Email:<i class="fas fa-envelope"></i>you_and_i@gmail.com</div>
+                <div class="follow">Get Social:
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1138.7648836182066!2d16.37329872892073!3d48.20628279752069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079e5e5cb86b%3A0xc60c7aa992e03f7b!2zRnJhbnppc2thbmVycGwuIDUsIDEwMTAgV2llbiwg0JDQstGB0YLRgNC40Y8!5e1!3m2!1sru!2sua!4v1561720770869!5m2!1sru!2sua" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<!--Footer-->
+<section class="footer">
+    <div class="container text-center">
+        <p>Made with <i class="far fa-heart"></i></p>
+    </div>
+</section>
+<script src="smooth-scroll.js"></script>
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</body>
+</html>

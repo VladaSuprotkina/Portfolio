@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1442px" viewBox="0 0 1920 1442" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>70C174BC-A5BA-4110-B827-B47BD30DF190</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="-24.5469245%" y1="80.6676628%" x2="52.6794131%" y2="29.6567874%" id="linearGradient-1">
+            <stop stop-color="#233488" offset="0%"></stop>
+            <stop stop-color="#2CABE5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.-Home" transform="translate(0.000000, -3066.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="4.0-Blocks" transform="translate(-582.000000, 2671.000000)">
+                <g id="rhone-702757-unsplash-+-Rectangle-Mask">
+                    <path d="M77.6851078,1032.44037 C321.059337,1288.86098 626.70333,1449.64221 994.617086,1514.78403 C1546.48772,1612.49677 2063.08326,1334.67622 2640.95385,1723.37057 C3026.20092,1982.50014 3099.43585,1795.48388 2860.65865,1162.32177 L2640.95385,506.061787 C2600.82129,387.004961 2580.75501,320.519668 2580.75501,306.605909 C2580.75501,292.692149 2561.98166,264.311624 2524.43495,221.464333 L1676.33963,200.415399 L148.26086,200.415399 L0.886662777,719.638355 L77.6851078,1032.44037 Z" id="Mask" transform="translate(1499.297097, 1018.333164) scale(1, -1) translate(-1499.297097, -1018.333164) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
