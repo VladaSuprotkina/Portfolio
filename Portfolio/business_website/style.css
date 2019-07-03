@@ -158,7 +158,6 @@
     margin-top: 25px;
 }
 .profile-pic .img-box {
-    opacity: 1;
     display: block;
     position: relative;
 }
@@ -182,6 +181,7 @@
     margin-top: 15px;
 }
 #team .fab {
+    margin: 0;
     font-size: 18px;
     color: #fff;
     background: #aa5050;
@@ -191,7 +191,6 @@
     padding: 2px;
 }
 .img-box ul {
-    padding: 15px 0;
     position: absolute;
     z-index: 2;
     bottom: 0;
@@ -199,7 +198,7 @@
     transform: translateX(-150%);
 }
 .img-box ul li {
-    padding-left: 5px;
+    padding-left: 15px;
     display: inline-block;
 }
 #portfolio {
@@ -294,11 +293,9 @@ blockquote {
 blockquote::before {
     content: '\201e';
     font-size: 30px;
-/*    font-family: cursive;*/
     color: #ccc;
     position: relative;
     line-height: 20px;
-/*    bottom: -15px;*/
     right: 5px;
 }
 blockquote::after {
