@@ -5,8 +5,6 @@
 }
 body {
     font-family: brandon-grotesque, sans-serif;
-    margin: 0;
-    padding: 0;
     line-height: 1;
     overflow-x: hidden;
 }
@@ -45,6 +43,12 @@ img {
     border-style: none;
     width: 100%;
 }
+button:focus,
+a:focus,
+input:focus
+{
+    outline:0;
+}
 
 svg {
     overflow: hidden;
@@ -58,8 +62,8 @@ button {
 }
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 44px;
+    padding-left: 44px;
     margin: 0 auto;
 }
 .row {
@@ -67,10 +71,14 @@ button {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-} 
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md {
+
+}
+.column {
     position: relative;
     width: 100%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
 }
 
 /*----------------------navigation----------------------*/
@@ -82,22 +90,7 @@ nav {
     flex-wrap: wrap;
     list-style: none;
 }
-.nav-link {
-    display: block;
-    padding-bottom: 15px;
-    
-}
-.nav-link:hover, .nav-link:focus {
-    text-decoration: none;
-}
 
-.tab-content > .tab-pane {
-    display: none;
-}
-
-.tab-content > .active {
-    display: block;
-}
 .navbar {
     width: 100%;
     background-color: #ffffff;
@@ -133,6 +126,7 @@ nav {
     height: 49px;
     display: block;
 }
+
 .navbar-sessions {
     display: flex;
     justify-content: flex-end;
@@ -150,9 +144,12 @@ nav {
 .header {
     position: relative;
     display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
+}
+.header-container {
+    width: 100%;
+    margin: 0 auto;
+    /*max-width: 1669px;*/
+    padding: 0 44px;
 }
 .header .btn {
     background-color: #ffffff;
@@ -168,6 +165,7 @@ nav {
 .caption {
     color: #ffffff;
     text-align: center;
+    line-height: 1.4;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -178,6 +176,7 @@ nav {
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0.46px;
+    padding-bottom: 31px;
 }
 .caption-brief {
     padding-bottom: 45px;
@@ -190,20 +189,18 @@ nav {
     font-weight: 900;
     letter-spacing: 10px;
     margin: 0;
-    padding-bottom: 20px;
+    padding-bottom: 7px;
 }
-.caption p {
-    padding-bottom: 20px;
-}
+
 /*--------------------slider---------------------*/
 
 .slick-arrow {
     position: absolute;
     bottom: 10%;
-    left: 10vw;
+    left: 50px;
     z-index: 1;
-    width: 3rem;
-    height: 3rem;
+    width: 55px;
+    height: 55px;
     transform: translateY(-10%);
     padding: 0;
     overflow: hidden;
@@ -211,12 +208,19 @@ nav {
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-/*    border: 2px solid #fff;*/
     border-radius: 50%;
     cursor: pointer;
     outline: none;
     transition: 0.25s;
+}
+.slider_item {
+    position: relative;
+    background-image: url("../img/Image_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header > .slick-initialized .slick-slide {
+    height: 60vh;
 }
 .slick-arrow:hover,
 .slick-arrow:focus {
@@ -227,29 +231,89 @@ nav {
 /*      transform: translateY(-50%) scale(0.9);*/
     }
 .slick-next {
-    margin-left: 60px;
+    margin-left: 68px;
+    background-image: url("../img/arrow-next.svg");
   }
-
-.slider-counter {
-  position: absolute;
-  bottom: 12%;
-  left: 20vw;
-  z-index: 1;
-  font-size: 1.5rem;
-  color: #fff;
-  mix-blend-mode: difference;
-  pointer-events: none;
+.slick-prev {
+    background-image: url("../img/arrow-prev.svg");
 }
-
-
+.slider-counter {
+    position: absolute;
+    bottom: 13%;
+    left: 200px;
+    z-index: 1;
+    font-size: 24px;
+    color: #fff;
+    /*mix-blend-mode: difference;*/
+    pointer-events: none;
+}
+.slider-counter-current {
+    position: relative;
+    top: -15px;
+}
+.slider-counter-total {
+    position: relative;
+    bottom: -20px;
+    left: 10px;
+}
+.slider-counter-current:after {
+    top: 35px;
+    left: -5px;
+    content: '';
+    width: 42px;
+    height: 1px;
+    position: absolute;
+    background-color: #ffffff;
+    transform: rotate(-40deg);
+}
 
 /*------------------filter----------------------*/
 .filter {
     position: relative;
+    display: block;
     width: 100%;
+    height: auto;
     padding-top: 128px;
 }
+.filter .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.filter-nav-link {
+    display: block;
+    padding-bottom: 15px;
+}
+.tab-content > .tab-pane {
+    display: none;
+}
+.tab-content > .active {
+    display: block;
+}
+.filter .filter-tab a:hover,
+.filter-tab a:active,
+.filter-tab a:focus {
+    transform: translateX(10px);
+    color: #212226;
+}
+.filter .filter-tab a::before {
+    content: "\2014\00A0";
+    transform: translate(20px 5px);
+    display: none;
+}
 
+
+.filter .filter-tab a{
+    color: #b2b2b2;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transform: translateX(0px);
+}
+.filter-col-wrapper {
+    margin-right: 20px;
+}
 .filter .filter-burn-text {
     color: #212226;
 }
@@ -265,16 +329,16 @@ nav {
     font-weight: 500;
     padding-bottom: 97px;
     line-height: 1.5;
+    max-width: 611px;
 }
-.filter .row .col-md-10{
-    display: flex;
-    justify-content: flex-end;
+.filter-burn-container_wrapper {
+    position: relative;
 }
 .post-wrapper_post-wrapper-bg {
     position: absolute;
     z-index: 1;
     top: 20%;
-    left: -25px;
+    left: -130px;
     background-image: url("../img/REBELSPEAK.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -290,6 +354,8 @@ nav {
 }
 .post-wrapper_first-column,
 .post-wrapper_second-column {
+    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -297,34 +363,32 @@ nav {
 .post-wrapper_second-column {
     align-items: flex-end;
 }
-.filter .nav a{
-    color: #b2b2b2;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-.filter .nav a:active {
-    transform: translateX(10%);
-}
-.filter .nav a::before {
-    content: "\2014\00A0";
-    display: none;
-}
-.filter .nav a:hover {
-    color: #212226;
-}
+
 .post-card-text_text-primary,
 .post-card-text_text-secondary {
+    z-index: 5;
+    height: 120px;
     position: relative;
     bottom: 65px;
     left: -27px;
-    padding: 27px 0 31px 38px;
+    padding: 27px 0 31px 36px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     color: #212226;
     font-weight: 900;
+    transition: linear 1s;
 }
+
+.post-card-text_text-secondary:hover {
+    transform: translateY(-80px);
+    box-shadow: none;
+}
+.post-card {
+    display: block;
+    position: relative;
+    margin-left: 29px;
+}
+
 .post-card-text_text-secondary {
     font-size: 24px;
     max-width: 388px;
@@ -349,10 +413,48 @@ nav {
 .blockquote-footer::before {
     content: "\2014\00A0";
 }
+.post-card-text_description {
+    position: relative;
+    max-width: 388px;
+    bottom: 150px;
+    left: -27px;
+    padding: 10px 0 31px 36px;
+    z-index: 0;
+    display: block;
+    background-color: #ffffff;
+    color: #707070;
+    font-size: 18px;
+    letter-spacing: 0.37px;
+}
+.post-card-text_description p {
+    max-width: 254px;
+}
+.post-card-text_description .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.post-card-text_description-more {
+    background-color: #000000;
+    background-image: url("../img/cur-next.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+    /*---------------------more---------------------------*/
+
 .view-more-wrapper {
+    position: relative;
+    display: block;
     text-align: center;
     margin: 0 auto;
 }
+
 .read-more-show,
 .read-more-hide {
     margin: 50px 0;
@@ -380,7 +482,7 @@ nav {
     text-align: center;
     margin: 0 auto;
     display: block;
-    width: 500px;
+    max-width: 500px;
 }
 /*------------------about---------------------*/
 .about {
@@ -471,22 +573,22 @@ nav {
     background-position: center;
     background-size: 162px 132px;
     background-repeat: no-repeat;
-}
-.footer-social a{
-    padding-right: 33px;
-}
-.footer-quote {
     text-align: center;
     color: #ffffff;
 }
+
+.footer-social a{
+    padding-right: 33px;
+}
 .footer-quote h2 {
-    margin-top: 32px;
+    margin-top: 34px;
     font-size: 35px;
     font-weight: 900;
     letter-spacing: 2.88px;
     text-transform: uppercase;
 }
 .footer-quote .footer-quote-name {
+    display: block;
     margin-top: 7px;
     font-size: 18px;
     font-weight: 400;

@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rebel</title>
-    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 <!--fonts-->
     <script src="https://use.typekit.net/jmm6edb.js"></script>
@@ -18,16 +18,16 @@
 </head>
 <body>
 <nav class="navbar">
-   <div class="container">
+   <div class="header-container">
     <div class="row">
-    <div class="col-md-4">
+    <div class="column">
     <button class="nav-toggler" type="button"></button>
     <a class="navbar-login" href="#" target="_blank">login/sign up</a>
     </div>
-    <div class="col-md-4">
+    <div class="column">
             <a class="navbar-brand" href="#"></a>
     </div>
-        <div class="col-md-4 navbar-sessions">
+        <div class="column navbar-sessions">
             <a class="navbar-sessions-buy" href="#" target="_blank">buy sessions</a>
             <span>|</span>
             <a class="navbar-sessions-book" href="#" target="_blank">book sessions</a>
@@ -37,121 +37,170 @@
 </nav>
 <section class="header">
         <div class="top-slider">
-            <div class="slider_item"><img src="img/Image_2.jpg" alt="..."></div>
-            <div class="slider_item"><img src="img/Image_2.jpg" alt="..."></div>
-            <div class="slider_item"><img src="img/Image_2.jpg" alt="..."></div>
-            <div class="slider_item"><img src="img/Image_2.jpg" alt="..."></div>
+            <div class="slider_item"></div>
+            <div class="slider_item"></div>
+            <div class="slider_item"></div>
+            <div class="slider_item"></div>
         </div>
+    <div class="header-container">
     <div class="caption">    
         <p class="caption-category">Example category</p>
         <h1>HERO ARTICLE</h1>
         <p class="caption-brief">Brief introduction copy... lorem ipsum dolar sit amet.</p>
         <button class="btn">READ MORE</button>
     </div>
+    </div>
 </section>
 <section class="filter">
     <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link" id="v-pills-most_read-tab" data-toggle="pill" href="#v-pills-most_read" role="tab" aria-controls="v-pills-most_read" aria-selected="false">MOST READ</a>
-                        <a class="nav-link" id="v-pills-trending-tab" data-toggle="pill" href="#v-pills-trending" role="tab" aria-controls="v-pills-trending" aria-selected="false">TRENDING</a>
-                        <a class="nav-link active" id="v-pills-burn-tab" data-toggle="pill" href="#v-pills-burn" role="tab" aria-controls="v-pills-burn" aria-selected="true">BURN</a>
-                        <a class="nav-link" id="v-pills-detox-tab" data-toggle="pill" href="#v-pills-detox" role="tab" aria-controls="v-pills-detox" aria-selected="false">DETOX</a>
-                        <a class="nav-link" id="v-pills-retox-tab" data-toggle="pill" href="#v-pills-retox" role="tab" aria-controls="v-pills-retox" aria-selected="false">RETOX</a>
-                        <a class="nav-link" id="v-pills-living-tab" data-toggle="pill" href="#v-pills-living" role="tab" aria-controls="v-pills-living" aria-selected="false">LIVING</a>
-                        <a class="nav-link" id="v-pills-rebelarmy-tab" data-toggle="pill" href="#v-pills-rebelarmy" role="tab" aria-controls="v-pills-rebelarmy" aria-selected="false">REBELARMY</a>
+                <div class="filter-col-wrapper">
+                    <div class="filter-tab responsive-menu">
+                        <div><a class="filter-nav-link" id="most_read-tab" href="#most_read" role="tab" aria-controls="most_read">MOST READ</a></div>
+                        <div><a class="filter-nav-link" id="trending-tab" href="#trending" role="tab" aria-controls="trending">TRENDING</a></div>
+                        <div><a class="filter-nav-link active" id="burn-tab" href="#burn" role="tab" aria-controls="burn">BURN</a></div>
+                        <div><a class="filter-nav-link" id="detox-tab" href="#detox" role="tab" aria-controls="detox">DETOX</a></div>
+                        <div><a class="filter-nav-link" id="retox-tab" href="#retox" role="tab" aria-controls="retox">RETOX</a></div>
+                         <div><a class="filter-nav-link" id="living-tab" href="#living" role="tab" aria-controls="living">LIVING</a></div>
+                          <div><a class="filter-nav-link" id="rebelarmy-tab" href="#rebelarmy" role="tab" aria-controls="rebelarmy">REBELARMY</a></div>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div class="article-col-wrapper">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade" id="v-pills-most_read" role="tabpanel" aria-labelledby="v-pills-most_read-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-trending" role="tabpanel" aria-labelledby="v-pills-trending-tab">...</div>
-                        <div class="tab-pane fade show active" id="v-pills-burn" role="tabpanel" aria-labelledby="v-pills-burn-tab">
+                        <div class="tab-pane" id="most_read" role="tabpanel" aria-labelledby="most_read-tab">...</div>
+                        <div class="tab-pane" id="trending" role="tabpanel" aria-labelledby="trending-tab">...</div>
+                        <div class="tab-pane active" id="burn" role="tabpanel" aria-labelledby="burn-tab">
                             <div class="filter-burn-container_wrapper">
-                                <div class="post-wrapper_post-wrapper-bg"></div>
-                            <div class="filter-burn-text">
-                                <h3>BURN</h3>
-                                <p>Stories,  Advice and opinions on all thinks fitness,<br>
-                                    including workouts... Lorem ipsum dolar sit amet.</p>
-                            </div>
+                                 <div class="post-wrapper_post-wrapper-bg"></div>
+                                  <div class="filter-burn-text">
+                                    <h3>BURN</h3>
+                                    <p>Stories,  Advice and opinions on all thinks fitness,
+                                        including workouts... Lorem ipsum dolar sit amet.</p>
+                                </div>
+                                 <div class="post-wrapper">
+                                    <div class="post-wrapper_first-column">
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-1.jpg" class="card-img-top-primary" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-primary">
+                                                <p>PRIMARY EXAMPLE</p>
+                                                    <footer class="blockquote-footer">
+                                                            Burn
+                                                    </footer>
+                                            </div>
+<!--                                            <div class="post-card-text_description">-->
+<!--                                                <div class="row">-->
+<!--                                                    <p>Lorem ipsum dolor sit amet,-->
+<!--                                                        at odio vulputate nam...</p>-->
+<!--                                                    <button class="post-card-text_description-more"></button>-->
+<!--                                                </div>-->
 
-                            <div class="post-wrapper">
-                            <div class="post-wrapper_first-column">
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-1.jpg" class="card-img-top-primary" alt="...">
+<!--                                            </div>-->
+                                        </div>
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-3.jpg" class="card-img-top" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-secondary">
+                                                    <p>SECONDARY EXAMPLE<br>
+                                                        WITH MORE TEXT</p>
+                                                    <footer class="blockquote-footer">
+                                                            Detox
+                                                    </footer>
+                                            </div>
+                                            <div class="post-card-text_description">
+                                                <div class="row">
+                                                    <p>Lorem ipsum dolor sit amet,
+                                                        at odio vulputate nam...</p>
+                                                    <button class="post-card-text_description-more"></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-5.jpg" class="card-img-top" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-secondary">
+                                                    <p>SECONDARY EXAMPLE</p>
+                                                    <footer class="blockquote-footer">
+                                                            Detox
+                                                    </footer>
+                                            </div>
+                                            <div class="post-card-text_description">
+                                                <div class="row">
+                                                    <p>Lorem ipsum dolor sit amet,
+                                                        at odio vulputate nam...</p>
+                                                    <button class="post-card-text_description-more"></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="post-card-text_text-primary">
-                                            <p>PRIMARY EXAMPLE</p>
-                                            <footer class="blockquote-footer">
-                                                    Burn
-                                            </footer>
-                                    </div>
+                                    <div class="post-wrapper_second-column">
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-2.jpg" class="card-img-top" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-secondary">
+                                                    <p>SECONDARY EXAMPLE</p>
+                                                    <footer class="blockquote-footer">
+                                                            Detox
+                                                    </footer>
+                                            </div>
+                                            <div class="post-card-text_description">
+                                                <div class="row">
+                                                    <p>Lorem ipsum dolor sit amet,
+                                                        at odio vulputate nam...</p>
+                                                    <button class="post-card-text_description-more"></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-4.jpg" class="card-img-top" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-secondary">
+                                                    <p>HOVER EXAMPLE</p>
+                                                    <footer class="blockquote-footer">
+                                                            Detox
+                                                    </footer>
+                                            </div>
+                                            <div class="post-card-text_description">
+                                                <div class="row">
+                                                    <p>Lorem ipsum dolor sit amet,
+                                                        at odio vulputate nam...</p>
+                                                    <button class="post-card-text_description-more"></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="post-card">
+                                            <div class="post-card-img">
+                                                <img src="img/burn-6.jpg" class="card-img-top-primary" alt="...">
+                                            </div>
+                                            <div class="post-card-text_text-primary">
+                                                    <p>PRIMARY EXAMPLE</p>
+                                                    <footer class="blockquote-footer">
+                                                            Burn
+                                                    </footer>
+                                            </div>
+<!--                                            <div class="post-card-text_description">-->
+<!--                                                <div class="row">-->
+<!--                                                    <p>Lorem ipsum dolor sit amet,-->
+<!--                                                        at odio vulputate nam...</p>-->
+<!--                                                    <button class="post-card-text_description-more"></button>-->
+<!--                                                </div>-->
+
+<!--                                            </div>-->
+                                        </div>
+                                        </div>
                                 </div>
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-3.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="post-card-text_text-secondary">
-                                            <p>SECONDARY EXAMPLE<br>
-                                                WITH MORE TEXT</p>
-                                            <footer class="blockquote-footer">
-                                                    Detox
-                                            </footer>
-                                    </div>
-                                </div>
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-5.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="post-card-text_text-secondary">
-                                            <p>SECONDARY EXAMPLE</p>
-                                            <footer class="blockquote-footer">
-                                                    Detox
-                                            </footer>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="post-wrapper_second-column">
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="post-card-text_text-secondary">
-                                            <p>SECONDARY EXAMPLE</p>
-                                            <footer class="blockquote-footer">
-                                                    Detox
-                                            </footer>
-                                    </div>
-                                </div>
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-4.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="post-card-text_text-secondary">
-                                            <p>HOVER EXAMPLE</p>
-                                            <footer class="blockquote-footer">
-                                                    Detox
-                                            </footer>
-                                    </div>
-                                </div>
-                                <div class="post-card">
-                                    <div class="post-card-img">
-                                        <img src="img/burn-6.jpg" class="card-img-top-primary" alt="...">
-                                    </div>
-                                    <div class="post-card-text_text-primary">
-                                            <p>PRIMARY EXAMPLE</p>
-                                            <footer class="blockquote-footer">
-                                                    Burn
-                                            </footer>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-detox" role="tabpanel" aria-labelledby="v-pills-detox-tab">...</div>
+                        <div class="tab-pane" id="detox" role="tabpanel" aria-labelledby="detox-tab">...</div>
                     </div>
                 </div>
             </div>
@@ -182,7 +231,7 @@
 </section>
 <section class="sign-section">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row">
             <p>SIGN UP FOR OUR NEWSLETTER</p>
             <input type="text" placeholder="EMAIL ADDRESS">
         </div>
@@ -191,7 +240,7 @@
 <section class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 footer-social">
+            <div class="column footer-social">
                 <a href="#" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" viewBox="0 0 24 17"><g><g><path fill="#acacac" d="M23.422 4.278s.228 1.845.228 3.689v1.728c0 1.845-.228 3.69-.228 3.69s-.223 1.57-.906 2.261c-.866.909-1.838.913-2.283.965-3.189.232-7.978.239-7.978.239s-5.926-.055-7.749-.229c-.507-.096-1.646-.066-2.513-.975-.683-.691-.905-2.261-.905-2.261S.86 11.54.86 9.695V7.967c0-1.844.228-3.689.228-3.689s.222-1.57.905-2.262c.867-.908 1.838-.913 2.284-.965C7.466.82 12.25.82 12.25.82h.009s4.785 0 7.974.231c.445.052 1.417.057 2.283.965.683.692.906 2.262.906 2.262zm-7.363 4.323L9.901 5.388l.001 6.403z"/></g></g></svg>
                 </a>
@@ -205,12 +254,12 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="7" height="17" viewBox="0 0 7 17"><g><g><path fill="#acacac" d="M7 .74c-.002.052-.007.104-.007.154 0 .832-.002 1.664.002 2.496.001.117-.029.146-.124.145-.385-.005-.77-.005-1.155.004a2.002 2.002 0 0 0-.391.055c-.243.054-.42.286-.43.607-.019.586-.017 1.172-.026 1.758-.001.107.059.089.112.089h2.022l-.25 2.789H4.872v.174l-.002 7.773c0 .052-.003.103-.004.155H2.292l.002-.724V8.841H.579c-.003-.057-.006-.099-.006-.14C.572 7.864.574 7.027.57 6.19c0-.115.029-.144.125-.143.491.005.983-.002 1.474.005.104 0 .127-.041.127-.156.003-.75 0-1.501.023-2.25a4.219 4.219 0 0 1 .328-1.569c.237-.541.604-.91 1.091-1.092.271-.101.556-.144.835-.214L4.69.74z"/></g></g></svg>
                 </a>
             </div>
-            <div class="col-md-6 footer-quote">
+            <div class="column footer-quote">
                 <h2>DROP BEATS NOT BOMBS</h2>
                 <span class="footer-quote-name">Kim Ngo</span>
                 <p>POST THE QUOTE</p>
             </div>
-            <div class="col-md-3 footer-siteMap">
+            <div class="column footer-siteMap">
                 <a href="#" target="_blank">SITEMAP</a>
                 <a href="#" target="_blank">CONTACT</a>
                 <a href="#" target="_blank">T&CS</a>
