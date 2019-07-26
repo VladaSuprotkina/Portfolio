@@ -11,7 +11,7 @@
 <body>
 
 <!--header-->
-<section class="header">
+<section class="header" id="header">
     <div class="container header_section--container">
             <nav class="nav-bar">
                 <a href="#" target="_blank" class="nav-bar_brand"><img src="img/logo.png" alt="ambio-n-logo"></a>
@@ -83,7 +83,7 @@
 <!--vision-->
 <section class="vision_section">
     <div class="row">
-        <div class="vision_section_first-column">
+        <div class="vision_section_first-column column-2">
             <div class="vision_section-description">
                 <h1>Our Vision</h1>
                 <p>We want to increase awareness of what
@@ -93,7 +93,7 @@
             </div>
             <div class="vision_section_first-column_decor-element"></div>
         </div>
-        <div class="vision_section_second-column">
+        <div class="vision_section_second-column column-2">
             <div class="vision_section-description">
                 <h1>Our Mission</h1>
                 <p>To connect Buyers and Sellers in
@@ -170,7 +170,7 @@
 <!--buyers-->
 <section class="buyers_section">
     <div class="buyers_section_wrapper container">
-        <div class="buyers_section_first-column">
+        <div class="buyers_section_first-column column-2">
             <div class="buyers_section_pagination pagination">
                 <span>02 / Buyers</span>
             </div>
@@ -187,7 +187,7 @@
             </div>
             <div class="buyer-decor-element"></div>
         </div>
-        <div class="buyers_section_second-column">
+        <div class="buyers_section_second-column column-2">
             <div class="buyers_section_cards-wrapper">
                 <div class="buyers_section_card">
                     <div class="buyers_section_card-img">
@@ -232,7 +232,7 @@
 <!--suppliers-->
 <section class="suppliers_section">
     <div class="suppliers_section_wrapper container">
-        <div class="suppliers_section_first-column">
+        <div class="suppliers_section_first-column column-2">
             <div class="suppliers_section_pagination pagination">
                 <span>03 / Suppliers</span>
             </div>
@@ -246,7 +246,7 @@
             </div>
             <div class="suppliers-decor-element"></div>
         </div>
-        <div class="suppliers_section_second-column">
+        <div class="suppliers_section_second-column column-2">
             <div class="suppliers_section_cards-wrapper">
                 <div class="suppliers_section_card">
                     <div class="suppliers_section_card-img">
@@ -290,9 +290,9 @@
 
 <!--leader-->
 <section class="leader_section">
-    <div class="leader_section_wrapper">
+    <div class="leader_section_wrapper container">
         <div class="row">
-            <div class="leader_section_first-column">
+            <div class="leader_section_first-column column-2">
                 <div class="leader_section_pagination pagination">
                     <span>05 / Thought leadership</span>
                 </div>
@@ -308,7 +308,7 @@
                         <a href="#" class="links">contributor@ambiodevelopments.com</a></p>
                 </div>
         </div>
-            <div class="leader_section_second-column">
+            <div class="leader_section_second-column column-2">
                 <div class="leader_section_img">
                     <img src="img/become-img.jpg" alt="">
                 </div>
@@ -316,13 +316,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="leader_section_first-column">
+            <div class="leader_section_first-column column-2">
                 <div class="leader_section_img">
                     <img src="img/become-img2.jpg" alt="">
                 </div>
                 <div class="leader-decor-element"></div>
             </div>
-            <div class="leader_section_second-column">
+            <div class="leader_section_second-column column-2">
                 <div class="leader_section_pagination pagination">
                     <span>04 / The team</span>
                 </div>
@@ -335,9 +335,9 @@
                         the acceleration of circular and
                         sustainable business models. </p>
                     <p>Interested in joining, then email:  <br>
-                        <a href="">fellows@ambiodevelopments.com</a>
+                        <a href="" class="links">fellows@ambiodevelopments.com</a>
                     </p>
-                    <p>Follow us on <a href="" class="links"><span></span></a></p>
+                    <p>Follow us on <a href=""><span class="leader_section_social-icon"></span></a></p>
                 </div>
         </div>
         </div>
@@ -346,7 +346,7 @@
 
 <!--news-->
 <section class="news_section">
-    <div class="news_section_wrapper">
+    <div class="news_section_wrapper container">
         <div class="row">
             <div class="news_section_first-column">
                 <div class="news_section_pagination pagination">
@@ -362,8 +362,8 @@
                     <div class="news_section_img">
                         <img src="img/card-slider-img.jpg" alt="">
                     </div>
-                    <div class="news_section_description">
-                        <time datetime="17.01.2018"></time>
+                    <div class="news_section_second-column_description">
+                        <span class="time">17.01.2018</span>
                         <h3>Sed ut perspiciatis
                             unde omnis iste natus
                             error sit voluptatem
@@ -372,7 +372,7 @@
                             adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna
                             aliqua...</p>
-                        <button class="btn news-section-btn" type="button">Read the article</button>
+                        <button class="btn green-btn" type="button">Read the article</button>
                     </div>
                 </div>
             </div>
@@ -382,7 +382,7 @@
 
 <!--contact-->
 <section class="contact_section">
-    <div class="contact_section_wrapper">
+    <div class="contact_section_wrapper container">
             <div class="contact_section_description">
                 <h1>Get in touch</h1>
                 <p>Please be in touch to add your name to the list (as a seller or as a buyer).</p>
@@ -391,43 +391,43 @@
             <div class="contact_section_form-wrapper">
                 <form action="">
                     <div class="row">
-                        <div class="labels">
+                        <div class="contact-field column-2">
                             <label id="name-label" for="name">Name*</label>
                             <input type="text" name="name" id="name" class="input-field" required>
                         </div>
-                        <div class="labels">
+                        <div class="contact-field column-2">
                             <label id="surname-label" for="surname">Surname*</label>
                             <input type="text" name="name" id="surname" class="input-field" required>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="labels">
+                        <div class="contact-field column-2">
                             <label id="email-label" for="email">Email*</label>
-                            <input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" required>
+                            <input type="email" name="email" id="email" class="input-field" required>
                         </div>
-                        <div class="labels">
-                            <label for="subject">Which option best describes your current role?</label>
-                            <select id="dropdown" name="subject" class="dropdown">
-                                <option value="seller">Sellert</option>
+                        <div class="contact-field column-2">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" class="dropdown">
+                                <option value="seller">Sellect</option>
                                 <option value="buyer">Buyer</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="labels">
-                            <label for="comments">Any Comments or Suggestions?</label>
+                        <div class="contact-field contact-field_textarea">
+                            <label for="comments">Messege</label>
                             <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"></textarea>
                         </div>
                     </div>
                     <div class="row">
-                        <input class="agreement" type="checkbox" checked>
+                        <input class="agreement-check" type="checkbox" checked>
                         <label>By using this form you agree to us handling and storing your data</label>
                     </div>
                 </form>
             </div>
-            </div>
-        <button class="btn news-section-btn" type="button">Read the article</button>
+            <button class="btn news-section-btn" type="button">Get in touch</button>
+        </div>
     </div>
 </section>
 
@@ -439,7 +439,7 @@
                 <img src="img/logo.png" alt="">
             </div>
             <div class="footer_section_second-column">
-                <button type="button" class="footer_section-button">Back to top</button>
+                <button type="button" ><a class="footer_section-button" href="#header">Back to top</a></button>
         </div>
     </div>
         <div class="row">
