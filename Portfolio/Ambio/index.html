@@ -10,41 +10,44 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 </head>
 <body>
-
+<nav>
+    <div class="nav-bar">
+    <a href="#" target="_blank" class="nav-bar_brand"></a>
+    <div class="menu-bar">Menu
+        <button class="nav-bar_toggler" type="button">
+            <span class="nav-bar_toggler-icon"></span>
+        </button>
+    </div>
+    <div class="nav-bar_collapse">
+        <ul class="nav-bar_nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Who we are</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Buyers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Suppliers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Thought Leadership</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">The Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
 <!--header-->
 <section class="header" id="header">
-    <div class="container header_section--container">
-            <nav class="nav-bar">
-                <a href="#" target="_blank" class="nav-bar_brand"><img src="img/logo.png" alt="ambio-n-logo"></a>
-                <button class="nav-bar_toggler" type="button">
-<!--                    <span class="nav-bar_toggler-icon">Menu</span>-->
-                </button>
-                <div class="nav-bar_collapse collapse">
-                    <ul class="nav-bar_nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Who we are</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Buyers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Suppliers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Thought Leadership</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">The Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+    <div class="container">
             <div class="header-title">
                 <h1>Acceleration for advancement of the circular economy.</h1>
                 <p>An online marketplace matching buyers with sellers with aligned
@@ -61,7 +64,6 @@
 
 <!--about-->
 <section class="about_section">
-    <div class="about-decor-element"></div>
     <div class="about_section_wrapper container">
         <div class="about_section_pagination pagination">
             <span>01 / Who we are</span>
@@ -115,7 +117,7 @@
             <h1>Principles/Themes</h1>
             <p>4 principles which explain what we do</p>
         </div>
-        <div class="principles_section_cards-wrapper">
+        <div class="principles_section_cards-wrapper row">
             <div class="principles_section_card">
                 <img src="img/icon-1.svg" alt="">
                 <h3>Responsible<br>
@@ -171,68 +173,71 @@
 <!--buyers-->
 <section class="buyers_section">
     <div class="buyers_section_wrapper container">
-        <div class="buyers_section_first-column column-2">
-            <div class="buyers_section_pagination pagination">
-                <span>02 / Buyers</span>
+        <div class="row">
+            <div class="buyers_section_first-column column-2">
+                <div class="buyers_section_pagination pagination">
+                    <span>02 / Buyers</span>
+                </div>
+                <div class="buyers_section_description">
+                    <h1>Why become <br>
+                        a Buyer</h1>
+                    <p>How can you become more sustainable
+                        or close the loop in your value chain?</p>
+                    <p>Use AMBIO-N to discover alternatives to
+                        your current inputs and connect with a
+                        new supplier who can address your
+                        requirements and drive value across the
+                        supply chain.</p>
+                </div>
+                <div class="buyer-decor-element"></div>
             </div>
-            <div class="buyers_section_description">
-                <h1>Why become <br>
-                    a Buyer</h1>
-                <p>How can you become more sustainable
-                    or close the loop in your value chain?</p>
-                <p>Use AMBIO-N to discover alternatives to
-                    your current inputs and connect with a
-                    new supplier who can address your
-                    requirements and drive value across the
-                    supply chain.</p>
-            </div>
-            <div class="buyer-decor-element"></div>
-        </div>
-        <div class="buyers_section_second-column column-2">
-            <div class="buyers_section_cards-wrapper">
-                <div class="buyers_section_card">
-                    <div class="buyers_section_card-img">
-                        <img src="img/icon-5.svg" alt="">
+            <div class="buyers_section_second-column column-2">
+                <div class="buyers_section_cards-wrapper">
+                    <div class="buyers_section_card">
+                        <div class="buyers_section_card-img">
+                            <img src="img/icon-5.svg" alt="">
+                        </div>
+                        <div class="buyers_section_card-description">
+                            <h3>Develop a responsible supply chain</h3>
+                            <p>Procure product, material or equipment and
+                                increase value across your supply chain.</p>
+                        </div>
                     </div>
-                    <div class="buyers_section_card-description">
-                        <h3>Develop a responsible supply chain</h3>
-                        <p>Procure product, material or equipment and
-                            increase value across your supply chain.</p>
+                    <div class="buyers_section_card">
+                        <div class="buyers_section_card-img">
+                            <img src="img/icon-6.svg" alt="">
+                        </div>
+                        <div class="buyers_section_card-description">
+                            <h3>An improved input and price
+                                from the directory of Suppliers</h3>
+                            <p>Search for an alternative product or
+                                material for your supply chain, from a
+                                international directory of suppliers.</p>
+                        </div>
+                    </div>
+                    <div class="buyers_section_card">
+                        <div class="buyers_section_card-img">
+                            <img src="img/icon-7.svg" alt="">
+                        </div>
+                        <div class="buyers_section_card-description">
+                            <h3>Gain information and insight</h3>
+                            <p>Learn what it means to become
+                                sustainable and to add value across the
+                                supply chain.</p>
+                             <p>Start today! <a class="links" href="#" target="_blank">Order a trial sample</a></p>
+                        </div>
                     </div>
                 </div>
-                <div class="buyers_section_card">
-                    <div class="buyers_section_card-img">
-                        <img src="img/icon-6.svg" alt="">
-                    </div>
-                    <div class="buyers_section_card-description">
-                        <h3>An improved input and price
-                            from the directory of Suppliers</h3>
-                        <p>Search for an alternative product or
-                            material for your supply chain, from a
-                            international directory of suppliers.</p>
-                    </div>
-                </div>
-                <div class="buyers_section_card">
-                    <div class="buyers_section_card-img">
-                        <img src="img/icon-7.svg" alt="">
-                    </div>
-                    <div class="buyers_section_card-description">
-                        <h3>Gain information and insight</h3>
-                        <p>Learn what it means to become
-                            sustainable and to add value across the
-                            supply chain.</p>
-                         <p>Start today! <a class="links" href="#" target="_blank">Order a trial sample</a></p>
-                    </div>
-                </div>
-            </div>
 
-        </div>
+            </div>
+         </div>
     </div>
 </section>
 
 <!--suppliers-->
 <section class="suppliers_section">
     <div class="suppliers_section_wrapper container">
+        <div class="row">
         <div class="suppliers_section_first-column column-2">
             <div class="suppliers_section_pagination pagination">
                 <span>03 / Suppliers</span>
@@ -286,6 +291,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 </section>
 
@@ -347,7 +353,7 @@
 
 <!--news-->
 <section class="news_section">
-    <div class="news_section_wrapper container">
+    <div class="news_section_wrapper">
         <div class="row">
             <div class="news_section_first-column">
                 <div class="news_section_pagination pagination">
@@ -413,7 +419,7 @@
 
 <!--contact-->
 <section class="contact_section">
-    <div class="contact_section_wrapper container">
+    <div class="contact_section_wrapper">
             <div class="contact_section_description">
                 <h1>Get in touch</h1>
                 <p>Please be in touch to add your name to the list (as a seller or as a buyer).</p>
@@ -445,14 +451,14 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+
                         <div class="contact-field contact-field_textarea">
-                            <label for="comments">Messege</label>
+                            <label for="comments">Message</label>
                             <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"></textarea>
                         </div>
-                    </div>
-                    <div class="row">
-                        <input class="agreement-check" type="checkbox" checked>
+
+                    <div class="agreement-check">
+                        <input  type="checkbox" checked>
                         <label>By using this form you agree to us handling and storing your data</label>
                     </div>
                 </form>
@@ -481,7 +487,7 @@
                     <span>Privacy Policy</span>
                 </div>
             </div>
-            <div class="footer_section_second-column">
+            <div class="footer_section_second-column ">
                 <span>Website built by Diffusion Digital</span>
             </div>
         </div>
