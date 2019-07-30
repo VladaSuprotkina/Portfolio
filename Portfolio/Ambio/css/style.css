@@ -403,10 +403,12 @@ nav {
 .header_parallax-element {
     position: absolute;
     display: inline;
-    bottom: -320px;
+    bottom: -120px;
     left: -250px;
+/*
     background-image: url("../img/decor-element.svg");
     background-repeat: no-repeat;
+*/
     height: 606px;
     width: 574px;
     z-index: 5;

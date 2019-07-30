@@ -25,8 +25,8 @@ $(function () {
 //     jarallax.addAnimation('.header_parallax-element',[{progress:'0%',bottom:'0%'},
 //         {progress:'100%', bottom:'50%'}]);
 // };
-jarallax(document.querySelectorAll('.header_parallax-element'), {
-    onScroll: function(calculations) {
-        console.log(calculations);
-    }
-});
+//jarallax(document.querySelectorAll('.header_parallax-element'), {
+//    onScroll: function(calculations) {
+//        console.log(calculations);
+//    }
+//});
