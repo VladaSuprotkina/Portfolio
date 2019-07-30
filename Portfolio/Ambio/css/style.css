@@ -305,6 +305,15 @@ nav {
 .nav-item {
     display: block;
 }
+
+.active:before {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 3px;
+    position: relative;
+    background-color: #ffffff;
+}
 .nav-bar_nav li:hover {
     border-radius: 20px;
     background-color: rgba(255,255,255,0.15);
@@ -327,6 +336,9 @@ nav {
 .scrolled .menu-bar {
     color: #0b4220;
 }
+.scrolled .active:before {
+    background-color: #0b4220;
+}
 /*------------------header-------------------*/
 .header {
     width: 100%;
@@ -335,16 +347,6 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.active:before {
-    display: inline-block;
-    content: '';
-    width: 10px;
-    height: 3px;
-    position: relative;
-    background-color: #ffffff;
-}
-
 .header-title {
     color: #ffffff;
     font-weight: 700;
@@ -354,7 +356,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
+    max-width: 630px;
 }
 .header-title h1 {
     padding-bottom: 20px;
@@ -397,22 +399,20 @@ nav {
     position: relative;
     bottom: 42px;
 }
-/*--------------about-----------------*/
 
-.about_section:before {
-    content: '';
+.header_parallax-element {
     position: absolute;
-    display: block;
-    top: -250px;
+    display: inline;
+    bottom: -320px;
     left: -250px;
     background-image: url("../img/decor-element.svg");
     background-repeat: no-repeat;
-    background-attachment: scroll;
     height: 606px;
     width: 574px;
+    z-index: 5;
 }
 
-
+/*--------------about-----------------*/
 
 .about_section {
     position: relative;
@@ -443,15 +443,45 @@ nav {
     background-color: #135334 ;
 }
 /*---------------vision-------------*/
+.vision_section {
+    position: relative;
+}
+.vision_section_first-column:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 25%;
+    left: 3%;
+    background-image: url("../img/d-element1.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 107px;
+    width: 173px;
+}
+.vision_section_second-column:before {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 15%;
+    right: 5%;
+    background-image: url("../img/d-element2.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 80px;
+    width: 152px;
+}
+
 .vision_section_first-column,
 .vision_section_second-column {
     padding: 110px 0;
 }
 .vision_section_first-column {
     background-color: #135334;
+    padding-left: 10%;
 }
 .vision_section_second-column {
     background-color: #0d4027;
+    padding-right: 10%;
 }
 .vision_section-description {
     max-width: 306px;
@@ -462,7 +492,20 @@ nav {
     padding-bottom: 20px;
 }
 /*-------------------principles-------------------*/
+.principles_section_cards-wrapper:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -25%;
+    left: 20%;
+    background-image: url("../img/d-element3.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 110px;
+    width: 182px;
+}
 .principles_section {
+    position: relative;
     background-color: #f7f7f7;
 }
 .principles_section .container {
@@ -481,6 +524,7 @@ nav {
 .principles_section_cards-wrapper {
     display: flex;
     justify-content: space-around;
+    position: relative;
 }
 .principles_section_card {
     max-width: 247px;
@@ -501,8 +545,11 @@ nav {
 }
 /*-----------info---------*/
 
+
 .info_section {
     background-color: #f1f1f1;
+    position: relative;
+    z-index: 0;
 }
 
 .info_section_wrapper {
@@ -519,15 +566,34 @@ nav {
 }
 .info_section_infographic {
     padding-bottom: 29px;
+    z-index: 8;
+    background-image: url("../img/Infographics.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 1126px;
+    height: 800px;
 }
 .info_section .btn:before {
     background-color: #135334 ;
 }
-
+.info_section_wrapper:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 558px;
+    right: -120px;
+    background-image: url("../img/decor-element2.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 567px;
+    width: 603px;
+    z-index: -1;
+}
 /*---------------buyers-----------------*/
 
 .buyers_section {
     background-color: #f7f7f7;
+    position: relative;
 }
 .suppliers_section_wrapper,
 .buyers_section_wrapper {
@@ -556,7 +622,7 @@ nav {
 }
 .suppliers_section_card-img,
 .buyers_section_card-img {
-    min-width: 121px;
+    width: 121px;
     margin-right: 73px;
 }
 .suppliers_section_card-description,
@@ -580,6 +646,7 @@ nav {
 .suppliers_section {
     background-color: #0d4027;
     color: #ffffff;
+    position: relative;
 }
 .suppliers_section_pagination {
     color: #ffffff;
@@ -588,11 +655,63 @@ nav {
 .suppliers_section_second-column {
     margin-top: 100px;
 }
-
+.suppliers_section:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -40%;
+    left: 15%;
+    background-image: url("../img/decor-element3.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 432px;
+    width: 321px;
+    z-index: 0;
+}
 
 /*--------------------leader---------------------*/
+.leader_section:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -15%;
+    left: 15%;
+    background-image: url("../img/decor_section-element.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 272px;
+    width: 297px;
+    z-index: 0;
+}
 .leader_section {
     background-color: #f7f7f7;
+    position: relative;
+}
+.leader_section_second-column .leader_section_img:before{
+     content: '';
+     position: absolute;
+     display: block;
+     bottom: 20%;
+     right: -23%;
+     background-image: url("../img/leader-decor-el2.svg");
+     background-repeat: no-repeat;
+     background-attachment: scroll;
+     height: 110px;
+     width: 182px;
+     z-index: 0;
+ }
+.leader_section_first-column .leader_section_img:before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: -10%;
+    background-image: url("../img/leader-decor-el.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 110px;
+    width: 179px;
+    z-index: 0;
 }
 .leader_section_wrapper {
     max-width: 945px;
@@ -646,9 +765,22 @@ nav {
     margin-right: 235px;
 }
 /*------------------news--------------------*/
-
+.news_section:before {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 211px;
+    right: -120px;
+    background-image: url("../img/decor-element2.svg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 567px;
+    width: 603px;
+    z-index: 0;
+}
 .news_section {
     background-color: #f1f1f1;
+    position: relative;
 }
 .news_section_wrapper {
     display: flex;
@@ -977,14 +1109,70 @@ option {
     .footer_section_first-column img{
         padding-right: 60px;
     }
-
-
+    .principles_section_cards-wrapper:before {
+        top: -15%;
+        left: 5%;
+    }
+    .leader_section_second-column .leader_section_img:before {
+        left: -15%;
+    }
+    .about_section:before,
+    .suppliers_section:before,
+    .info_section_wrapper:after,
+    .leader_section:before,
+    .news_section:before {
+        display: none;
+    }
+    .header_parallax-element {
+        display: none;
+    }
 
 
 }
 @media screen and (max-width: 769px) {
+    h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .nav-bar {
+        padding: 0 30px;
+    }
+    .nav-bar_brand {
+        width: 149px;
+        height: 17px;
+    }
+    .header-title {
+        min-width: 314px;
+    }
     .news_section_second-column {
         width: 100%;
+    }
+    .info_section_infographic {
+        height: 550px;
+    }
+    .suppliers_section_card,
+    .buyers_section_card {
+        flex-direction: column;
+        margin: 0;
+        padding-bottom: 50px;
+    }
+    .suppliers_section_card-img,
+    .buyers_section_card-img {
+        width: 100px;
+        padding-bottom: 18px;
+        margin: 0 auto;
+    }
+    .buyers_section_second-column,
+    .suppliers_section_second-column {
+        margin-top: 50px;
+    }
+    .suppliers_section_card-description,
+    .buyers_section_card-description {
+        text-align: center;
     }
 
 }
