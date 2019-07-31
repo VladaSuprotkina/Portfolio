@@ -5,14 +5,21 @@ $(document).ready(function(){
         slidesToScroll: 1,
 });
 });
-$('.nav-bar').on('click', function () {
-    $(this).toggleClass('active-bar');
+$('.menu-bar').on('click', function () {
+    $('.nav-bar').toggleClass('active-bar');
     $('.collapse').toggleClass('menu-open');
 });
 
-$('.nav a').on('click', function () {
+$('.nav-bar_collapse > a').on('click', function () {
     $('.menu').removeClass('active-bar');
     $('.collapse').removeClass('menu-open');
+});
+$('.nav-item').on('click', function () {
+    $(this).toggleClass('active');
+
+});
+$('.nav-item a').on('click', function () {
+    $('.nav-item').removeClass('active');
 });
 $(function () {
     $(document).scroll(function () {
@@ -20,13 +27,3 @@ $(function () {
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     });
 });
-// init = function(){
-//     var jarallax = new Jarallax();
-//     jarallax.addAnimation('.header_parallax-element',[{progress:'0%',bottom:'0%'},
-//         {progress:'100%', bottom:'50%'}]);
-// };
-//jarallax(document.querySelectorAll('.header_parallax-element'), {
-//    onScroll: function(calculations) {
-//        console.log(calculations);
-//    }
-//});

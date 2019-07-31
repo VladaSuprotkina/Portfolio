@@ -8,6 +8,7 @@
     <title>Ambio-n</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="script/jarallax.css"/>
 </head>
 <body>
 <!--navigation-->
@@ -21,26 +22,26 @@
     </div>
     <div class="nav-bar_collapse">
         <ul class="nav-bar_nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Who we are</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">Who we are</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Buyers</a>
+                <a class="nav-link" href="#buyers">Buyers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Suppliers</a>
+                <a class="nav-link" href="#suppliers">Suppliers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Thought Leadership</a>
+                <a class="nav-link" href="#leadership">Thought Leadership</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">The Team</a>
+                <a class="nav-link" href="#team">The Team</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="#news">News</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="#contacts">Contacts</a>
             </li>
         </ul>
     </div>
@@ -67,7 +68,7 @@
 </section>
 
 <!--about-->
-<section class="about_section">
+<section class="about_section" id="about">
     <div class="about_section_wrapper container">
         <div class="about_section_pagination pagination">
             <span>01 / Who we are</span>
@@ -91,6 +92,9 @@
 <section class="vision_section">
     <div class="row">
         <div class="vision_section_first-column column-2">
+            <span class="vision_section_first-column_parallax-element" data-jarallax-element="80">
+                <img src="img/d-element1.svg" alt="">
+            </span>
             <div class="vision_section-description">
                 <h1>Our Vision</h1>
                 <p>We want to increase awareness of what
@@ -100,6 +104,9 @@
             </div>
         </div>
         <div class="vision_section_second-column column-2">
+            <span class="vision_section_second-column_parallax-element" data-jarallax-element="-80">
+                <img src="img/d-element2.svg" alt="">
+            </span>
             <div class="vision_section-description">
                 <h1>Our Mission</h1>
                 <p>To connect Buyers and Sellers in
@@ -118,7 +125,10 @@
             <h1>Principles/Themes</h1>
             <p>4 principles which explain what we do</p>
         </div>
-        <div class="principles_section_cards-wrapper row">
+        <div class="principles_section_decor-element">
+            <img src="img/d-element3.svg" alt="">
+        </div>
+        <div class="principles_section_cards-wrapper">
             <div class="principles_section_card">
                 <img src="img/icon-1.svg" alt="">
                 <h3>Responsible<br>
@@ -157,6 +167,9 @@
 
 <!--info-->
 <section class="info_section">
+    <span class="info_section_parallax-element" data-jarallax-element="-250">
+        <img src="img/decor-element2.svg" alt="">
+    </span>
     <div class="info_section_wrapper container">
         <div class="info_section_title">
             <h1>Beign the synapse <br>
@@ -164,13 +177,14 @@
             <p>Creating synapses and opportunity for increased value across the chain.</p>
         </div>
         <div class="info_section_infographic">
+            <img src="img/Infographics.png" alt="">
         </div>
         <button class="btn green-btn" type="button">Download the PDF</button>
     </div>
 </section>
 
 <!--buyers-->
-<section class="buyers_section">
+<section class="buyers_section" id="buyers">
     <div class="buyers_section_wrapper container">
         <div class="row">
             <div class="buyers_section_first-column column-2">
@@ -188,6 +202,9 @@
                         requirements and drive value across the
                         supply chain.</p>
                 </div>
+                <span class="buyers_section_first-column_parallax-element" data-jarallax-element="80">
+                    <img src="img/decor-element3.svg" alt="">
+                </span>
             </div>
             <div class="buyers_section_second-column column-2">
                 <div class="buyers_section_cards-wrapper">
@@ -233,7 +250,7 @@
 </section>
 
 <!--suppliers-->
-<section class="suppliers_section">
+<section class="suppliers_section" id="suppliers">
     <div class="suppliers_section_wrapper container">
         <div class="row">
         <div class="suppliers_section_first-column column-2">
@@ -248,7 +265,9 @@
                     value chain and immediately connect
                     with Suppliers.</p>
             </div>
-            <div class="suppliers-decor-element"></div>
+            <span class="suppliers_section_first-column_parallax-element" data-jarallax-element="80">
+                <img src="img/decor_section-element.svg" alt="">
+            </span>
         </div>
         <div class="suppliers_section_second-column column-2">
             <div class="suppliers_section_cards-wrapper">
@@ -294,9 +313,9 @@
 </section>
 
 <!--leader-->
-<section class="leader_section">
+<section class="leader_section" id="leadership">
     <div class="leader_section_wrapper container">
-        <div class="row">
+        <div class="leader_section_wrapper-row">
             <div class="leader_section_first-column column-2">
                 <div class="leader_section_pagination pagination">
                     <span>05 / Thought leadership</span>
@@ -314,14 +333,20 @@
                 </div>
         </div>
             <div class="leader_section_second-column column-2">
+                <span class="leader_section_second-column_decor-element">
+                    <img src="img/leader-decor-el2.svg" alt="">
+                </span>
                 <div class="leader_section_img">
                     <img src="img/become-img.jpg" alt="">
                 </div>
 
             </div>
         </div>
-        <div class="row">
+        <div class="leader_section_wrapper-row">
             <div class="leader_section_first-column column-2">
+                <span class="leader_section_first-column_decor-element">
+                    <img src="img/leader-decor-el.svg" alt="">
+                </span>
                 <div class="leader_section_img">
                     <img src="img/become-img2.jpg" alt="">
                 </div>
@@ -350,7 +375,10 @@
 </section>
 
 <!--news-->
-<section class="news_section">
+<section class="news_section" id="news">
+    <span class="news_section_parallax-element" data-jarallax-element="100">
+        <img src="img/decor-element2.svg" alt="">
+    </span>
     <div class="news_section_wrapper">
         <div class="row">
             <div class="news_section_first-column">
@@ -413,10 +441,11 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <!--contact-->
-<section class="contact_section">
+<section class="contact_section" id="contacts">
     <div class="contact_section_wrapper">
             <div class="contact_section_description">
                 <h1>Get in touch</h1>

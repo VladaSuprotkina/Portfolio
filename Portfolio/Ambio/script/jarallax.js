@@ -1,1129 +1,1700 @@
 /*!
- * Name    : Just Another Parallax [Jarallax]
- * Version : 1.11.0
- * Author  : nK <https://nkdev.info>
- * GitHub  : https://github.com/nk-o/jarallax
+ * Jarallax
+ * Version: 0.2.4b
+ * website: http://jarallax.com
+ *
+ * Copyright 2013, Jacko Hoogeveen
+ * Dual licensed under the MIT or GPL Version 3 licenses.
+ * http://jarallax.com/license.html
+ *
+ * Date: 08 Jun 2013
  */
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+////////////////////////////////////////////////////////////////////////////////
+// jarallax class //////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+var Jarallax = function () {
+    this.FPS = 24;
+    this.FPS_INTERVAL = 1000 / this.FPS;
+    this.FRAME_DATA_SAMPLE = 24;
+    this.FRAME_DATA_REFRESH = 12;
+    this.fpsTop = 0;
+    this.fpsBottom = 1000;
+    this.animations = [];
+    this.defaultValues = [];
+    this.progress = 0.0;
+    this.properties = {};
+    this.prevProgress = 0.0;
+    this.controllers = [];
+    this.maxProgress = 1;
+    this.timer = undefined;
+    this.allowWeakProgress = true;
+    this.frameRate = this.FPS;
+    this.stepSize = 0;
+    this.jumping = false;
 
-
-module.exports = function (callback) {
-
-	if (document.readyState === 'complete' || document.readyState === 'interactive') {
-		// Already ready or interactive, execute callback
-		callback.call();
-	} else if (document.attachEvent) {
-		// Old browsers
-		document.attachEvent('onreadystatechange', function () {
-			if (document.readyState === 'interactive') callback.call();
-		});
-	} else if (document.addEventListener) {
-		// Modern browsers
-		document.addEventListener('DOMContentLoaded', callback);
-	}
-};
-
-/***/ }),
-/* 3 */,
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
-
-var win;
-
-if (typeof window !== "undefined") {
-    win = window;
-} else if (typeof global !== "undefined") {
-    win = global;
-} else if (typeof self !== "undefined") {
-    win = self;
-} else {
-    win = {};
-}
-
-module.exports = win;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(5)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var g;
-
-// This works in non-strict mode
-g = function () {
-	return this;
-}();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-/***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(12);
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _liteReady = __webpack_require__(2);
-
-var _liteReady2 = _interopRequireDefault(_liteReady);
-
-var _global = __webpack_require__(4);
-
-var _jarallax = __webpack_require__(13);
-
-var _jarallax2 = _interopRequireDefault(_jarallax);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// no conflict
-var oldPlugin = _global.window.jarallax;
-_global.window.jarallax = _jarallax2.default;
-_global.window.jarallax.noConflict = function () {
-    _global.window.jarallax = oldPlugin;
-    return this;
-};
-
-// jQuery support
-if (typeof _global.jQuery !== 'undefined') {
-    var jQueryPlugin = function jQueryPlugin() {
-        var args = arguments || [];
-        Array.prototype.unshift.call(args, this);
-        var res = _jarallax2.default.apply(_global.window, args);
-        return (typeof res === 'undefined' ? 'undefined' : _typeof(res)) !== 'object' ? res : this;
-    };
-    jQueryPlugin.constructor = _jarallax2.default.constructor;
-
-    // no conflict
-    var oldJqPlugin = _global.jQuery.fn.jarallax;
-    _global.jQuery.fn.jarallax = jQueryPlugin;
-    _global.jQuery.fn.jarallax.noConflict = function () {
-        _global.jQuery.fn.jarallax = oldJqPlugin;
-        return this;
-    };
-}
-
-// data-jarallax initialization
-(0, _liteReady2.default)(function () {
-    (0, _jarallax2.default)(document.querySelectorAll('[data-jarallax]'));
-});
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _liteReady = __webpack_require__(2);
-
-var _liteReady2 = _interopRequireDefault(_liteReady);
-
-var _rafl = __webpack_require__(14);
-
-var _rafl2 = _interopRequireDefault(_rafl);
-
-var _global = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var isIE = navigator.userAgent.indexOf('MSIE ') > -1 || navigator.userAgent.indexOf('Trident/') > -1 || navigator.userAgent.indexOf('Edge/') > -1;
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-var supportTransform = function () {
-    var prefixes = 'transform WebkitTransform MozTransform'.split(' ');
-    var div = document.createElement('div');
-    for (var i = 0; i < prefixes.length; i++) {
-        if (div && div.style[prefixes[i]] !== undefined) {
-            return prefixes[i];
+    for(var argument in arguments) {
+        if (arguments[argument] instanceof Array){
+            this.controllers = arguments[argument];
+        } else if (arguments[argument].isController) {
+            this.controllers.push(arguments[argument]);
+        } else if (arguments[argument] instanceof Object) {
+            this.properties = arguments[argument];
+        } else {
+            console.log('WARNING: bad argument ' + argument);
         }
+    }
+
+    if (!this.controller) {
+        if($.browser.iDevice) {
+            this.controllers.push(new ControllerApple(false));
+        } else if ($.browser.mozilla) {
+            this.controllers.push(new ControllerScroll(false,
+                this.properties.horizontal, this.properties.disableVertical));
+        } else {
+            this.controllers.push(new ControllerScroll(true,
+                this.properties.horizontal, this.properties.disableVertical));
+        }
+    }
+
+    for (var i in this.controllers) {
+        this.controllers[i].activate(this);
+    }
+
+    this.frameChart = [];
+    for(var j = 1; j <= 600; j++) {
+        this.frameChart[j] = (1000 / j);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax methods ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+Jarallax.prototype.setProgress = function (progress, isWeak) {
+    if (progress > 1) {
+        progress = 1;
+    } else if (progress < 0) {
+        progress = 0;
+    }
+
+    if(this.progress != progress){
+        this.progress = progress;
+        if (this.allowWeakProgress || !weak) {
+
+            this.previousTime = new Date();
+            this.currentTime = new Date();
+            var weak = isWeak || false;
+
+            for (var defaultValue in this.defaultValues) {
+                this.defaultValues[defaultValue].activate(this.progress);
+            }
+
+            for (var animation in this.animations) {
+                this.animations[animation].activate(this.progress);
+            }
+
+            for (var controller in this.controllers) {
+                this.controllers[controller].update(this.progress);
+            }
+
+            this.currentTime = new Date();
+            this.stepSize = Math.max(this.currentTime - this.previousTime, this.stepSize);
+        }
+    }
+};
+
+Jarallax.prototype.clearAnimations = function() {
+    this.animations = [];
+};
+
+Jarallax.prototype.clearDefaults = function() {
+    this.defaultValues = [];
+};
+
+Jarallax.prototype.clearControllers = function() {
+    this.controllers = [];
+};
+
+Jarallax.prototype.jumpToProgress = function (progress, time, fps) {
+    if (!progress.indexOf) {
+        progress = progress / this.maxProgress;
+    } else if (progress.indexOf('%') != -1) {
+        progress = parseFloat(progress) / 100;
+    }
+
+    if(progress == this.progress) {
+        return false;
+    }
+
+    if (progress > 1) {
+        progress = 1;
+    } else if (progress < 0) {
+        progress = 0;
+    }
+
+    this.smoothProperties = {};
+    this.smoothProperties.timeStep = 1000 / fps;
+    this.smoothProperties.steps = time / this.smoothProperties.timeStep;
+    this.smoothProperties.currentStep = 0;
+
+    this.smoothProperties.startProgress = this.progress;
+    this.smoothProperties.diffProgress = progress - this.progress;
+    this.smoothProperties.previousValue = this.progress;
+    this.smooth();
+    this.allowWeakProgress = false;
+
+    return false;
+};
+
+Jarallax.prototype.smooth = function (externalScope) {
+    var scope;
+    if (!externalScope) {
+        scope = this;
+    } else {
+        scope = externalScope;
+    }
+
+    scope.smoothProperties.currentStep++;
+    clearTimeout(scope.timer);
+    if (scope.smoothProperties.currentStep < scope.smoothProperties.steps) {
+        var position = scope.smoothProperties.currentStep / scope.smoothProperties.steps;
+        var newProgress = Jarallax.EASING.easeOut(position,
+            scope.smoothProperties.startProgress,
+            scope.smoothProperties.diffProgress,
+            1,
+            5);
+
+        scope.jumpingAllowed = true;
+        scope.setProgress(newProgress);
+        scope.jumpingAllowed = false;
+        scope.timer = window.setTimeout(function(){scope.smooth(scope);}, scope.smoothProperties.timeStep);
+        scope.smoothProperties.previousValue = newProgress;
+        scope.allowWeakProgress = false;
+    } else {
+        scope.jumpingAllowed = true;
+        scope.setProgress(scope.smoothProperties.startProgress + scope.smoothProperties.diffProgress);
+        scope.jumpingAllowed = false;
+        scope.clearSmooth(scope);
+    }
+};
+
+Jarallax.prototype.clearSmooth = function(scope){
+    scope.allowWeakProgress = true;
+    clearTimeout(scope.timer);
+    delete scope.smoothProperties;
+};
+
+Jarallax.prototype.setDefault = function (selector, values) {
+    if (!selector) {
+        throw new Error('no selector defined.');
+    }
+
+    if (JarallaxTools.isValues(values))
+    {
+        var newDefault = new JarallaxObject(selector, values);
+        newDefault.activate();
+        this.defaultValues.push(newDefault);
+    }
+};
+
+Jarallax.prototype.addStatic = function (selector, values) {
+    if (!selector) {
+        throw new Error('no selector defined.');
+    }
+
+    if (JarallaxTools.isValues(values))
+    {
+        var newDefault = new JarallaxStatic(selector, values[0], values[1]);
+        this.defaultValues.push(newDefault);
+    }
+};
+
+Jarallax.prototype.addCounter = function (properties) {
+    this.animations.push(new JarallaxCounter(this, properties));
+};
+
+Jarallax.prototype.addController = function (controller, activate) {
+    this.controllers.push(controller);
+
+    if (activate) {
+        controller.activate(this);
+    }
+};
+
+Jarallax.prototype.addAnimation = function (selector, values, platforms, allMustBeTrue) {
+    if (!platforms) {
+        platforms = ['any'];
+    } else if(platforms.substring) {
+        platforms = [platforms];
+    } else {
+        platforms = platforms || [JarallaxTools.Platform.Any];
+    }
+
+    if (JarallaxTools.PlatformAllowed(platforms, allMustBeTrue)) {
+        var newAnimation;
+
+        if (!selector) {
+            throw new Error('no selector defined.');
+        }
+
+        var returnValue = [];
+        if (JarallaxTools.isValues(values)) {
+            if (values.length) {
+                for (var i = 0; i < values.length - 1; i++) {
+                    if (values[i] && values[i + 1])
+                    {
+                        if (values[i].progress && values[i + 1].progress) {
+                            if (values[i + 1].progress.indexOf('%') == -1) {
+                                if (this.maxProgress < values[i + 1].progress) {
+                                    this.maxProgress = values[i + 1].progress;
+                                }
+                            }
+                            newAnimation = new JarallaxAnimation(selector, values[i], values[i + 1], this);
+                            this.animations.push(newAnimation);
+                            returnValue.push(newAnimation);
+                        }
+                        else
+                        {
+                            throw new Error('no animation boundry found.');
+                        }
+                    }
+                    else
+                    {
+                        throw new Error('bad animation data.');
+                    }
+                }
+            } else {
+                if (!values.progress) {
+                    values.progress = '100%';
+                }
+                var startValues = {};
+
+                for (var j in values) {
+                    startValues[j] = $(selector).css(j);
+                }
+
+                startValues.progress = '0%';
+
+
+                newAnimation = new JarallaxAnimation(selector, startValues, values, this);
+                this.animations.push(newAnimation);
+                returnValue.push(newAnimation);
+            }
+        }
+        return returnValue;
     }
     return false;
-}();
-
-var $deviceHelper = void 0;
-
-/**
- * The most popular mobile browsers changes height after page scroll and this generates image jumping.
- * We can fix it using this workaround with vh units.
- */
-function getDeviceHeight() {
-    if (!$deviceHelper && document.body) {
-        $deviceHelper = document.createElement('div');
-        $deviceHelper.style.cssText = 'position: fixed; top: -9999px; left: 0; height: 100vh; width: 0;';
-        document.body.appendChild($deviceHelper);
-    }
-
-    return ($deviceHelper ? $deviceHelper.clientHeight : 0) || _global.window.innerHeight || document.documentElement.clientHeight;
-}
-
-// Window data
-var wndW = void 0;
-var wndH = void 0;
-var wndY = void 0;
-var forceResizeParallax = false;
-var forceScrollParallax = false;
-function updateWndVars(e) {
-    wndW = _global.window.innerWidth || document.documentElement.clientWidth;
-
-    if (isMobile) {
-        wndH = getDeviceHeight();
-    } else {
-        wndH = _global.window.innerHeight || document.documentElement.clientHeight;
-    }
-
-    if ((typeof e === 'undefined' ? 'undefined' : _typeof(e)) === 'object' && (e.type === 'load' || e.type === 'dom-loaded')) {
-        forceResizeParallax = true;
-    }
-}
-updateWndVars();
-_global.window.addEventListener('resize', updateWndVars);
-_global.window.addEventListener('orientationchange', updateWndVars);
-_global.window.addEventListener('load', updateWndVars);
-(0, _liteReady2.default)(function () {
-    updateWndVars({
-        type: 'dom-loaded'
-    });
-});
-
-// list with all jarallax instances
-// need to render all in one scroll/resize event
-var jarallaxList = [];
-
-// Animate if changed window size or scrolled page
-var oldPageData = false;
-function updateParallax() {
-    if (!jarallaxList.length) {
-        return;
-    }
-
-    if (_global.window.pageYOffset !== undefined) {
-        wndY = _global.window.pageYOffset;
-    } else {
-        wndY = (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    }
-
-    var isResized = forceResizeParallax || !oldPageData || oldPageData.width !== wndW || oldPageData.height !== wndH;
-    var isScrolled = forceScrollParallax || isResized || !oldPageData || oldPageData.y !== wndY;
-
-    forceResizeParallax = false;
-    forceScrollParallax = false;
-
-    if (isResized || isScrolled) {
-        jarallaxList.forEach(function (item) {
-            if (isResized) {
-                item.onResize();
-            }
-            if (isScrolled) {
-                item.onScroll();
-            }
-        });
-
-        oldPageData = {
-            width: wndW,
-            height: wndH,
-            y: wndY
-        };
-    }
-
-    (0, _rafl2.default)(updateParallax);
-}
-
-// ResizeObserver
-var resizeObserver = global.ResizeObserver ? new global.ResizeObserver(function (entry) {
-    if (entry && entry.length) {
-        (0, _rafl2.default)(function () {
-            entry.forEach(function (item) {
-                if (item.target && item.target.jarallax) {
-                    if (!forceResizeParallax) {
-                        item.target.jarallax.onResize();
-                    }
-                    forceScrollParallax = true;
-                }
-            });
-        });
-    }
-}) : false;
-
-var instanceID = 0;
-
-// Jarallax class
-
-var Jarallax = function () {
-    function Jarallax(item, userOptions) {
-        _classCallCheck(this, Jarallax);
-
-        var self = this;
-
-        self.instanceID = instanceID++;
-
-        self.$item = item;
-
-        self.defaults = {
-            type: 'scroll', // type of parallax: scroll, scale, opacity, scale-opacity, scroll-opacity
-            speed: 0.5, // supported value from -1 to 2
-            imgSrc: null,
-            imgElement: '.jarallax-img',
-            imgSize: 'cover',
-            imgPosition: '50% 50%',
-            imgRepeat: 'no-repeat', // supported only for background, not for <img> tag
-            keepImg: false, // keep <img> tag in it's default place
-            elementInViewport: null,
-            zIndex: -100,
-            disableParallax: false,
-            disableVideo: false,
-            automaticResize: true, // use ResizeObserver to recalculate position and size of parallax image
-
-            // video
-            videoSrc: null,
-            videoStartTime: 0,
-            videoEndTime: 0,
-            videoVolume: 0,
-            videoLoop: true,
-            videoPlayOnlyVisible: true,
-            videoLazyLoading: true,
-
-            // events
-            onScroll: null, // function(calculations) {}
-            onInit: null, // function() {}
-            onDestroy: null, // function() {}
-            onCoverImage: null // function() {}
-        };
-
-        // prepare data-options
-        var dataOptions = self.$item.dataset || {};
-        var pureDataOptions = {};
-        Object.keys(dataOptions).forEach(function (key) {
-            var loweCaseOption = key.substr(0, 1).toLowerCase() + key.substr(1);
-            if (loweCaseOption && typeof self.defaults[loweCaseOption] !== 'undefined') {
-                pureDataOptions[loweCaseOption] = dataOptions[key];
-            }
-        });
-
-        self.options = self.extend({}, self.defaults, pureDataOptions, userOptions);
-        self.pureOptions = self.extend({}, self.options);
-
-        // prepare 'true' and 'false' strings to boolean
-        Object.keys(self.options).forEach(function (key) {
-            if (self.options[key] === 'true') {
-                self.options[key] = true;
-            } else if (self.options[key] === 'false') {
-                self.options[key] = false;
-            }
-        });
-
-        // fix speed option [-1.0, 2.0]
-        self.options.speed = Math.min(2, Math.max(-1, parseFloat(self.options.speed)));
-
-        // prepare disableParallax callback
-        if (typeof self.options.disableParallax === 'string') {
-            self.options.disableParallax = new RegExp(self.options.disableParallax);
-        }
-        if (self.options.disableParallax instanceof RegExp) {
-            var disableParallaxRegexp = self.options.disableParallax;
-            self.options.disableParallax = function () {
-                return disableParallaxRegexp.test(navigator.userAgent);
-            };
-        }
-        if (typeof self.options.disableParallax !== 'function') {
-            self.options.disableParallax = function () {
-                return false;
-            };
-        }
-
-        // prepare disableVideo callback
-        if (typeof self.options.disableVideo === 'string') {
-            self.options.disableVideo = new RegExp(self.options.disableVideo);
-        }
-        if (self.options.disableVideo instanceof RegExp) {
-            var disableVideoRegexp = self.options.disableVideo;
-            self.options.disableVideo = function () {
-                return disableVideoRegexp.test(navigator.userAgent);
-            };
-        }
-        if (typeof self.options.disableVideo !== 'function') {
-            self.options.disableVideo = function () {
-                return false;
-            };
-        }
-
-        // custom element to check if parallax in viewport
-        var elementInVP = self.options.elementInViewport;
-        // get first item from array
-        if (elementInVP && (typeof elementInVP === 'undefined' ? 'undefined' : _typeof(elementInVP)) === 'object' && typeof elementInVP.length !== 'undefined') {
-            var _elementInVP = elementInVP;
-
-            var _elementInVP2 = _slicedToArray(_elementInVP, 1);
-
-            elementInVP = _elementInVP2[0];
-        }
-        // check if dom element
-        if (!(elementInVP instanceof Element)) {
-            elementInVP = null;
-        }
-        self.options.elementInViewport = elementInVP;
-
-        self.image = {
-            src: self.options.imgSrc || null,
-            $container: null,
-            useImgTag: false,
-
-            // position fixed is needed for the most of browsers because absolute position have glitches
-            // on MacOS with smooth scroll there is a huge lags with absolute position - https://github.com/nk-o/jarallax/issues/75
-            // on mobile devices better scrolled with absolute position
-            position: /iPad|iPhone|iPod|Android/.test(navigator.userAgent) ? 'absolute' : 'fixed'
-        };
-
-        if (self.initImg() && self.canInitParallax()) {
-            self.init();
-        }
-    }
-
-    // add styles to element
-
-
-    _createClass(Jarallax, [{
-        key: 'css',
-        value: function css(el, styles) {
-            if (typeof styles === 'string') {
-                return _global.window.getComputedStyle(el).getPropertyValue(styles);
-            }
-
-            // add transform property with vendor prefix
-            if (styles.transform && supportTransform) {
-                styles[supportTransform] = styles.transform;
-            }
-
-            Object.keys(styles).forEach(function (key) {
-                el.style[key] = styles[key];
-            });
-            return el;
-        }
-
-        // Extend like jQuery.extend
-
-    }, {
-        key: 'extend',
-        value: function extend(out) {
-            var _arguments = arguments;
-
-            out = out || {};
-            Object.keys(arguments).forEach(function (i) {
-                if (!_arguments[i]) {
-                    return;
-                }
-                Object.keys(_arguments[i]).forEach(function (key) {
-                    out[key] = _arguments[i][key];
-                });
-            });
-            return out;
-        }
-
-        // get window size and scroll position. Useful for extensions
-
-    }, {
-        key: 'getWindowData',
-        value: function getWindowData() {
-            return {
-                width: wndW,
-                height: wndH,
-                y: wndY
-            };
-        }
-
-        // Jarallax functions
-
-    }, {
-        key: 'initImg',
-        value: function initImg() {
-            var self = this;
-
-            // find image element
-            var $imgElement = self.options.imgElement;
-            if ($imgElement && typeof $imgElement === 'string') {
-                $imgElement = self.$item.querySelector($imgElement);
-            }
-            // check if dom element
-            if (!($imgElement instanceof Element)) {
-                $imgElement = null;
-            }
-
-            if ($imgElement) {
-                if (self.options.keepImg) {
-                    self.image.$item = $imgElement.cloneNode(true);
-                } else {
-                    self.image.$item = $imgElement;
-                    self.image.$itemParent = $imgElement.parentNode;
-                }
-                self.image.useImgTag = true;
-            }
-
-            // true if there is img tag
-            if (self.image.$item) {
-                return true;
-            }
-
-            // get image src
-            if (self.image.src === null) {
-                self.image.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-                self.image.bgImage = self.css(self.$item, 'background-image');
-            }
-            return !(!self.image.bgImage || self.image.bgImage === 'none');
-        }
-    }, {
-        key: 'canInitParallax',
-        value: function canInitParallax() {
-            return supportTransform && !this.options.disableParallax();
-        }
-    }, {
-        key: 'init',
-        value: function init() {
-            var self = this;
-            var containerStyles = {
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                overflow: 'hidden',
-                pointerEvents: 'none'
-            };
-            var imageStyles = {};
-
-            if (!self.options.keepImg) {
-                // save default user styles
-                var curStyle = self.$item.getAttribute('style');
-                if (curStyle) {
-                    self.$item.setAttribute('data-jarallax-original-styles', curStyle);
-                }
-                if (self.image.useImgTag) {
-                    var curImgStyle = self.image.$item.getAttribute('style');
-                    if (curImgStyle) {
-                        self.image.$item.setAttribute('data-jarallax-original-styles', curImgStyle);
-                    }
-                }
-            }
-
-            // set relative position and z-index to the parent
-            if (self.css(self.$item, 'position') === 'static') {
-                self.css(self.$item, {
-                    position: 'relative'
-                });
-            }
-            if (self.css(self.$item, 'z-index') === 'auto') {
-                self.css(self.$item, {
-                    zIndex: 0
-                });
-            }
-
-            // container for parallax image
-            self.image.$container = document.createElement('div');
-            self.css(self.image.$container, containerStyles);
-            self.css(self.image.$container, {
-                'z-index': self.options.zIndex
-            });
-
-            // fix for IE https://github.com/nk-o/jarallax/issues/110
-            if (isIE) {
-                self.css(self.image.$container, {
-                    opacity: 0.9999
-                });
-            }
-
-            self.image.$container.setAttribute('id', 'jarallax-container-' + self.instanceID);
-            self.$item.appendChild(self.image.$container);
-
-            // use img tag
-            if (self.image.useImgTag) {
-                imageStyles = self.extend({
-                    'object-fit': self.options.imgSize,
-                    'object-position': self.options.imgPosition,
-                    // support for plugin https://github.com/bfred-it/object-fit-images
-                    'font-family': 'object-fit: ' + self.options.imgSize + '; object-position: ' + self.options.imgPosition + ';',
-                    'max-width': 'none'
-                }, containerStyles, imageStyles);
-
-                // use div with background image
-            } else {
-                self.image.$item = document.createElement('div');
-                if (self.image.src) {
-                    imageStyles = self.extend({
-                        'background-position': self.options.imgPosition,
-                        'background-size': self.options.imgSize,
-                        'background-repeat': self.options.imgRepeat,
-                        'background-image': self.image.bgImage || 'url("' + self.image.src + '")'
-                    }, containerStyles, imageStyles);
-                }
-            }
-
-            if (self.options.type === 'opacity' || self.options.type === 'scale' || self.options.type === 'scale-opacity' || self.options.speed === 1) {
-                self.image.position = 'absolute';
-            }
-
-            // check if one of parents have transform style (without this check, scroll transform will be inverted if used parallax with position fixed)
-            // discussion - https://github.com/nk-o/jarallax/issues/9
-            if (self.image.position === 'fixed') {
-                var parentWithTransform = 0;
-                var $itemParents = self.$item;
-                while ($itemParents !== null && $itemParents !== document && parentWithTransform === 0) {
-                    var parentTransform = self.css($itemParents, '-webkit-transform') || self.css($itemParents, '-moz-transform') || self.css($itemParents, 'transform');
-                    if (parentTransform && parentTransform !== 'none') {
-                        parentWithTransform = 1;
-                        self.image.position = 'absolute';
-                    }
-                    $itemParents = $itemParents.parentNode;
-                }
-            }
-
-            // add position to parallax block
-            imageStyles.position = self.image.position;
-
-            // insert parallax image
-            self.css(self.image.$item, imageStyles);
-            self.image.$container.appendChild(self.image.$item);
-
-            // set initial position and size
-            self.onResize();
-            self.onScroll(true);
-
-            // ResizeObserver
-            if (self.options.automaticResize && resizeObserver) {
-                resizeObserver.observe(self.$item);
-            }
-
-            // call onInit event
-            if (self.options.onInit) {
-                self.options.onInit.call(self);
-            }
-
-            // remove default user background
-            if (self.css(self.$item, 'background-image') !== 'none') {
-                self.css(self.$item, {
-                    'background-image': 'none'
-                });
-            }
-
-            self.addToParallaxList();
-        }
-
-        // add to parallax instances list
-
-    }, {
-        key: 'addToParallaxList',
-        value: function addToParallaxList() {
-            jarallaxList.push(this);
-
-            if (jarallaxList.length === 1) {
-                updateParallax();
-            }
-        }
-
-        // remove from parallax instances list
-
-    }, {
-        key: 'removeFromParallaxList',
-        value: function removeFromParallaxList() {
-            var self = this;
-
-            jarallaxList.forEach(function (item, key) {
-                if (item.instanceID === self.instanceID) {
-                    jarallaxList.splice(key, 1);
-                }
-            });
-        }
-    }, {
-        key: 'destroy',
-        value: function destroy() {
-            var self = this;
-
-            self.removeFromParallaxList();
-
-            // return styles on container as before jarallax init
-            var originalStylesTag = self.$item.getAttribute('data-jarallax-original-styles');
-            self.$item.removeAttribute('data-jarallax-original-styles');
-            // null occurs if there is no style tag before jarallax init
-            if (!originalStylesTag) {
-                self.$item.removeAttribute('style');
-            } else {
-                self.$item.setAttribute('style', originalStylesTag);
-            }
-
-            if (self.image.useImgTag) {
-                // return styles on img tag as before jarallax init
-                var originalStylesImgTag = self.image.$item.getAttribute('data-jarallax-original-styles');
-                self.image.$item.removeAttribute('data-jarallax-original-styles');
-                // null occurs if there is no style tag before jarallax init
-                if (!originalStylesImgTag) {
-                    self.image.$item.removeAttribute('style');
-                } else {
-                    self.image.$item.setAttribute('style', originalStylesTag);
-                }
-
-                // move img tag to its default position
-                if (self.image.$itemParent) {
-                    self.image.$itemParent.appendChild(self.image.$item);
-                }
-            }
-
-            // remove additional dom elements
-            if (self.$clipStyles) {
-                self.$clipStyles.parentNode.removeChild(self.$clipStyles);
-            }
-            if (self.image.$container) {
-                self.image.$container.parentNode.removeChild(self.image.$container);
-            }
-
-            // call onDestroy event
-            if (self.options.onDestroy) {
-                self.options.onDestroy.call(self);
-            }
-
-            // delete jarallax from item
-            delete self.$item.jarallax;
-        }
-
-        // it will remove some image overlapping
-        // overlapping occur due to an image position fixed inside absolute position element
-
-    }, {
-        key: 'clipContainer',
-        value: function clipContainer() {
-            // needed only when background in fixed position
-            if (this.image.position !== 'fixed') {
-                return;
-            }
-
-            var self = this;
-            var rect = self.image.$container.getBoundingClientRect();
-            var width = rect.width,
-                height = rect.height;
-
-
-            if (!self.$clipStyles) {
-                self.$clipStyles = document.createElement('style');
-                self.$clipStyles.setAttribute('type', 'text/css');
-                self.$clipStyles.setAttribute('id', 'jarallax-clip-' + self.instanceID);
-                var head = document.head || document.getElementsByTagName('head')[0];
-                head.appendChild(self.$clipStyles);
-            }
-
-            var styles = '#jarallax-container-' + self.instanceID + ' {\n           clip: rect(0 ' + width + 'px ' + height + 'px 0);\n           clip: rect(0, ' + width + 'px, ' + height + 'px, 0);\n        }';
-
-            // add clip styles inline (this method need for support IE8 and less browsers)
-            if (self.$clipStyles.styleSheet) {
-                self.$clipStyles.styleSheet.cssText = styles;
-            } else {
-                self.$clipStyles.innerHTML = styles;
-            }
-        }
-    }, {
-        key: 'coverImage',
-        value: function coverImage() {
-            var self = this;
-
-            var rect = self.image.$container.getBoundingClientRect();
-            var contH = rect.height;
-            var speed = self.options.speed;
-
-            var isScroll = self.options.type === 'scroll' || self.options.type === 'scroll-opacity';
-            var scrollDist = 0;
-            var resultH = contH;
-            var resultMT = 0;
-
-            // scroll parallax
-            if (isScroll) {
-                // scroll distance and height for image
-                if (speed < 0) {
-                    scrollDist = speed * Math.max(contH, wndH);
-
-                    if (wndH < contH) {
-                        scrollDist -= speed * (contH - wndH);
-                    }
-                } else {
-                    scrollDist = speed * (contH + wndH);
-                }
-
-                // size for scroll parallax
-                if (speed > 1) {
-                    resultH = Math.abs(scrollDist - wndH);
-                } else if (speed < 0) {
-                    resultH = scrollDist / speed + Math.abs(scrollDist);
-                } else {
-                    resultH += (wndH - contH) * (1 - speed);
-                }
-
-                scrollDist /= 2;
-            }
-
-            // store scroll distance
-            self.parallaxScrollDistance = scrollDist;
-
-            // vertical center
-            if (isScroll) {
-                resultMT = (wndH - resultH) / 2;
-            } else {
-                resultMT = (contH - resultH) / 2;
-            }
-
-            // apply result to item
-            self.css(self.image.$item, {
-                height: resultH + 'px',
-                marginTop: resultMT + 'px',
-                left: self.image.position === 'fixed' ? rect.left + 'px' : '0',
-                width: rect.width + 'px'
-            });
-
-            // call onCoverImage event
-            if (self.options.onCoverImage) {
-                self.options.onCoverImage.call(self);
-            }
-
-            // return some useful data. Used in the video cover function
-            return {
-                image: {
-                    height: resultH,
-                    marginTop: resultMT
-                },
-                container: rect
-            };
-        }
-    }, {
-        key: 'isVisible',
-        value: function isVisible() {
-            return this.isElementInViewport || false;
-        }
-    }, {
-        key: 'onScroll',
-        value: function onScroll(force) {
-            var self = this;
-
-            var rect = self.$item.getBoundingClientRect();
-            var contT = rect.top;
-            var contH = rect.height;
-            var styles = {};
-
-            // check if in viewport
-            var viewportRect = rect;
-            if (self.options.elementInViewport) {
-                viewportRect = self.options.elementInViewport.getBoundingClientRect();
-            }
-            self.isElementInViewport = viewportRect.bottom >= 0 && viewportRect.right >= 0 && viewportRect.top <= wndH && viewportRect.left <= wndW;
-
-            // stop calculations if item is not in viewport
-            if (force ? false : !self.isElementInViewport) {
-                return;
-            }
-
-            // calculate parallax helping variables
-            var beforeTop = Math.max(0, contT);
-            var beforeTopEnd = Math.max(0, contH + contT);
-            var afterTop = Math.max(0, -contT);
-            var beforeBottom = Math.max(0, contT + contH - wndH);
-            var beforeBottomEnd = Math.max(0, contH - (contT + contH - wndH));
-            var afterBottom = Math.max(0, -contT + wndH - contH);
-            var fromViewportCenter = 1 - 2 * (wndH - contT) / (wndH + contH);
-
-            // calculate on how percent of section is visible
-            var visiblePercent = 1;
-            if (contH < wndH) {
-                visiblePercent = 1 - (afterTop || beforeBottom) / contH;
-            } else if (beforeTopEnd <= wndH) {
-                visiblePercent = beforeTopEnd / wndH;
-            } else if (beforeBottomEnd <= wndH) {
-                visiblePercent = beforeBottomEnd / wndH;
-            }
-
-            // opacity
-            if (self.options.type === 'opacity' || self.options.type === 'scale-opacity' || self.options.type === 'scroll-opacity') {
-                styles.transform = 'translate3d(0,0,0)';
-                styles.opacity = visiblePercent;
-            }
-
-            // scale
-            if (self.options.type === 'scale' || self.options.type === 'scale-opacity') {
-                var scale = 1;
-                if (self.options.speed < 0) {
-                    scale -= self.options.speed * visiblePercent;
-                } else {
-                    scale += self.options.speed * (1 - visiblePercent);
-                }
-                styles.transform = 'scale(' + scale + ') translate3d(0,0,0)';
-            }
-
-            // scroll
-            if (self.options.type === 'scroll' || self.options.type === 'scroll-opacity') {
-                var positionY = self.parallaxScrollDistance * fromViewportCenter;
-
-                // fix if parallax block in absolute position
-                if (self.image.position === 'absolute') {
-                    positionY -= contT;
-                }
-
-                styles.transform = 'translate3d(0,' + positionY + 'px,0)';
-            }
-
-            self.css(self.image.$item, styles);
-
-            // call onScroll event
-            if (self.options.onScroll) {
-                self.options.onScroll.call(self, {
-                    section: rect,
-
-                    beforeTop: beforeTop,
-                    beforeTopEnd: beforeTopEnd,
-                    afterTop: afterTop,
-                    beforeBottom: beforeBottom,
-                    beforeBottomEnd: beforeBottomEnd,
-                    afterBottom: afterBottom,
-
-                    visiblePercent: visiblePercent,
-                    fromViewportCenter: fromViewportCenter
-                });
-            }
-        }
-    }, {
-        key: 'onResize',
-        value: function onResize() {
-            this.coverImage();
-            this.clipContainer();
-        }
-    }]);
-
-    return Jarallax;
-}();
-
-// global definition
-
-
-var plugin = function plugin(items) {
-    // check for dom element
-    // thanks: http://stackoverflow.com/questions/384286/javascript-isdom-how-do-you-check-if-a-javascript-object-is-a-dom-object
-    if ((typeof HTMLElement === 'undefined' ? 'undefined' : _typeof(HTMLElement)) === 'object' ? items instanceof HTMLElement : items && (typeof items === 'undefined' ? 'undefined' : _typeof(items)) === 'object' && items !== null && items.nodeType === 1 && typeof items.nodeName === 'string') {
-        items = [items];
-    }
-
-    var options = arguments[1];
-    var args = Array.prototype.slice.call(arguments, 2);
-    var len = items.length;
-    var k = 0;
-    var ret = void 0;
-
-    for (k; k < len; k++) {
-        if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object' || typeof options === 'undefined') {
-            if (!items[k].jarallax) {
-                items[k].jarallax = new Jarallax(items[k], options);
-            }
-        } else if (items[k].jarallax) {
-            // eslint-disable-next-line prefer-spread
-            ret = items[k].jarallax[options].apply(items[k].jarallax, args);
-        }
-        if (typeof ret !== 'undefined') {
-            return ret;
-        }
-    }
-
-    return items;
 };
-plugin.constructor = Jarallax;
 
-exports.default = plugin;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(5)))
+Jarallax.prototype.cloneAnimation = function (selector, adittionalValues, animations) {
+    if (!selector) {
+        throw new Error('no selector defined.');
+    }
 
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
+    var newAnimations = [];
+    var adittionalValuesArray = [];
 
-"use strict";
+    for (var i = 0; i < animations.length + 1; i++) {
+        if (adittionalValues instanceof Array) {
+            adittionalValuesArray.push(adittionalValues[i]);
+        } else {
+            adittionalValuesArray.push(adittionalValues);
+        }
+    }
+
+    for (i = 0; i < animations.length; i++) {
+        var currentAnimation = animations[i];
+        var newStart = JarallaxTools.clone(currentAnimation.startValues);
+        var newEnd = JarallaxTools.clone(currentAnimation.endValues);
+
+        var adittionalValueStart = adittionalValuesArray[i];
+        var adittionalValueEnd = adittionalValuesArray[i + 1];
+
+        for (var j in newStart) {
+            if (adittionalValueStart[j]) {
+                newStart[j] = JarallaxTools.calculateNewValue(adittionalValueStart[j], newStart[j]);
+            }
+        }
+
+        for (var k in newEnd) {
+            if (adittionalValueEnd[k]) {
+                newEnd[k] = JarallaxTools.calculateNewValue(adittionalValueEnd[k], newEnd[k]);
+            }
+        }
+
+        newAnimations.push(this.addAnimation(selector, [newStart, newEnd])[0]);
+
+    }
+    return newAnimations;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax static methods /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+Jarallax.EASING = {
+    'linear':function (currentTime, beginningValue, changeInValue, duration, power) {
+        return currentTime / duration * changeInValue + beginningValue;
+    },
+
+    'easeOut':function (currentTime, beginningValue, changeInValue, duration, power) {
+        if (power === undefined) {
+            power = 2;
+        }
+        return ((Math.pow((duration - currentTime) / duration, power) * -1) + 1) * changeInValue + beginningValue;
+    },
+    'easeIn':function (currentTime, beginningValue, changeInValue, duration, power) {
+        if (power === undefined) {
+            power = 2;
+        }
+        return Math.pow(currentTime / duration, power) * changeInValue + beginningValue;
+    },
+    'easeInOut':function (currentTime, beginningValue, changeInValue, duration, power) {
+        if (power === undefined) {
+            power = 2;
+        }
+        changeInValue /= 2;
+        currentTime *= 2;
+        if (currentTime < duration) {
+            return Math.pow(currentTime / duration, power) * changeInValue + beginningValue;
+        } else {
+            currentTime = currentTime - duration;
+            return ((Math.pow((duration - currentTime) / duration, power) * -1) + 1) * changeInValue + beginningValue + changeInValue;
+        }
+
+        return Math.pow(currentTime / duration, power) * changeInValue + beginningValue;
+    }
+};
+
+Jarallax.EASING.none = Jarallax.EASING.linear;
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax tools //////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+JarallaxTools = {};
+
+JarallaxTools.hasNumbers = function(t) {
+    var expr = new RegExp('\\d');
+    return expr.test(t);
+
+};
+
+JarallaxTools.isValues = function(object) {
+    if(!object) {
+        throw new Error('no values set.');
+    }
+
+    if(typeof object != 'object') {
+        throw new Error('wrong data type values. expected: "object", got: "' +
+            typeof object + '"');
+    }
+
+    if(object.size === 0) {
+        throw new Error('Got an empty values object');
+    }
+
+    return true;
+};
+
+JarallaxTools.PlatformAllowed = function(platforms, allMustBeTrue, invert){
+    allMustBeTrue = allMustBeTrue || false;
+    invert = invert || false;
+    for (var i = 0; i < platforms.length; i++) {
+        if(platforms[i] == 'any'){
+            return !invert;
+        }
+        if(jQuery.browser[platforms[i]]) {
+            if(!allMustBeTrue) {
+                return !invert;
+            }
+        } else if(allMustBeTrue) {
+            return invert;
+        }
+    }
+
+    return !invert ? allMustBeTrue : !allMustBeTrue;
+};
+
+JarallaxTools.calculateNewValue = function (modifier, original) {
+    var result;
+    var units = JarallaxTools.getUnits(original);
+    if (modifier.indexOf('+') === 0) {
+        result = String(parseFloat(original) + parseFloat(modifier) + units);
+    } else if (modifier.indexOf('-') === 0) {
+        result = String(parseFloat(original) + parseFloat(modifier) + units);
+    } else if (modifier.indexOf('*') === 0) {
+        result = String(parseFloat(original) * parseFloat(modifier.substr(1)) + units);
+    } else if (modifier.indexOf('/') === 0) {
+        result = String(parseFloat(original) / parseFloat(modifier.substr(1)) + units);
+    } else {
+        result = modifier;
+    }
+
+    if(original.indexOf){
+        if(original.indexOf('%') > 0){
+            return result + '%';
+        }
+    }
+    return result;
+};
+
+JarallaxTools.getUnits = function (string) {
+    return string.replace(/\d+/g, '');
+};
+
+JarallaxTools.clone = function (obj) {
+    var newObj = {};
+    for(var i in obj){
+        newObj[i] = obj[i];
+    }
+
+    return newObj;
+};
+
+Position = function(x, y){
+    this.x = x;
+    this.y = y;
+};
+
+Position.prototype.add = function(value){
+    return new Position(this.x + value.x,
+        this.y + value.y);
+};
+
+Position.prototype.subract = function(value){
+    return new Position(this.x - value.x,
+        this.y - value.y);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Platforms ///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+JarallaxTools.Platforms = ['webkit',
+    'opera',
+    'msie',
+    'mozilla',
+    'android',
+    'blackBerry',
+    'webOs',
+    'windowsPhone',
+    'iDevice',
+    'iPad',
+    'iPhone',
+    'iPod',
+    'msie',
+    'mobile',
+    'nonMobile'];
 
 
-var global = __webpack_require__(15);
+jQuery.browser.android = /android/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.blackBerry = /blackberry/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.webOs = /webos/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.windowsPhone = /windows phone/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.iDevice = /ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.iPad = /ipad/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.iPhone = /iphone/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.iPod = /ipod/i.test(navigator.userAgent.toLowerCase());
+jQuery.browser.mobile = jQuery.browser.android ||
+    jQuery.browser.blackBerry ||
+    jQuery.browser.webOs ||
+    jQuery.browser.windowsPhone ||
+    jQuery.browser.iDevice;
+jQuery.browser.nonMobile = !jQuery.browser.mobile;
 
-/**
- * `requestAnimationFrame()`
+
+// This script sets OSName variable as follows:
+// "Windows"    for all versions of Windows
+// "MacOS"      for all versions of Macintosh OS
+// "Linux"      for all versions of Linux
+// "UNIX"       for all other UNIX flavors
+// "Unknown OS" indicates failure to detect the OS
+
+jQuery.platform = {};
+jQuery.platform.windows = navigator.appVersion.indexOf("Win")!=-1;
+jQuery.platform.macOs = navigator.appVersion.indexOf("Mac")!=-1;
+jQuery.platform.unix = navigator.appVersion.indexOf("X11")!=-1;
+jQuery.platform.linux = navigator.appVersion.indexOf("Linux")!=-1;
+jQuery.platform.unknown = !(jQuery.platform.windows ||
+    jQuery.platform.macOs ||
+    jQuery.platform.unix ||
+    jQuery.platform.linux);
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax Controller base class //////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+JarallaxController = function() {
+    this.isActive = false;
+    this.bindings = [];
+    this.isController = true;
+};
+
+
+JarallaxController.prototype.activate = function(jarallax) {
+    this.isActive = true;
+    if (!this.jarallax || this.jarallax !== jarallax) {
+        this.jarallax = jarallax;
+    }
+};
+
+JarallaxController.prototype.deactivate = function(jarallax) {
+    this.isActive = false;
+};
+
+JarallaxController.prototype.update = function(progress) {
+    //do nothing
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax counter class //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+JarallaxCounter = function(jarallax, properties) {
+    if (!properties) {
+        throw new Error('No properties defined.');
+    } else if (!properties.selector) {
+        throw new Error('No selector defined. properties.selector.');
+    }
+
+    this.jarallax = jarallax;
+    this.selector = properties.selector;
+    this.startNumber = properties.startNumber || 0;
+    this.endNumber = properties.endNumber || 100;
+    this.startProgress = properties.startProgress || '0%';
+    this.endProgress = properties.endProgress || '100%';
+    this.decimals = properties.decimals || 0;
+    this.stepSize = properties.stepSize;
+
+    if (this.decimals === 0 && this.stepSize < 1) {
+        tmp = this.stepSize.toString().split('.');
+        this.decimals = tmp[1].length;
+    }
+};
+
+JarallaxCounter.prototype.activate = function() {
+    var rawDiff = this.endNumber - this.startNumber;
+    var rawNumber = rawDiff * this.jarallax.progress + this.startNumber;
+
+
+
+    if (this.startProgress.indexOf('%') >= 0) {
+        start = parseInt(this.startProgress,10) / 100;
+    } else if (JarallaxTools.hasNumbers(this.startProgress)) {
+        start = parseInt(this.startProgress,10) / this.jarallax.maxProgress;
+    }
+
+    if (this.endProgress.indexOf('%') >= 0) {
+        end = parseInt(this.endProgress,10) / 100;
+    } else if (JarallaxTools.hasNumbers(this.endProgress)) {
+        end = parseInt(this.endProgress,10) / this.jarallax.maxProgress;
+    }
+
+    if (this.jarallax.progress < start) {
+        $(this.selector).html(this.startNumber);
+    } else if (this.jarallax.progress > end) {
+        $(this.selector).html(this.endNumber);
+    } else {
+        var duration = end - start;
+        var currentTime = (this.jarallax.progress-start);
+        var changeInValue = this.endNumber - this.startNumber ;
+        var result =  Jarallax.EASING.none(currentTime, this.startNumber ,
+            changeInValue, duration);
+
+        if (this.stepSize) {
+            result = Math.round(result / this.stepSize) * this.stepSize;
+        }
+
+        if (this.decimals > 0) {
+            result = result.toFixed(this.decimals);
+        }
+
+        $(this.selector).html(result);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax object class ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+JarallaxObject = function (selector, values) {
+    this.selector = selector;
+    this.values = values;
+};
+
+JarallaxObject.prototype.activate = function (position) {
+    for (var i in this.values) {
+        $(this.selector).css(i ,this.values[i]);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Jarallax animation class ////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+JarallaxAnimation = function (selector, startValues, endValues, jarallax) {
+    this.progress = -1;
+    this.selector = selector;
+    this.startValues = startValues;
+    this.endValues = endValues;
+    this.jarallax = jarallax;
+};
+
+JarallaxAnimation.prototype.activate = function (progress) {
+    if (this.progress != progress) {
+        var start;
+        var end;
+        var style;
+
+        if (this.startValues.style === undefined) {
+            style = {easing:'linear'};
+        } else{
+            style = this.startValues.style;
+        }
+
+        if (this.startValues.progress.indexOf('%') >= 0) {
+            start = parseInt(this.startValues.progress,10) / 100;
+        } else if (JarallaxTools.hasNumbers(this.startValues.progress)) {
+            start = parseInt(this.startValues.progress,10) / this.jarallax.maxProgress;
+        }
+
+        if (this.endValues.progress.indexOf('%') >= 0)
+        {
+            end = parseInt(this.endValues.progress,10) / 100;
+        } else if (JarallaxTools.hasNumbers(this.endValues.progress)) {
+            end = parseInt(this.endValues.progress,10) / this.jarallax.maxProgress;
+        }
+
+        if (this.startValues.event) {
+            this.dispatchEvent(this.progress, progress, start, end);
+        }
+
+        if (progress >= start && progress <= end ) {
+            for(var i in this.startValues) {
+                if (i !== 'progress' && i !== 'style' && i !== 'event') {
+                    if (undefined !== this.endValues[i] && i !== 'display' && i !== 'backgroundImage') {
+                        var units = JarallaxTools.getUnits(this.startValues[i]+'');
+                        units = units.replace('-','');
+                        var startValue = parseFloat(this.startValues[i]);
+                        var endValue = parseFloat(this.endValues[i]);
+
+                        var duration = end - start;
+                        var currentTime = (progress-start);
+                        var changeInValue = endValue - startValue ;
+                        var result =  Jarallax.EASING[style.easing](currentTime,
+                            startValue , changeInValue, duration, style.power);
+
+                        if(units == 'px'){
+                            result = parseInt(result, 10);
+                        }
+
+                        if(units !== '.'){
+                            result+= units;
+                        }
+
+                        if (i !== 'rotate') {
+                            $(this.selector).css(i,result);
+                        } else {
+                            $(this.selector).rotate(Math.round(result));
+                        }
+                    } else {
+                        if (i !== 'rotate') {
+                            $(this.selector).css(i,this.startValues[i]);
+                        } else {
+                            $(this.selector).rotate(Math.round(this.startValues[i]));
+                        }
+                    }
+                }
+            }
+        }
+        this.progress = progress;
+    }
+};
+
+JarallaxAnimation.prototype.dispatchEvent = function(progressOld, progressNew,
+                                                     start, end) {
+    var events = this.startValues.event;
+    var eventData = {};
+    eventData.animation = this;
+    eventData.selector = this.selector;
+
+    if (progressNew >= start && progressNew <= end ) {
+        if (events.start && progressOld < start) {
+            eventData.type = 'start';
+            events.start(eventData);
+        }
+
+        if (events.start && progressOld > end) {
+            eventData.type = 'rewind';
+            events.start(eventData);
+        }
+
+        if (events.animating) {
+            eventData.type = 'animating';
+            events.animating(eventData);
+        }
+
+        if (events.forward && progressOld < progressNew) {
+            eventData.type = 'forward';
+            events.forward(eventData);
+        }
+
+        if (events.reverse && progressOld > progressNew) {
+            eventData.type = 'reverse';
+            events.reverse(eventData);
+        }
+
+    } else {
+        if (events.complete && progressOld < end && progressNew > end) {
+            eventData.type = 'complete';
+            events.complete(eventData);
+        }
+
+        if (events.rewinded && progressOld > start && progressNew < start) {
+            eventData.type = 'rewind';
+            events.rewinded(eventData);
+        }
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Apple mobile controller /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerApple = function(scrollPage) {
+    if(scrollPage === undefined) {
+        this.scrollPage = true;
+    } else {
+        this.scrollPage = scrollPage;
+    }
+
+    this.target = $('body');
+    this.scrollPostion = new Position(0, 0);
+};
+
+ControllerApple.prototype = new JarallaxController();
+
+ControllerApple.prototype.activate = function(jarallax) {
+
+    JarallaxController.prototype.activate.call(this, jarallax);
+
+    this.scrollSpace = $('body').height() - $(window).height();
+    this.target.bind('touchmove', {scope: this}, this.onMove);
+    this.target.bind('touchstart', {scope: this}, this.onTouch);
+
+};
+
+ControllerApple.prototype.deactivate = function(jarallax) {
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+    this.target.unbind('touchmove');
+    this.target.unbind('touchstart');
+};
+
+ControllerApple.prototype.onTouch = function(event) {
+    var controller = event.data.scope;
+    var targetEvent = event.originalEvent.touches.item(0);
+
+    controller.startPosition = new Position(targetEvent.clientX, targetEvent.clientY);
+
+    event.preventDefault();
+};
+
+ControllerApple.prototype.onMove = function(event) {
+    var controller = event.data.scope;
+    var targetEvent = event.originalEvent.touches.item(0);
+    var tempPosition = new Position(targetEvent.clientX, targetEvent.clientY);
+    var vector = tempPosition.subract(controller.startPosition);
+    controller.startPosition = tempPosition;
+    controller.scrollPostion = vector.add(controller.scrollPostion);
+
+    controller.scrollPostion.y = Math.max(Math.min(controller.scrollPostion.y, 0),-controller.scrollSpace);
+    controller.jarallax.setProgress(-controller.scrollPostion.y / controller.scrollSpace, false);
+    $('body').scrollTop(controller.scrollSpace * controller.jarallax.progress);
+
+    if (!controller.scrollPage) {
+        event.preventDefault();
+    }
+};
+
+ControllerApple.prototype.update = function(progress) {
+    this.position.y = Math.round(progress * this.scrollSpace);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// onDrag controller /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerDrag = function(selector, start, end){
+    this.object = $(selector);
+    this.start = start;
+    this.end = end;
+    this.container = "";
+    this.width = 0;
+
+    this.startX = 0;
+    this.startY = 0;
+};
+
+ControllerDrag.prototype = new JarallaxController();
+
+ControllerDrag.prototype.activate = function(jarallax){
+    JarallaxController.prototype.activate.call(this, jarallax);
+    this.container = "#scrollbar";
+    this.object.draggable({containment:this.container, axis: 'x'});
+    this.object.bind("drag", {scope: this}, this.onDrag);
+    this.container = $(this.container);
+    this.width = $(this.container).innerWidth() - this.object.outerWidth();
+};
+
+
+ControllerDrag.prototype.onDrag = function(event){
+    var controller = event.data.scope;
+
+    if (controller.isActive) {
+        var x = parseInt($(this).css('left'), 10);
+        var position = (x / event.data.scope.width);
+        event.data.scope.jarallax.setProgress(position);
+    }
+};
+
+ControllerDrag.prototype.deactivate = function(jarallax){
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+    this.object.unbind('drag');
+    this.object.draggable('destroy');
+};
+
+ControllerDrag.prototype.update = function(progress){
+    this.object.css('left', progress * this.width);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Keyboard controller /////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerKeyboard = function(keys, preventDefault, repetitiveInput) {
+    this.repetitiveInput = repetitiveInput;
+    this.preventDefault = preventDefault || false;
+    this.keys = keys || {38:-0.01, 40:0.01};
+    this.keysState = {};
+};
+
+ControllerKeyboard.prototype = new JarallaxController();
+
+ControllerKeyboard.prototype.activate = function(jarallax) {
+    JarallaxController.prototype.activate.call(this, jarallax);
+    $(document.documentElement).keydown({scope: this}, this.keyDown);
+    $(document.documentElement).keyup({scope: this}, this.keyUp);
+
+    for(var key in this.keys){
+        this.keysState[key] = false;
+    }
+};
+
+ControllerKeyboard.prototype.deactivate = function(jarallax) {
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+};
+
+ControllerKeyboard.prototype.keyDown = function(event) {
+    var controller = event.data.scope;
+
+    if (controller.isActive) {
+        for(var key in controller.keys) {
+            if(key == event.keyCode) {
+                if(controller.keysState[key] !== true || controller.repetitiveInput) {
+                    controller.jarallax.setProgress(controller.jarallax.progress + controller.keys[key]);
+                }
+                controller.keysState[key] = true;
+                if(controller.preventDefault) {
+                    event.preventDefault();
+                }
+            }
+        }
+    }
+};
+
+ControllerKeyboard.prototype.keyUp = function(event) {
+    if (this.isActive) {
+        var controller = event.data.scope;
+        for(var key in controller.keys) {
+            if(key == event.keyCode) {
+                controller.keysState[key] = false;
+            }
+        }
+    }
+};
+
+ControllerKeyboard.prototype.update = function(progress) {
+    //empty
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Mobile controller ///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerMobile = function(disableDefault, height){
+    this.disableDefault = disableDefault || false;
+    this.y = 0;
+    this.previousY = undefined;
+    this.height = height;
+};
+
+ControllerMobile.prototype = new JarallaxController();
+
+ControllerMobile.prototype.activate = function(jarallax){
+    JarallaxController.prototype.activate.call(this, jarallax);
+
+    if (!this.height) {
+        this.height = this.height = parseInt($("body").css('height'),10);
+        if (this.height ==  $(window).height) {
+            this.height = parseInt($("#wrapper").css('height'),10);
+        }
+    }
+    $('body').bind('touchmove', {scope: this}, this.onTouchMove);
+    $('body').bind('touchend', {scope: this}, this.onTouchEnd);
+    //TODO:
+    //horizontal scrolling
+    //flip_direction
+};
+
+ControllerMobile.prototype.onTouchEnd = function(event){
+    this.previousY = undefined;
+};
+
+ControllerMobile.prototype.onTouchMove = function(event, manuel){
+    if(this.isActive) {
+        if (this.disableDefault) {
+            event.preventDefault();
+        }
+
+        var scope = event.data.scope;
+        var targetEvent = manuel ? event : event.originalEvent.touches.item(0);
+
+        if(scope.previousY === undefined) {
+            scope.previousY = targetEvent.clientY;
+        }
+        else
+        {
+            scope.y += (targetEvent.clientY - scope.previousY);
+            scope.y = scope.y < scope.height ? scope.y : scope.height;
+            scope.y = scope.y > 0 ? scope.y : 0;
+            scope.previousY = targetEvent.clientY;
+            var poss = scope.y/scope.height;
+
+            scope.jarallax.setProgress(scope.y/scope.height);
+        }
+    }
+};
+
+
+ControllerMobile.prototype.deactivate = function(jarallax){
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+    $('body').unbind('touchmove');
+};
+
+ControllerMobile.prototype.update = function(progress){
+    //empty
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Mousewheel controller ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerMousewheel = function(sensitivity, preventDefault){
+    this.sensitivity = -sensitivity;
+    this.preventDefault = preventDefault || false;
+};
+
+
+ControllerMousewheel.prototype = new JarallaxController();
+
+ControllerMousewheel.prototype.activate = function(jarallax){
+    JarallaxController.prototype.activate.call(this, jarallax);
+    $('body').bind('mousewheel', {scope: this} , this.onScroll);
+};
+
+ControllerMousewheel.prototype.deactivate = function(jarallax){
+    $('body').unbind('mousewheel');
+    JarallaxController.prototype.deactivate(this, jarallax);
+};
+
+ControllerMousewheel.prototype.onScroll = function(event, delta){
+    var controller = event.data.scope;
+
+    if (controller.isActive) {
+        controller.jarallax.setProgress(controller.jarallax.progress + controller.sensitivity * delta);
+        if(controller.preventDefault){
+            event.preventDefault();
+        }
+    }
+};
+
+ControllerMousewheel.prototype.update = function(progress){
+    //empty
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Scroll controller ///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerScroll = function(smoothing, horizontal, convertScroll) {
+    this.target = $(window);
+    this.horizontal = horizontal;
+    this.convertScroll = convertScroll;
+    $(window).scrollTop(0);
+    $(window).scrollLeft(0);
+
+    if (!horizontal) {
+        var height = parseInt($("body").css('height'),10);
+        this.scrollSpace = height - this.target.height();
+    } else {
+        var width = parseInt($("body").css('width'),10);
+        this.scrollSpace = width - this.target.width();
+    }
+
+    this.smoothing = smoothing || false;
+    this.targetProgress = 0;
+};
+
+ControllerScroll.prototype = new JarallaxController();
+
+ControllerScroll.prototype.activate = function(jarallax) {
+    JarallaxController.prototype.activate.call(this, jarallax);
+    if (this.convertScroll) {
+        scrollConverter.activate();
+    }
+    this.target.bind('scroll', {scope: this} , this.onScroll);
+};
+
+ControllerScroll.prototype.deactivate = function(jarallax) {
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+    if (this.convertScroll) {
+        scrollConverter.deactivate();
+    }
+    this.target.unbind('scroll');
+};
+
+ControllerScroll.prototype.onScroll = function(event) {
+    var controller = event.data.scope;
+    //console.log(controller.target.scrollTop());
+
+    if(controller.jarallax.jumping){
+        if(!controller.jarallax.jumpingAllowed) {
+            controller.jarallax.clearSmooth(controller.jarallax);
+        }
+    }
+
+    if (controller.isActive) {
+        var progress;
+        if (!controller.horizontal) {
+            var y = event.data.y || controller.target.scrollTop();
+            progress = y/controller.scrollSpace;
+        } else {
+            var x = event.data.x || controller.target.scrollLeft();
+            progress = x/controller.scrollSpace;
+        }
+
+        if(!controller.smoothing){
+            controller.jarallax.setProgress(progress, true);
+        } else {
+            controller.targetProgress = Math.min(progress, 1);
+            controller.smooth();
+        }
+    }
+};
+
+ControllerScroll.prototype.smooth = function(externalScope) {
+    var scope;
+    if (!externalScope) {
+        scope = this;
+    } else {
+        scope = externalScope;
+    }
+
+    var oldProgress = scope.jarallax.progress;
+    var animationSpace =  scope.targetProgress - oldProgress;
+    clearTimeout(scope.timer);
+
+    if(animationSpace > 0.0001 || animationSpace < -0.0001){
+        var newProgress = oldProgress + animationSpace / 5;
+
+        scope.timer = window.setTimeout(function(){
+            scope.smooth(scope);}, scope.jarallax.FPS_INTERVAL);
+        scope.jarallax.setProgress(newProgress, true);
+    }else{
+        scope.jarallax.setProgress(scope.targetProgress, true);
+    }
+};
+
+ControllerScroll.prototype.update = function(progress) {
+    var scrollPosition = parseInt(progress * this.scrollSpace, 10);
+    if(!this.jarallax.allowWeakProgress) {
+        if (this.horizontal) {
+            $(window).scrollLeft(scrollPosition);
+        } else {
+            $(window).scrollTop(scrollPosition);
+        }
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Time controller /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+ControllerTime = function(speed, interval, type) {
+    this.interval = interval;
+    this.speed = speed;
+    this.playForward = true;
+    this.type = type || ControllerTime.TYPES.NORMAL;
+};
+
+ControllerTime.prototype = new JarallaxController();
+
+
+ControllerTime.prototype.activate = function(jarallax) {
+    JarallaxController.prototype.activate.call(this, jarallax);
+    this.progress = 0;
+    this.timer = setInterval(this.onInterval.bind(this, {scope: this}), this.interval);
+};
+
+ControllerTime.prototype.deactivate = function(jarallax) {
+    JarallaxController.prototype.deactivate.call(this, jarallax);
+    clearInterval(this.timer);
+};
+
+
+ControllerTime.prototype.onInterval = function(event) {
+    var scope = event.scope;
+    if (this.isActive) {
+        if(this.playForward) {
+            this.progress+= this.speed;
+        }else{
+            this.progress-= this.speed;
+        }
+
+        if(this.progress >= 1) {
+            switch(this.type) {
+                case ControllerTime.TYPES.NORMAL:
+                    this.progress = 1;
+                    this.deactivate(this.jarallax);
+                    break;
+                case ControllerTime.TYPES.LOOP:
+                    this.progress = 0;
+                    break;
+                case ControllerTime.TYPES.BOUNCE:
+                    this.progress = 1 - this.speed;
+                    this.playForward = false;
+                    break;
+            }
+        } else if(this.progress <= 0) {
+            this.progress = 0 + this.speed;
+            this.playForward = true;
+        }
+        this.jarallax.setProgress(this.progress);
+    }
+};
+
+ControllerTime.TYPES = {NORMAL: 0,
+    LOOP: 1,
+    BOUNCE: 2};
+
+ControllerTime.prototype.update = function(progress) {
+    this.progress = progress;
+};
+
+// VERSION: 2.2 LAST UPDATE: 13.03.2012
+/*
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ *
+ * Made by Wilq32, wilq32@gmail.com, Wroclaw, Poland, 01.2009
+ * Website: http://code.google.com/p/jqueryrotate/
  */
 
-var request = global.requestAnimationFrame || global.webkitRequestAnimationFrame || global.mozRequestAnimationFrame || fallback;
+// Documentation removed from script file (was kinda useless and outdated)
 
-var prev = +new Date();
-function fallback(fn) {
-  var curr = +new Date();
-  var ms = Math.max(0, 16 - (curr - prev));
-  var req = setTimeout(fn, ms);
-  return prev = curr, req;
-}
+(function($) {
+    var supportedCSS,styles=document.getElementsByTagName("head")[0].style,toCheck="transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
+    for (var a=0;a<toCheck.length;a++) if (styles[toCheck[a]] !== undefined) supportedCSS = toCheck[a];
+// Bad eval to preven google closure to remove it from code o_O
+// After compresion replace it back to var IE = 'v' == '\v'
+    var IE = eval('"v"=="\v"');
 
-/**
- * `cancelAnimationFrame()`
- */
+    jQuery.fn.extend({
+        rotate:function(parameters)
+        {
+            if (this.length===0||typeof parameters=="undefined") return;
+            if (typeof parameters=="number") parameters={angle:parameters};
+            var returned=[];
+            for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);
+                if (!element.Wilq32 || !element.Wilq32.PhotoEffect) {
 
-var cancel = global.cancelAnimationFrame || global.webkitCancelAnimationFrame || global.mozCancelAnimationFrame || clearTimeout;
+                    var paramClone = $.extend(true, {}, parameters);
+                    var newRotObject = new Wilq32.PhotoEffect(element,paramClone)._rootObj;
 
-if (Function.prototype.bind) {
-  request = request.bind(global);
-  cancel = cancel.bind(global);
-}
+                    returned.push($(newRotObject));
+                }
+                else {
+                    element.Wilq32.PhotoEffect._handleRotation(parameters);
+                }
+            }
+            return returned;
+        },
+        getRotateAngle: function(){
+            var ret = [];
+            for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);
+                if (element.Wilq32 && element.Wilq32.PhotoEffect) {
+                    ret[i] = element.Wilq32.PhotoEffect._angle;
+                }
+            }
+            return ret;
+        },
+        stopRotate: function(){
+            for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);
+                if (element.Wilq32 && element.Wilq32.PhotoEffect) {
+                    clearTimeout(element.Wilq32.PhotoEffect._timer);
+                }
+            }
+        }
+    });
 
-exports = module.exports = request;
-exports.cancel = cancel;
+// Library agnostic interface
 
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
+    Wilq32=window.Wilq32||{};
+    Wilq32.PhotoEffect=(function(){
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
+        if (supportedCSS) {
+            return function(img,parameters){
+                img.Wilq32 = {
+                    PhotoEffect: this
+                };
 
-var win;
+                this._img = this._rootObj = this._eventObj = img;
+                this._handleRotation(parameters);
+            }
+        } else {
+            return function(img,parameters) {
+                // Make sure that class and id are also copied - just in case you would like to refeer to an newly created object
+                this._img = img;
 
-if (typeof window !== "undefined") {
-    win = window;
-} else if (typeof global !== "undefined") {
-    win = global;
-} else if (typeof self !== "undefined") {
-    win = self;
-} else {
-    win = {};
-}
+                this._rootObj=document.createElement('span');
+                this._rootObj.style.display="inline-block";
+                this._rootObj.Wilq32 =
+                    {
+                        PhotoEffect: this
+                    };
+                img.parentNode.insertBefore(this._rootObj,img);
 
-module.exports = win;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(5)))
+                if (img.complete) {
+                    this._Loader(parameters);
+                } else {
+                    var self=this;
+                    // TODO: Remove jQuery dependency
+                    jQuery(this._img).bind("load", function()
+                    {
+                        self._Loader(parameters);
+                    });
+                }
+            }
+        }
+    })();
 
-/***/ })
-/******/ ]);
+    Wilq32.PhotoEffect.prototype={
+        _setupParameters : function (parameters){
+            this._parameters = this._parameters || {};
+            if (typeof this._angle !== "number") this._angle = 0 ;
+            if (typeof parameters.angle==="number") this._angle = parameters.angle;
+            this._parameters.animateTo = (typeof parameters.animateTo==="number") ? (parameters.animateTo) : (this._angle);
+
+            this._parameters.step = parameters.step || this._parameters.step || null;
+            this._parameters.easing = parameters.easing || this._parameters.easing || function (x, t, b, c, d) { return -c * ((t=t/d-1)*t*t*t - 1) + b; }
+            this._parameters.duration = parameters.duration || this._parameters.duration || 1000;
+            this._parameters.callback = parameters.callback || this._parameters.callback || function(){};
+            if (parameters.bind && parameters.bind != this._parameters.bind) this._BindEvents(parameters.bind);
+        },
+        _handleRotation : function(parameters){
+            this._setupParameters(parameters);
+            if (this._angle==this._parameters.animateTo) {
+                this._rotate(this._angle);
+            }
+            else {
+                this._animateStart();
+            }
+        },
+
+        _BindEvents:function(events){
+            if (events && this._eventObj)
+            {
+                // Unbinding previous Events
+                if (this._parameters.bind){
+                    var oldEvents = this._parameters.bind;
+                    for (var a in oldEvents) if (oldEvents.hasOwnProperty(a))
+                    // TODO: Remove jQuery dependency
+                        jQuery(this._eventObj).unbind(a,oldEvents[a]);
+                }
+
+                this._parameters.bind = events;
+                for (var a in events) if (events.hasOwnProperty(a))
+                // TODO: Remove jQuery dependency
+                    jQuery(this._eventObj).bind(a,events[a]);
+            }
+        },
+
+        _Loader:(function()
+        {
+            if (IE)
+                return function(parameters)
+                {
+                    var width=this._img.width;
+                    var height=this._img.height;
+                    this._img.parentNode.removeChild(this._img);
+
+                    this._vimage = this.createVMLNode('image');
+                    this._vimage.src=this._img.src;
+                    this._vimage.style.height=height+"px";
+                    this._vimage.style.width=width+"px";
+                    this._vimage.style.position="absolute"; // FIXES IE PROBLEM - its only rendered if its on absolute position!
+                    this._vimage.style.top = "0px";
+                    this._vimage.style.left = "0px";
+
+                    /* Group minifying a small 1px precision problem when rotating object */
+                    this._container =  this.createVMLNode('group');
+                    this._container.style.width=width;
+                    this._container.style.height=height;
+                    this._container.style.position="absolute";
+                    this._container.setAttribute('coordsize',width-1+','+(height-1)); // This -1, -1 trying to fix ugly problem with small displacement on IE
+                    this._container.appendChild(this._vimage);
+
+                    this._rootObj.appendChild(this._container);
+                    this._rootObj.style.position="relative"; // FIXES IE PROBLEM
+                    this._rootObj.style.width=width+"px";
+                    this._rootObj.style.height=height+"px";
+                    this._rootObj.setAttribute('id',this._img.getAttribute('id'));
+                    this._rootObj.className=this._img.className;
+                    this._eventObj = this._rootObj;
+                    this._handleRotation(parameters);
+                }
+            else
+                return function (parameters)
+                {
+                    this._rootObj.setAttribute('id',this._img.getAttribute('id'));
+                    this._rootObj.className=this._img.className;
+
+                    this._width=this._img.width;
+                    this._height=this._img.height;
+                    this._widthHalf=this._width/2; // used for optimisation
+                    this._heightHalf=this._height/2;// used for optimisation
+
+                    var _widthMax=Math.sqrt((this._height)*(this._height) + (this._width) * (this._width));
+
+                    this._widthAdd = _widthMax - this._width;
+                    this._heightAdd = _widthMax - this._height;	// widthMax because maxWidth=maxHeight
+                    this._widthAddHalf=this._widthAdd/2; // used for optimisation
+                    this._heightAddHalf=this._heightAdd/2;// used for optimisation
+
+                    this._img.parentNode.removeChild(this._img);
+
+                    this._aspectW = ((parseInt(this._img.style.width,10)) || this._width)/this._img.width;
+                    this._aspectH = ((parseInt(this._img.style.height,10)) || this._height)/this._img.height;
+
+                    this._canvas=document.createElement('canvas');
+                    this._canvas.setAttribute('width',this._width);
+                    this._canvas.style.position="relative";
+                    this._canvas.style.left = -this._widthAddHalf + "px";
+                    this._canvas.style.top = -this._heightAddHalf + "px";
+                    this._canvas.Wilq32 = this._rootObj.Wilq32;
+
+                    this._rootObj.appendChild(this._canvas);
+                    this._rootObj.style.width=this._width+"px";
+                    this._rootObj.style.height=this._height+"px";
+                    this._eventObj = this._canvas;
+
+                    this._cnv=this._canvas.getContext('2d');
+                    this._handleRotation(parameters);
+                }
+        })(),
+
+        _animateStart:function()
+        {
+            if (this._timer) {
+                clearTimeout(this._timer);
+            }
+            this._animateStartTime = +new Date;
+            this._animateStartAngle = this._angle;
+            this._animate();
+        },
+        _animate:function()
+        {
+            var actualTime = +new Date;
+            var checkEnd = actualTime - this._animateStartTime > this._parameters.duration;
+
+            // TODO: Bug for animatedGif for static rotation ? (to test)
+            if (checkEnd && !this._parameters.animatedGif)
+            {
+                clearTimeout(this._timer);
+            }
+            else
+            {
+                if (this._canvas||this._vimage||this._img) {
+                    var angle = this._parameters.easing(0, actualTime - this._animateStartTime, this._animateStartAngle, this._parameters.animateTo - this._animateStartAngle, this._parameters.duration);
+                    this._rotate((~~(angle*10))/10);
+                }
+                if (this._parameters.step) {
+                    this._parameters.step(this._angle);
+                }
+                var self = this;
+                this._timer = setTimeout(function()
+                {
+                    self._animate.call(self);
+                }, 10);
+            }
+
+            // To fix Bug that prevents using recursive function in callback I moved this function to back
+            if (this._parameters.callback && checkEnd){
+                this._angle = this._parameters.animateTo;
+                this._rotate(this._angle);
+                this._parameters.callback.call(this._rootObj);
+            }
+        },
+
+        _rotate : (function()
+        {
+            var rad = Math.PI/180;
+            if (IE)
+                return function(angle)
+                {
+                    this._angle = angle;
+                    this._container.style.rotation=(angle%360)+"deg";
+                }
+            else if (supportedCSS)
+                return function(angle){
+                    this._angle = angle;
+                    this._img.style[supportedCSS]="rotate("+(angle%360)+"deg)";
+                }
+            else
+                return function(angle)
+                {
+                    this._angle = angle;
+                    angle=(angle%360)* rad;
+                    // clear canvas
+                    this._canvas.width = this._width+this._widthAdd;
+                    this._canvas.height = this._height+this._heightAdd;
+
+                    // REMEMBER: all drawings are read from backwards.. so first function is translate, then rotate, then translate, translate..
+                    this._cnv.translate(this._widthAddHalf,this._heightAddHalf);	// at least center image on screen
+                    this._cnv.translate(this._widthHalf,this._heightHalf);			// we move image back to its orginal
+                    this._cnv.rotate(angle);										// rotate image
+                    this._cnv.translate(-this._widthHalf,-this._heightHalf);		// move image to its center, so we can rotate around its center
+                    this._cnv.scale(this._aspectW,this._aspectH); // SCALE - if needed ;)
+                    this._cnv.drawImage(this._img, 0, 0);							// First - we draw image
+                }
+
+        })()
+    }
+
+    if (IE)
+    {
+        Wilq32.PhotoEffect.prototype.createVMLNode=(function(){
+            document.createStyleSheet().addRule(".rvml", "behavior:url(#default#VML)");
+            try {
+                !document.namespaces.rvml && document.namespaces.add("rvml", "urn:schemas-microsoft-com:vml");
+                return function (tagName) {
+                    return document.createElement('<rvml:' + tagName + ' class="rvml">');
+                };
+            } catch (e) {
+                return function (tagName) {
+                    return document.createElement('<' + tagName + ' xmlns="urn:schemas-microsoft.com:vml" class="rvml">');
+                };
+            }
+        })();
+    }
+
+})(jQuery);
+
+/*
+scrollConverter 1.0
+https://github.com/koggdal/scroll-converter
+
+Copyright 2011 Johannes Koggdal (http://koggdal.com/)
+Developed for BombayWorks (http://bombayworks.com/)
+
+Released under MIT license
+*/
+
+window.scrollConverter = (function (window, document, undefined) {
+
+    // Private vars
+    var docElem = document.documentElement,
+        active = false,
+        hasDeactivated = false,
+        eventsBound = false;
+
+    // Private methods
+    var scrollCallback = function (offset, event, callback) {
+
+            // Abort the scrolling if it's inactive
+            if (!active) {
+                return;
+            }
+
+            var delta, numPixelsPerStep, change, newOffset,
+                docOffset, scrollWidth, winWidth, maxOffset;
+
+            // Set scrolling parameters
+            delta = 0;
+            numPixelsPerStep = 10;
+
+            // Find the maximum offset for the scroll
+            docOffset = (docElem ? docElem.offsetWidth : 0) || 0;
+            scrollWidth = document.body.scrollWidth || 0;
+            winWidth = docElem ? docElem.clientWidth : 0;
+            maxOffset = Math.max(docOffset, scrollWidth) - winWidth;
+
+            // "Normalize" the wheel value across browsers
+            //  The delta value after this will not be the same for all browsers.
+            //  Instead, it is normalized in a way to try to give a pretty similar feeling in all browsers.
+            //
+            //  Firefox and Opera
+            if (event.detail) {
+                delta = event.detail * -240;
+            }
+            // IE, Safari and Chrome
+            else if (event.wheelDelta) {
+                delta = event.wheelDelta * 5;
+            }
+
+            // Get the real offset change from the delta
+            //  A positive change is when the user scrolled the wheel up (in regular scrolling direction)
+            //  A negative change is when the user scrolled the wheel down
+            change = delta / 120 * numPixelsPerStep;
+            newOffset = offset.x - change;
+
+            // Do the scroll if the new offset is positive
+            if (newOffset >= 0 && newOffset <= maxOffset) {
+                offset.x = newOffset;
+                offset.setByScript = true;
+                window.scrollTo(offset.x, offset.y);
+            }
+            // Keep the offset within the boundaries
+            else if (offset.x !== 0 && offset.x !== maxOffset) {
+                offset.x = newOffset > maxOffset ? maxOffset : 0;
+                offset.setByScript = true;
+                window.scrollTo(offset.x, offset.y);
+            }
+
+            // Fire the callback
+            if (typeof callback === "function") {
+                callback(offset);
+            }
+        },
+
+        getOffset = function (axis) {
+            axis = axis.toUpperCase();
+            var pageOffset = "page" + axis + "Offset",
+                scrollValue = "scroll" + axis,
+                scrollDir = "scroll" + (axis === "X" ? "Left" : "Top");
+
+            // Get the scroll offset for all browsers
+            return window[pageOffset] || window[scrollValue] || (function () {
+                var rootElem = document.documentElement || document.body.parentNode;
+                return ((typeof rootElem[scrollDir] === "number") ? rootElem : document.body)[scrollDir];
+            }());
+        },
+
+        bindEvents = function (offset, cb) {
+
+            var callback = function (e) {
+
+                    // Fix event object for IE8 and below
+                    e = e || window.event;
+
+                    // Trigger the scroll behavior
+                    scrollCallback(offset, e, cb);
+
+                    // Prevent the normal scroll action to happen
+                    if (e.preventDefault && e.stopPropagation) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    } else {
+                        return false;
+                    }
+                },
+
+                updateOffsetOnScroll = function () {
+
+                    // Update the offset variable when the normal scrollbar is used
+                    if (!offset.setByScript) {
+                        offset.x = getOffset("x");
+                        offset.y = getOffset("y");
+                    }
+                    offset.setByScript = false;
+                };
+
+            // Safari, Chrome, Opera, IE9+
+            if (window.addEventListener) {
+
+                // Safari, Chrome, Opera, IE9
+                if ("onmousewheel" in window) {
+                    window.addEventListener("mousewheel", callback, false);
+                    window.addEventListener("scroll", updateOffsetOnScroll, false);
+                }
+                // Firefox
+                else {
+                    window.addEventListener("DOMMouseScroll", callback, false);
+                    window.addEventListener("scroll", updateOffsetOnScroll, false);
+                }
+            }
+            // IE8 and below
+            else {
+                document.attachEvent("onmousewheel", callback);
+                window.attachEvent("onscroll", updateOffsetOnScroll);
+            }
+        },
+
+        deactivateScrolling = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        };
+
+    // Return a public API
+    return {
+
+        // Activate the scrolling switch
+        //  An optional callback can be passed in, which will fire at every scroll update
+        activate: function (callback) {
+
+            // Set state
+            active = true;
+
+            // Bind events if it hasn't been done before
+            if (!eventsBound) {
+                var offset = { x: 0, y: 0 };
+                bindEvents(offset, callback);
+                eventsBound = true;
+            }
+
+            // Remove event handlers if it was previously deactivated
+            if (hasDeactivated) {
+                if (window.addEventListener) {
+                    window.removeEventListener("scroll", deactivateScrolling, true);
+                } else {
+                    window.detachEvent("onscroll", deactivateScrolling);
+                }
+                hasDeactivated = false;
+            }
+        },
+
+        deactivate: function () {
+            active = false;
+        },
+
+        deactivateAllScrolling: function () {
+
+            // Set state
+            active = false;
+            hasDeactivated = true;
+
+            // Bind event handlers to disable the scroll
+            if (window.addEventListener) {
+                window.addEventListener("scroll", deactivateScrolling, true);
+            } else {
+                window.attachEvent("onscroll", deactivateScrolling);
+            }
+        }
+    };
+}(window, document));
