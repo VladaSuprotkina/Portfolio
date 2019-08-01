@@ -1,19 +1,21 @@
 
 @media screen and (max-width: 1461px) {
-    .navbar-login,
-    .navbar-sessions {
-        visibility: hidden;
+    .left-side .navbar-login,
+    .right-side {
+        display: none;
     }
-    .navbar .row {
-        align-items: center;
+    .top-menu_navbar .row{
         flex-direction: row-reverse;
+        text-align: right;
     }
-    .nav-toggler {
+    .left-side {
+        text-align: right;
+    }
+    .top-menu_toggler-btn {
         -moz-transform: scale(-1, 1);
         -webkit-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
         transform: scale(-1, 1);
-        position: absolute;
         bottom: 0;
         right: 0%;
     }
@@ -28,10 +30,10 @@
 
 }
 @media screen and (max-width: 1224px){
-    .container {
-        padding-left: 62px;
-        padding-right: 62px;
-    }
+    /*.container {*/
+    /*    padding-left: 62px;*/
+    /*    padding-right: 62px;*/
+    /*}*/
     .navbar {
         height: 97px;
     }
@@ -59,7 +61,7 @@
         max-width: 192px;
         margin: 0 auto;
     }
-    .header .btn {
+    .intro .btn {
         display: none;
     }
     .slick-arrow {
@@ -240,7 +242,7 @@
 
 }
 @media screen and (max-width: 769px) {
-    .header-container,
+    .intro-container,
     .container {
         padding-right: 20px;
         padding-left: 20px;

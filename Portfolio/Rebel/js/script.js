@@ -78,14 +78,4 @@ $(document).ready(function(){
             $('.responsive-menu').slick('resize');
         });
     });
-    // if (window.matchMedia("(max-width: 768px)").matches){
-    // $('.responsive-menu').slick({
-    //     arrows: false,
-    //     dots: false,
-    //     infinite: false,
-    //     speed: 300,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1
-    // });
-    // }
 });
