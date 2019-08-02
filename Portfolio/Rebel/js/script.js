@@ -1,3 +1,4 @@
+$(document).ready(function(){
 $('.read-more-content').addClass('hide')
 $('.read-more-show, .read-more-hide').removeClass('hide')
 
@@ -16,7 +17,7 @@ $('.read-more-hide').on('click', function(e) {
 
 
 
-$(document).ready(function(){
+
     let slider = $('.top-slider'); 
     
     let slidesCount = 1;
@@ -49,9 +50,6 @@ $(document).ready(function(){
     });
     
     slider.slick();
-
-
-
     $(function() {
         $('.responsive-menu').slick({
             slidesToShow: 3,
@@ -61,14 +59,21 @@ $(document).ready(function(){
             dots: false,
             responsive: [
                 {
-                    breakpoint: 480,
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 1024,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
                     }
                 },
                 {
-                    breakpoint: 769,
+                    breakpoint: 1140,
                     settings: 'unslick'
                 }
             ]
