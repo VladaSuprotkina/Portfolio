@@ -29,8 +29,6 @@ time, mark, audio, video {
 }
 a {
     text-decoration: none;
-    background-color: transparent;
-    white-space: nowrap;
 }
 a:hover {
     text-decoration: none;
@@ -167,7 +165,7 @@ button {
     display: inline-block;
 }
 .top-menu_navbar .right-side {
-    font-size: 1rem;
+    font-size: 16px;
     letter-spacing: .4rem;
     font-weight: 900;
 }
@@ -241,6 +239,7 @@ button {
     padding: 32px 82px;
     transition: all .3s ease-in-out;
     letter-spacing: .3rem;
+    white-space: nowrap;
 }
 .caption {
     color: #ffffff;
@@ -293,17 +292,17 @@ button {
 }
 .slider_item {
     position: relative;
-    background-image: url("../img/Image_2.jpg");
-    background-repeat: no-repeat;
+    background: url("../img/Image_2.jpg") no-repeat;
     background-size: cover;
-    outline: none;
+    
 }
 .intro > .slick-initialized .slick-slide {
     height: 80vh;
+    outline: none;
 }
 .slick-arrow:hover,
 .slick-arrow:focus {
-      background-color: #c6c6c6;
+      background-color: rgba(198, 198, 198, 0.56);
     }
 
 .slick-next {
@@ -368,7 +367,7 @@ button {
 .filter-tab a:active,
 .filter-tab a:focus {
     transform: translateX(34px);
-    transition: 0.5s;
+    transition: .9s;
     color: #212226;
 }
 .filter .filter-tab a:hover::before {
@@ -380,7 +379,7 @@ button {
     background-color: #000000;
     top: 6px;
     left: -34px;
-    transition: 0.5s;
+    transition: .5s;
 }
 .filter .filter-tab a{
     color: #b2b2b2;
@@ -400,7 +399,7 @@ button {
 .filter .filter-burn-text h3 {
     font-size: 30px;
     font-weight: 900;
-    letter-spacing: 2.28px;
+    letter-spacing: .2rem;
     text-transform: uppercase;
     padding-bottom: 13px;
 }
@@ -464,11 +463,9 @@ button {
 
 .post-card-text_text-secondary {
     font-size: 24px;
-    width: 100%;
 }
 .post-card-text_text-primary {
     font-size: 36px;
-    width: 100%;
 }
 .card-img-top {
     max-width: 427px;
@@ -477,7 +474,6 @@ button {
     max-width: 614px;
 }
 .small-text {
-    display: block;
     font-size: 20px;
     font-weight: 400;
     padding-top: 12px;
@@ -490,8 +486,7 @@ button {
 .post-card a:hover .post-card-text_short-info_btn {
     padding-top: 10px;
     opacity: 1;
-    min-height: 30px;
-    max-width: 50px;
+    min-height: 50px;
 }
 .post-card-text_short-info {
     transition: all .3s ease-in-out;
@@ -501,7 +496,10 @@ button {
     opacity: 0;
     height: 0;
 }
-
+.post-card-text_short-info p {
+    max-width: 60%;
+    line-height: 1.2;
+}
 .post-card-text_short-info_btn {
     background-image: url("../img/cur-next.svg");
     display: block;
@@ -535,19 +533,18 @@ button {
     color: #212226;
     font-size: 14px;
     font-weight: 900;
-    letter-spacing: 5px;
+    letter-spacing: .5rem;
     text-transform: uppercase;
 
 }
 .read-more-show::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 35px;
     height: 21px;
     left: 50%;
-    transform: translate(-100px, 2px);
-    background-image: url("../img/arrow-down.svg");
-    background-repeat: no-repeat;
+    transform: translate(-110px, 2px);
+    background: url("../img/arrow-down.svg") no-repeat;
 }
 .read-more-hide {
     display: block;
@@ -591,7 +588,7 @@ button {
     color: #8a8a8a;
     font-size: 18px;
     font-weight: 400;
-    letter-spacing: 0.26px;
+    letter-spacing: .14rem;
 }
 .hide {
     display: none;
@@ -616,13 +613,13 @@ button {
     color: #8b8b8b;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.1rem;
+    letter-spacing: .1rem;
     border: none;
     border-bottom: 1px solid #ffffff;
     padding-bottom: 14px;
 }
 .sign-section input::placeholder {
-    letter-spacing: 0.5rem;
+    letter-spacing: .5rem;
     text-transform: uppercase;
 }
 
@@ -635,7 +632,7 @@ button {
     color: #ffffff;
     font-size: 30px;
     font-weight: 900;
-    letter-spacing: 2.38px;
+    letter-spacing: .0793rem;
     text-transform: uppercase;
 }
 
@@ -665,6 +662,9 @@ button {
 .footer-social a{
     padding-right: 33px;
 }
+.footer-social a:last-child {
+    padding-right: 0;
+}
 .footer-social_icon-youtube:hover path {
     fill: #DD4B39;
 }
@@ -681,7 +681,7 @@ button {
     margin-top: 34px;
     font-size: 35px;
     font-weight: 900;
-    letter-spacing: 2.88px;
+    letter-spacing: .082rem;
     text-transform: uppercase;
 }
 .footer-quote .footer-quote-name {
@@ -690,13 +690,17 @@ button {
     font-size: 18px;
     font-weight: 400;
 }
-.footer-quote p {
-    padding-top: 27px;
+.footer-quote p,
+.footer-siteMap a {
     color: #8b8b8b;
     font-size: 14px;
     font-weight: 900;
-    letter-spacing: 5px;
+    letter-spacing: .357rem;
     text-transform: uppercase;
+}
+.footer-quote p {
+    padding-top: 27px;
+    
 }
 .footer-siteMap {
     display: flex;
@@ -705,9 +709,4 @@ button {
 }
 .footer-siteMap a {
     padding-bottom: 12px;
-    color: #8b8b8b;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-transform: uppercase;
 }

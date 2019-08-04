@@ -6,7 +6,6 @@
     }
     .top-menu_navbar .row{
         flex-direction: row-reverse;
-        text-align: right;
     }
     .left-side {
         text-align: right;
@@ -16,12 +15,11 @@
         -webkit-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
         transform: scale(-1, 1);
-        bottom: 0;
-        right: 0%;
+        margin-right: 0;
     }
     .caption h1{
         font-size: 46px;
-        letter-spacing: 6.7px;
+        letter-spacing: .15rem;
     }
     .post-card-text_text-secondary {
         font-size: 16px;
@@ -35,17 +33,14 @@
 
 }
 @media screen and (max-width: 1224px){
-    .top-menu_toggler-btn {
-        margin-right: 0;
-    }
     .caption-preheading {
         font-size: 16px;
-        letter-spacing: 0.6px;
+        letter-spacing: .375rem;
     }
     .caption-description {
         width: 100%;
         font-size: 16px;
-        letter-spacing: 0.1px;
+        letter-spacing: .00625rem;
         line-height: 1.2;
         max-width: 192px;
         margin: 0 auto;
@@ -72,11 +67,10 @@
     }
     .filter .filter-tab {
         display: flex;
-        position: relative;
-
     }
     .filter .filter-tab a {
         padding: 13px 20px 8px 28px;
+        white-space: nowrap;
     }
     .filter .filter-tab a:hover,
     .filter-tab a:active,
@@ -95,8 +89,6 @@
         font-size: 20px;
         padding-bottom: 28px;
     }
-
-
     .about {
         padding-top: 87px;
         padding-bottom: 78px;
@@ -167,9 +159,6 @@
     .footer-social a {
         padding-right: 34px;
     }
-    .footer-social a:last-child {
-        padding-right: 0;
-    }
     .footer-siteMap {
         align-items: center;
     }
@@ -177,7 +166,6 @@
         height: 131px;
         position: absolute;
         bottom: 101px;
-        padding-top: 0;
     }
     .footer-quote h2 {
         white-space: nowrap;
@@ -187,15 +175,10 @@
 
 }
 @media screen and (max-width: 1024px) {
-    .card-img-top {
-        max-width: 311px;
+     .slider-counter {
+        bottom: 11%;
     }
-    .card-img-top-primary {
-        max-width: 367px;
-    }
-    .slider-counter {
-        bottom: 13%;
-    }
+   
     .filter .filter-tab a {
         font-size: 10px;
         letter-spacing: .257rem;
@@ -228,6 +211,9 @@
 
 }
 @media screen and (max-width: 769px) {
+    .slider_item {
+        background-position: -400px;
+    }
     .intro-container,
     .container {
         padding-right: 20px;
@@ -236,28 +222,20 @@
     .caption-btn {
         display: none;
     }
-    .slick-arrow {
-        bottom: 10%;
-        left: 20px;
-    }
     .slick-next {
         margin-left: 54px;
     }
     .slider-counter {
-        bottom: 12%;
-        left: 150px;
+        left: 30%;
     }
     .filter {
         padding-top: 38px;
     }
-    .filter-nav-link {
-        display: block;
-        width: 100%;
-    }
 
     .post-card-text_text-primary,
     .post-card-text_text-secondary {
-        padding: 17px 0 21px 26px;
+        min-width: 250px;
+        padding: 17px 20px 21px 26px;
         height: auto;
     }
     .post-card {
@@ -274,10 +252,6 @@
     .filter .filter-burn-text p {
         font-size: 20px;
         max-width: 320px;
-    }
-    .post-wrapper_first-column,
-    .post-wrapper_second-column {
-        justify-content: flex-end;
     }
     .post-card-text_short-info_btn,
     .post-card-text_short-info {
