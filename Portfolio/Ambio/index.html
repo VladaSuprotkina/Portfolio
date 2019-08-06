@@ -12,14 +12,16 @@
 </head>
 <body>
 <!--navigation-->
-<header>
-    <nav>
-    <div class="nav-bar">
-    <a href="#" target="_blank" class="nav-bar_brand"></a>
+<header class="header_nav-bar">
+    <nav class="nav-bar">
+    <a href="#" target="_blank" class="nav-bar_brand">
+        <img class="nav-bar_white-logo" src="img/logo.png" alt="Ambio-N">
+        <img class="nav-bar_green-logo" src="img/logo-menu-bar.png" alt="Ambio-N">
+    </a>
     <div class="menu-bar">Menu
-        <button class="nav-bar_toggler" type="button">
+        <a class="nav-bar_toggler">
             <span class="nav-bar_toggler-icon"></span>
-        </button>
+        </a>
     </div>
     <div class="nav-bar_collapse">
         <ul class="nav-bar_nav">
@@ -46,8 +48,7 @@
             </li>
         </ul>
     </div>
-    </div>
-</nav>
+    </nav>
 </header>
 <!--intro-->
 <section class="intro" id="intro">
@@ -71,27 +72,30 @@
 
 <!--about-->
 <section class="about_section" id="about">
-    <div class="about_section_wrapper container">
-        <div class="about_section_pagination pagination">
-            <span>01 / Who we are</span>
-        </div>
-        <div class="about_section_description">
-            <h1>What is AMBIO-N in few words</h1>
-            <p>A brand new experience for sourcing needs across industry for organisations
-                 seeking alternative sustainable solutions.</p>
-            <p>AMBIO-N is a materials and product search market platform connecting
-                Buyers to Suppliers procuring materials, product and equipment to aid with a
-                circular value chain. </p>
-            <p>The platform will provide thought leadership on the subject of sustainability -
-                what it can mean for your business and the value it can bring to your
-                organisation.</p>
-            <a href="#" class="btn green-btn" type="button">Latest News</a>
+    <div class="container">
+        <div class="about_section_wrapper">
+            <div class="about_section_pagination pagination">
+                <span>01 / Who we are</span>
+            </div>
+            <div class="about_section_description">
+                <h1>What is AMBIO-N in few words</h1>
+                <p>A brand new experience for sourcing needs across industry for organisations
+                     seeking alternative sustainable solutions.</p>
+                <p>AMBIO-N is a materials and product search market platform connecting
+                    Buyers to Suppliers procuring materials, product and equipment to aid with a
+                    circular value chain. </p>
+                <p>The platform will provide thought leadership on the subject of sustainability -
+                    what it can mean for your business and the value it can bring to your
+                    organisation.</p>
+                <a href="#" class="btn green-btn" type="button">Latest News</a>
+            </div>
         </div>
     </div>
 </section>
 
 <!--vision-->
 <section class="vision_section">
+
     <div class="row">
         <div class="vision_section_first-column column-2">
             <span class="vision_section_first-column_parallax-element" data-jarallax-element="80">
@@ -118,6 +122,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <!--principles-->
@@ -187,7 +192,8 @@
 
 <!--buyers-->
 <section class="buyers_section" id="buyers">
-    <div class="buyers_section_wrapper container">
+    <div class="container">
+        <div class="buyers_section_wrapper">
         <div class="row">
             <div class="buyers_section_first-column column-2">
                 <div class="buyers_section_pagination pagination">
@@ -248,6 +254,7 @@
 
             </div>
          </div>
+        </div>
     </div>
 </section>
 
@@ -331,7 +338,7 @@
                         within business, we would be grateful
                         for your contribution.</p>
                     <p>Please email: <br>
-                        <a href="#" class="links">contributor@ambiodevelopments.com</a></p>
+                        <a href="mailto:contributor@ambiodevelopments.com" class="links">contributor@ambiodevelopments.com</a></p>
                 </div>
         </div>
             <div class="leader_section_second-column column-2">
@@ -367,9 +374,11 @@
                         the acceleration of circular and
                         sustainable business models. </p>
                     <p>Interested in joining, then email:  <br>
-                        <a href="" class="links">fellows@ambiodevelopments.com</a>
+                        <a href="mailto:fellows@ambiodevelopments.com" class="links">fellows@ambiodevelopments.com</a>
                     </p>
-                    <p>Follow us on <a href=""><span class="leader_section_social-icon"></span></a></p>
+                    <p>Follow us on <a href="#"><span class="leader_section_social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><g><g><g><path fill="#0d4027" d="M10.277 7.665C11.937 4.629 19 4.405 19 10.57V18.5h-3.949v-6.573c0-3.954-4.773-3.655-4.773 0V18.5H6.344V5.978h3.933zM3.958 18.5H0V5.978h3.958zM3.933 2.457c0 1.08-.877 1.956-1.959 1.956a1.957 1.957 0 1 1 1.959-1.956z"/></g></g></g></svg>
+                    </span></a></p>
                 </div>
         </div>
         </div>
@@ -381,7 +390,7 @@
     <span class="news_section_parallax-element" data-jarallax-element="100">
         <img src="img/decor-element2.svg" alt="">
     </span>
-    <div class="news_section_wrapper">
+    <div class="news_section_wrapper container">
         <div class="row">
             <div class="news_section_first-column">
                 <div class="news_section_pagination pagination">
@@ -397,7 +406,7 @@
                     <div class="slider-wrapper">
                         <div class="news_section_img first-slide"></div>
                         <div class="news_section_second-column_description">
-                            <span class="time">17.01.2018</span>
+                            <time class="time" datetime="2018-01-17">17.01.2018</time>
                             <h3>Sed ut perspiciatis
                                 unde omnis iste natus
                                 error sit voluptatem
@@ -448,7 +457,8 @@
 
 <!--contact-->
 <section class="contact_section" id="contacts">
-    <div class="contact_section_wrapper">
+    <div class="container">
+        <div class="contact_section_wrapper">
             <div class="contact_section_description">
                 <h1>Get in touch</h1>
                 <p>Please be in touch to add your name to the list (as a seller or as a buyer).</p>
@@ -495,20 +505,21 @@
             <button class="btn news-section-btn" type="button">Get in touch</button>
         </div>
     </div>
+    </div>
 </section>
 
 <!--footer-->
 <section class="footer_section">
-    <div class="container">
-        <div class="row">
+    <div class="footer_section-container container">
+        <div class="footer_section-row row">
             <div class="footer_section_first-column">
                 <img src="img/logo.png" alt="">
             </div>
             <div class="footer_section_second-column">
-                <a class="footer_section-button" href="#header">Back to top</a>
+                <a class="footer_section-button" href="#intro">Back to top</a>
         </div>
     </div>
-        <div class="row">
+        <div class="footer_section-row row">
             <div class="footer_section_first-column">
                 <div class="footer_section_privacy">
                     <span>© AMBIO-N</span>
