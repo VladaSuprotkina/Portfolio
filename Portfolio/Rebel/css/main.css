@@ -27,8 +27,11 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
-a {
+a{
     text-decoration: none;
+}
+ul {
+    list-style: none;
 }
 a:hover {
     text-decoration: none;
@@ -129,10 +132,14 @@ button {
 }
 .top-menu_toggler-btn {
     position: relative;
-    height: 7px;
+    height: 27px;
     width: 37px;
     cursor: pointer;
     margin-right: 41px;
+    transition: opacity .3s ease;
+}
+.top-menu_toggler-btn:hover {
+    opacity: .5;
 }
 .nav-bar_toggler-icon_burger,
 .nav-bar_toggler-icon_burger::before,
@@ -142,11 +149,9 @@ button {
     width: 27px;
     background-color: #000000;
     position: absolute;
-    top: 0;
+    top: 70%;
     left: 0;
-    right: 0;
-    bottom: 0;
-    transition: 650ms;
+
 }
 .nav-bar_toggler-icon_burger::before {
     top: -7px;
@@ -159,6 +164,10 @@ button {
 .navbar-login {
     position: relative;
     font-size: 18px;
+    transition: opacity .3s ease;
+}
+.navbar-login:hover {
+    opacity: .5;
 }
 .top-menu_logo {
     max-width: 100%;
@@ -168,8 +177,18 @@ button {
     font-size: 16px;
     letter-spacing: .4rem;
     font-weight: 900;
+
+}
+.right-side a {
+    transition: opacity .3s ease;
+}
+.right-side a:hover {
+    opacity: .5;
 }
 
+.left-side a:last-child:before {
+    content: '\2044';
+}
 .top-menu_navbar .right-side a:first-of-type:after {
     content: ' | ';
 }
@@ -219,10 +238,10 @@ button {
     margin-top: 100px;
 }
 .intro-container {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1669px;
-    padding: 0 44px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .caption-btn {
     background-color: #ffffff;
@@ -237,9 +256,13 @@ button {
     text-decoration: none;
     display: inline-block;
     padding: 32px 82px;
-    transition: all .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
     letter-spacing: .3rem;
     white-space: nowrap;
+}
+.caption-btn:hover {
+    background-color: transparent;
+    color: #ffffff;
 }
 .caption {
     color: #ffffff;
@@ -288,7 +311,7 @@ button {
     border-radius: 50%;
     cursor: pointer;
     outline: none;
-    transition: 0.25s;
+    transition: background-color .25s ease-in-out;
 }
 .slider_item {
     position: relative;
@@ -363,11 +386,20 @@ button {
 .tab-content > .active {
     display: block;
 }
+
+.filter .filter-tab a{
+    transition: transform .3s ease-in-out;
+    color: #b2b2b2;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transform: translateX(0px);
+}
 .filter .filter-tab a:hover,
 .filter-tab a:active,
 .filter-tab a:focus {
     transform: translateX(34px);
-    transition: .9s;
     color: #212226;
 }
 .filter .filter-tab a:hover::before {
@@ -379,16 +411,8 @@ button {
     background-color: #000000;
     top: 6px;
     left: -34px;
-    transition: .5s;
 }
-.filter .filter-tab a{
-    color: #b2b2b2;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    transform: translateX(0px);
-}
+
 .filter-col-wrapper {
     margin-right: 20px;
 }
@@ -482,40 +506,40 @@ button {
 .small-text::before {
     content: "\2014\00A0";
 }
-.post-card a:hover .post-card-text_short-info,
-.post-card a:hover .post-card-text_short-info_btn {
-    padding-top: 10px;
-    opacity: 1;
-    min-height: 50px;
-}
 .post-card-text_short-info {
-    transition: all .3s ease-in-out;
+    transition: opacity .5s ease-in-out;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: .02rem;
     opacity: 0;
     height: 0;
 }
+.post-card a:hover .post-card-text_short-info,
+.post-card a:hover .post-card-text_short-info_btn {
+    padding-top: 10px;
+    opacity: 1;
+    min-height: 50px;
+}
 .post-card-text_short-info p {
     max-width: 60%;
     line-height: 1.2;
 }
 .post-card-text_short-info_btn {
-    background-image: url("../img/cur-next.svg");
+    background: #000000 url("../img/cur-next.svg") no-repeat center;
     display: block;
     width: 48px;
     height: 48px;
     position: absolute;
-    background-color: #000000;
     border-radius: 50%;
     right: 25px;
     bottom: 25px;
-    transition: all .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
     opacity: 0;
     background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: center;
 
+}
+.post-card-text_short-info_btn:hover {
+    background-color: #8b8b8b;
 }
 
     /*---------------------more---------------------------*/
@@ -526,7 +550,10 @@ button {
     text-align: center;
     margin: 0 auto;
 }
-
+.read-more-show-icon {
+    position: relative;
+    top: -2px;
+}
 .read-more-show,
 .read-more-hide {
     margin: 50px 0;
@@ -535,16 +562,12 @@ button {
     font-weight: 900;
     letter-spacing: .5rem;
     text-transform: uppercase;
-
+    opacity: 1;
+    transition: opacity .3s ease-in;
 }
-.read-more-show::before {
-    content: '';
-    position: absolute;
-    width: 35px;
-    height: 21px;
-    left: 50%;
-    transform: translate(-110px, 2px);
-    background: url("../img/arrow-down.svg") no-repeat;
+.read-more-show:hover,
+.read-more-hide:hover {
+    opacity: .6;
 }
 .read-more-hide {
     display: block;
@@ -595,7 +618,6 @@ button {
 }
 /*----------------sign section--------------------*/
 .sign-section {
-
     display: block;
     position: relative;
     white-space: nowrap;
@@ -605,28 +627,28 @@ button {
 .sign-section_form {
     position: relative;
     padding: 10% 0;
+    display: flex;
+}
+.sign-section_input-field {
+    margin-left: 5%;
+    min-width: 458px;
+    border-bottom: 1px solid #ffffff;
 }
 .sign-section input {
-    margin-left: 5%;
-    width: 458px;
+    border: none;
     background-color: transparent;
     color: #8b8b8b;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: .1rem;
-    border: none;
-    border-bottom: 1px solid #ffffff;
     padding-bottom: 14px;
+    width: 400px;
 }
 .sign-section input::placeholder {
     letter-spacing: .5rem;
     text-transform: uppercase;
 }
 
-.sign-btn {
-    position: absolute;
-    transform: translate(-50px, 10px);
-}
 .sign-section label {
     display: inline;
     color: #ffffff;
@@ -635,35 +657,38 @@ button {
     letter-spacing: .0793rem;
     text-transform: uppercase;
 }
-
+.sign-btn {
+    transform: translateX(0);
+    transition: .5s ease-in-out;
+}
+.sign-btn:hover {
+    transform: translateX(15px);
+}
 
 /*--------------------footer----------------------*/
 .footer {
     width: 100%;
-    height: 448px;
+    min-height: 448px;
     background-color: #212226;
     margin: 0 auto;
-
-}
-.footer .row {
     padding-top: 151px;
+}
+.footer-section_footer-row {
     align-items: center;
 }
-.footer-quote  {
-    height: 148px;
-    background-image: url("../img/footer-bg.png");
-    background-position: center;
-    background-size: 162px 132px;
-    background-repeat: no-repeat;
-    text-align: center;
-    color: #ffffff;
+.footer-social_list {
+    display: flex;
+    align-items: center;
 }
-
-.footer-social a{
+.footer-social_list-item {
     padding-right: 33px;
+
 }
-.footer-social a:last-child {
+.footer-social_list-item:last-child {
     padding-right: 0;
+}
+.footer-social_list-item path {
+    transition: fill .3s ease-in-out;
 }
 .footer-social_icon-youtube:hover path {
     fill: #DD4B39;
@@ -677,20 +702,30 @@ button {
 .footer-social_icon-facebook:hover path {
     fill: #3B5998;
 }
-.footer-quote h2 {
+.footer-quote  {
+    min-height: 148px;
+    background: url("../img/footer-bg.png") no-repeat center;
+    text-align: center;
+    color: #ffffff;
+    max-width: 100%;
+}
+.footer-quote p {
     margin-top: 34px;
+    margin-bottom: 20px;
     font-size: 35px;
     font-weight: 900;
     letter-spacing: .082rem;
     text-transform: uppercase;
 }
-.footer-quote .footer-quote-name {
-    display: block;
-    margin-top: 7px;
+.footer-quote-name {
     font-size: 18px;
     font-weight: 400;
 }
-.footer-quote p,
+.footer-quote_btn {
+    display: block;
+    padding-top: 42px;
+}
+.footer-quote a,
 .footer-siteMap a {
     color: #8b8b8b;
     font-size: 14px;
@@ -698,15 +733,14 @@ button {
     letter-spacing: .357rem;
     text-transform: uppercase;
 }
-.footer-quote p {
-    padding-top: 27px;
-    
-}
-.footer-siteMap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.footer-siteMap a {
+.footer-siteMap_list-item {
     padding-bottom: 12px;
+    text-align: end;
+}
+.footer-quote a:hover,
+.footer-siteMap_list-item a:hover {
+    color: #ffffff;
+}
+.footer-siteMap_list-item:last-child {
+    padding-bottom: 0;
 }

@@ -21,13 +21,13 @@
         font-size: 46px;
         letter-spacing: .15rem;
     }
-    .post-card-text_text-secondary {
-        font-size: 16px;
-        max-width: 283px;
-    }
+    .post-card-text_text-secondary,
     .post-card-text_text-primary {
         font-size: 16px;
         max-width: 316px;
+    }
+    .small-text {
+        font-size: 14px;
     }
 
 
@@ -110,14 +110,18 @@
     }
     .sign-section {
         background-color: #ffffff;
-
     }
     .sign-section_form {
-        display: flex;
         flex-direction: column;
         text-align: center;
-    }
 
+    }
+    .sign-section_input-field {
+        border-bottom: 1px solid #000000;
+        min-width: 350px;
+        margin: 0 auto;
+        text-align: left;
+    }
     .sign-section label {
         color: #13171a;
         font-size: 24px;
@@ -129,15 +133,9 @@
     .sign-section input {
         font-size: 12px;
         font-weight: 900;
-        margin: 0 auto;
         color: #000000;
-        border-bottom: 1px solid #000000;
         padding-bottom: 20px;
-    }
-    .sign-btn {
-        top: 50%;
-        right: 50%;
-        transform: translate(450%, 10%);
+        width: 300px;
     }
     .footer {
         height: 469px;
@@ -146,28 +144,30 @@
         position: relative;
 
     }
-    .footer .row {
-        padding-top: 0;
-        display: flex;
+    .footer-section_footer-row {
         flex-direction: column;
     }
     .footer-social {
-        display: flex;
-        justify-content: center;
         padding-bottom: 50px;
+        max-width: 200px;
     }
-    .footer-social a {
-        padding-right: 34px;
+    .footer-social_list {
+        justify-content: space-between;
+    }
+    .footer-siteMap_list-item {
+        text-align: center;
     }
     .footer-siteMap {
-        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     .footer-quote {
         height: 131px;
         position: absolute;
         bottom: 101px;
     }
-    .footer-quote h2 {
+
+    .footer-quote p {
         white-space: nowrap;
         font-size: 24px;
     }
@@ -206,7 +206,6 @@
         width: 100%;
         -ms-flex: 100%;
         flex: 100%;
-        max-width: 100%;
     }
 
 }
@@ -224,9 +223,6 @@
     }
     .slick-next {
         margin-left: 54px;
-    }
-    .slider-counter {
-        left: 30%;
     }
     .filter {
         padding-top: 38px;
@@ -262,8 +258,5 @@
     }
     .about-text  .about-text-small {
         max-width: 250px;
-    }
-    .footer-quote h2 {
-        letter-spacing: 0.08px;
     }
 }
