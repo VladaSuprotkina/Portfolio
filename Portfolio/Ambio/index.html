@@ -75,7 +75,7 @@
     <div class="container">
         <div class="about_section_wrapper">
             <div class="about_section_pagination pagination">
-                <span>01 / Who we are</span>
+                <strong>01 / Who we are</strong>
             </div>
             <div class="about_section_description">
                 <h1>What is AMBIO-N in few words</h1>
@@ -95,7 +95,6 @@
 
 <!--vision-->
 <section class="vision_section">
-
     <div class="row">
         <div class="vision_section_first-column column-2">
             <span class="vision_section_first-column_parallax-element" data-jarallax-element="80">
@@ -129,7 +128,7 @@
 <section class="principles_section">
     <div class="container">
         <div class="principles_section_title">
-            <h1>Principles/Themes</h1>
+            <h1>Principle<span class="heading-slash">/</span>Themes</h1>
             <p>4 principles which explain what we do</p>
         </div>
         <div class="principles_section_decor-element">
@@ -193,11 +192,11 @@
 <!--buyers-->
 <section class="buyers_section" id="buyers">
     <div class="container">
-        <div class="buyers_section_wrapper">
-        <div class="row">
+        <div class="buyers_section_wrapper row">
+
             <div class="buyers_section_first-column column-2">
                 <div class="buyers_section_pagination pagination">
-                    <span>02 / Buyers</span>
+                    <strong>02 / Buyers</strong>
                 </div>
                 <div class="buyers_section_description">
                     <h1>Why become <br>
@@ -253,18 +252,18 @@
                 </div>
 
             </div>
-         </div>
+
         </div>
     </div>
 </section>
 
 <!--suppliers-->
 <section class="suppliers_section" id="suppliers">
-    <div class="suppliers_section_wrapper container">
-        <div class="row">
+    <div class="container">
+        <div class="suppliers_section_wrapper row">
         <div class="suppliers_section_first-column column-2">
             <div class="suppliers_section_pagination pagination">
-                <span>03 / Suppliers</span>
+                <strong>03 / Suppliers</strong>
             </div>
             <div class="suppliers_section_description">
                 <h1>Why become <br>
@@ -315,7 +314,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     </div>
@@ -327,7 +325,7 @@
         <div class="leader_section_wrapper-row">
             <div class="leader_section_first-column column-2">
                 <div class="leader_section_pagination pagination">
-                    <span>05 / Thought leadership</span>
+                    <strong>05 / Thought leadership</strong>
                 </div>
                 <div class="leader_section_description">
                     <h1>Become a Leader</h1>
@@ -363,7 +361,7 @@
             </div>
             <div class="leader_section_second-column column-2">
                 <div class="leader_section_pagination pagination">
-                    <span>04 / The team</span>
+                    <strong>04 / The team</strong>
                 </div>
                 <div class="leader_section_description">
                     <h1>Here we are</h1>
@@ -390,11 +388,11 @@
     <span class="news_section_parallax-element" data-jarallax-element="100">
         <img src="img/decor-element2.svg" alt="">
     </span>
-    <div class="news_section_wrapper container">
-        <div class="row">
+    <div class="container">
+        <div class="news_section_wrapper row">
             <div class="news_section_first-column">
                 <div class="news_section_pagination pagination">
-                    <span>06 / News</span>
+                    <strong>06 / News</strong>
                 </div>
                 <div class="news_section_description">
                     <h1>Latest from <br>
@@ -491,7 +489,7 @@
                         </div>
                     </div>
 
-                        <div class="contact-field contact-field_textarea">
+                        <div class="contact-field_textarea">
                             <label for="comments">Message</label>
                             <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"></textarea>
                         </div>
@@ -502,7 +500,7 @@
                     </div>
                 </form>
             </div>
-            <button class="btn news-section-btn" type="button">Get in touch</button>
+            <button class="btn contact-section-btn" type="button">Get in touch</button>
         </div>
     </div>
     </div>
@@ -513,7 +511,7 @@
     <div class="footer_section-container container">
         <div class="footer_section-row row">
             <div class="footer_section_first-column">
-                <img src="img/logo.png" alt="">
+                <a href="#" class="footer_logo_brand logo_brand"><img src="img/logo.png" alt="Ambio-N"></a>
             </div>
             <div class="footer_section_second-column">
                 <a class="footer_section-button" href="#intro">Back to top</a>
@@ -521,13 +519,13 @@
     </div>
         <div class="footer_section-row row">
             <div class="footer_section_first-column">
-                <div class="footer_section_privacy">
-                    <span>© AMBIO-N</span>
-                    <span>Terms of use</span>
-                    <span>Privacy Policy</span>
-                </div>
+                <ul class="footer_section_privacy">
+                    <li class="footer_section_privacy-item"><a href="#" target="_blank">© AMBIO-N</a></li>
+                    <li class="footer_section_privacy-item"><a href="#" target="_blank">Terms of use</a></li>
+                    <li class="footer_section_privacy-item"><a href="#" target="_blank">Privacy Policy</a></li>
+                </ul>
             </div>
-            <div class="footer_section_second-column ">
+            <div class="footer_section_second-column">
                 <span>Website built by Diffusion Digital</span>
             </div>
         </div>
@@ -539,6 +537,10 @@
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script type="text/javascript" src="script/jarallax.min.js"></script>
 <script src="script/jarallax-element.min.js"></script>
+<script src="script/smooth-scroll.js"></script>
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 <script type="text/javascript" src="script/script.js"></script>
 
 </body>
