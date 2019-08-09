@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86689662-d911-46be-aded-43d0e856954e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../health_happy/.idea/health_happy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_happy/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/smooth-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/smooth-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rebel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rebel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rebel/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Rebel/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rebel/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Rebel/css/media.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rebel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rebel/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,29 +29,28 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5529412">
+    <splitter split-orientation="horizontal" split-proportion="0.23349835">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+                <state relative-caret-position="17">
+                  <caret line="250" column="14" selection-start-line="250" selection-start-column="14" selection-end-line="250" selection-end-column="14" />
                   <folding>
-                    <element signature="n#div#1;n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#span#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
-                    <element signature="e#24071#24077#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17034">
-                  <caret line="1013" column="22" selection-start-line="1013" selection-start-column="22" selection-end-line="1013" selection-end-column="22" />
+                <state relative-caret-position="832">
+                  <caret line="1023" column="22" selection-start-line="1023" selection-start-column="22" selection-end-line="1023" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -49,20 +58,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/script/script.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/script/smooth-scroll.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
+                <state relative-caret-position="238">
+                  <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -74,8 +71,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3043">
-                  <caret line="181" column="11" lean-forward="true" selection-start-line="181" selection-start-column="11" selection-end-line="181" selection-end-column="11" />
+                <state relative-caret-position="322">
+                  <caret line="162" column="1" lean-forward="true" selection-start-line="1" selection-end-line="162" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -105,16 +102,16 @@
         <option value="$PROJECT_DIR$/script/jarallax.js" />
         <option value="$PROJECT_DIR$/script/jarallax.css" />
         <option value="$PROJECT_DIR$/css/jarallax.css" />
-        <option value="$PROJECT_DIR$/script/script.js" />
         <option value="$PROJECT_DIR$/script/smooth-scroll.js" />
+        <option value="$PROJECT_DIR$/script/script.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-7" />
-    <option name="width" value="1259" />
+    <option name="width" value="1302" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -123,6 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,7 +137,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,16 +195,20 @@
       <workItem from="1565166344509" duration="18395000" />
       <workItem from="1565186739843" duration="653000" />
       <workItem from="1565272141027" duration="3992000" />
+      <workItem from="1565335508330" duration="6913000" />
+      <workItem from="1565361543659" duration="54000" />
+      <workItem from="1565361767089" duration="394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175625000" />
+    <option name="totallyTimeSpent" value="182986000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1259" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1302" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.02502085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.024154589" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -292,23 +293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/smooth-scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slick/slick.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -316,23 +300,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/script/smooth-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17034">
-          <caret line="1013" column="22" selection-start-line="1013" selection-start-column="22" selection-end-line="1013" selection-end-column="22" />
+        <state relative-caret-position="323">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="17">
+          <caret line="250" column="14" selection-start-line="250" selection-start-column="14" selection-end-line="250" selection-end-column="14" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" />
             <element signature="n#span#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#24071#24077#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="1023" column="22" selection-start-line="1023" selection-start-column="22" selection-end-line="1023" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%; }
+
+body {
+  font-family: 'Overpass', sans-serif;
+  overflow-x: hidden; }
+  body a {
+    text-decoration: none;
+    background-color: transparent; }
+  body ul,
+  body li {
+    list-style: none; }
+  body a:hover {
+    text-decoration: none; }
+  body article, body aside, body figcaption, body figure, body footer, body header, body hgroup, body main, body nav, body section {
+    display: block; }
+  body img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%; }
+  body button:focus,
+  body a:focus,
+  body input:focus {
+    outline: 0; }
+  body svg {
+    overflow: hidden;
+    vertical-align: middle; }
+  body button {
+    border-radius: 0;
+    background: none;
+    border: 0;
+    cursor: pointer; }
+  body select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  body select::-ms-expand {
+    display: none; }
+  body input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
+  body textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none !important; }
+  body .btn {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    white-space: nowrap; }
+  body .btn:hover {
+    border: 1px solid #ffffff;
+    padding: 14px 29px; }
+  body .btn:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 3px;
+    right: 16px;
+    background-color: #ffffff; }
+  body .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px; }
+  body .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  body .col {
+    position: relative;
+    width: 50%; }
+  body .col:only-of-type {
+    width: 100%; }
+  body h1 {
+    font-size: 44px;
+    line-height: 50px;
+    font-weight: 700; }
+  body h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px; }
+  body p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.625; }
+
+/*# sourceMappingURL=style.css.map */

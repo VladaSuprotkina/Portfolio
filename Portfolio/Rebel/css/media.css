@@ -53,7 +53,7 @@
         height: 39px;
     }
     .filter {
-        padding-top: 65px;
+        margin-top: 65px;
     }
     .filter .row {
         display: flex;
@@ -78,7 +78,7 @@
        transform: none;
         transition: none;
         color: #ffffff;
-        text-align: center;
+        text-align: left;
         background-color: #212226;
         padding: 13px 20px 8px 28px;
     }
@@ -182,12 +182,15 @@
     .filter .filter-tab a {
         font-size: 10px;
         letter-spacing: .257rem;
+        padding: 0;
     }
+
     .filter .filter-tab a:hover,
     .filter-tab a:active,
     .filter-tab a:focus {
         background-color: transparent;
         color: #212226;
+        padding: 0;
     }
     .filter .filter-burn-text p {
         max-width: 420px;
@@ -213,7 +216,6 @@
     .slider_item {
         background-position: -400px;
     }
-    .intro-container,
     .container {
         padding-right: 20px;
         padding-left: 20px;
@@ -225,7 +227,7 @@
         margin-left: 54px;
     }
     .filter {
-        padding-top: 38px;
+        margin-top: 38px;
     }
 
     .post-card-text_text-primary,
