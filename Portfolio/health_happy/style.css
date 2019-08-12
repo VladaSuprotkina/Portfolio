@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Apercu Light";
+  src: url("/fonts/Apercu Light.otf") format("otf"); }
+@font-face {
+  font-family: "Chronicle Display Roman";
+  src: url("/fonts/Chronicle Display Roman.otf") format("otf"); }
+@font-face {
+  font-family: "Verlag-Book";
+  src: url("/fonts/Verlag-Book.otf") format("otf"); }
+@font-face {
+  font-family: "ApercuPro";
+  src: url("/fonts/ApercuPro.ttf") format("ttf"); }
 *,
 *::before,
 *::after {
@@ -75,32 +87,33 @@ body {
     -moz-box-shadow: none;
     box-shadow: none;
     resize: none !important; }
-  body .btn {
-    display: inline-block;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .1rem;
-    line-height: 1.3;
-    text-transform: uppercase;
-    padding: 15px 30px;
-    white-space: nowrap; }
-  body .btn:hover {
-    border: 1px solid #ffffff;
-    padding: 14px 29px; }
-  body .btn:before {
-    content: '';
-    display: inline-block;
+  body a.btn {
     position: relative;
-    width: 16px;
-    height: 3px;
-    right: 16px;
-    background-color: #ffffff; }
+    display: inline-block;
+    color: #525759;
+    font-size: 16px;
+    line-height: 2.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all .5s; }
+    body a.btn, body a.btn::after, body a.btn::before {
+      transition: all .5s; }
+    body a.btn::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #aaa;
+      height: 1px; }
+    body a.btn:hover::after {
+      width: 100%; }
   body .container {
     max-width: 1920px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px; }
+    margin: 0 auto; }
   body .row {
     display: -ms-flexbox;
     display: flex;
@@ -112,16 +125,286 @@ body {
   body .col:only-of-type {
     width: 100%; }
   body h1 {
-    font-size: 44px;
-    line-height: 50px;
-    font-weight: 700; }
-  body h3 {
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 26px; }
+    font-size: 40px;
+    font-family: "Chronicle Display";
+    letter-spacing: .4rem;
+    color: #ffffff;
+    text-transform: uppercase; }
+  body h2 {
+    font-size: 30px;
+    font-family: "Chronicle Display Roman";
+    letter-spacing: .4rem;
+    color: #525759;
+    text-transform: uppercase; }
   body p {
     font-size: 16px;
-    font-weight: 700;
-    line-height: 1.625; }
+    font-family: "Apercu Light";
+    line-height: 1.75;
+    color: #a2a9b0; }
+
+.header-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  min-height: 155px;
+  width: 100vw;
+  z-index: 99999;
+  background-image: linear-gradient(180deg, rgba(198, 198, 198, 0.39) 0%, rgba(238, 234, 234, 0) 100%); }
+  .header-section .header-section__container {
+    padding-left: 64px;
+    padding-right: 64px;
+    line-height: 155px; }
+    .header-section .header-section__container .header-section__row {
+      align-items: center;
+      justify-content: space-between; }
+      .header-section .header-section__container .header-section__row .header-section__brand-logo {
+        max-width: 435px; }
+      .header-section .header-section__container .header-section__row .header-section__navigation-wrapper {
+        align-items: center; }
+        .header-section .header-section__container .header-section__row .header-section__navigation-wrapper .header-section__navigation {
+          display: flex;
+          flex-wrap: wrap;
+          color: #525759;
+          font-family: "Chronicle Display Roman";
+          font-size: 16px;
+          letter-spacing: .4rem; }
+          .header-section .header-section__container .header-section__row .header-section__navigation-wrapper .header-section__navigation li {
+            padding-left: 43px; }
+
+.hero-section {
+  position: relative;
+  display: block;
+  min-height: 100vh; }
+  .hero-section .hero-section__caption {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    z-index: 0; }
+  .hero-section .hero-section__slider-item {
+    background-image: linear-gradient(to bottom, rgba(82, 87, 89, 0.2) 0%, rgba(82, 87, 89, 0.2) 100%), url("img/aditya-saxena-410663-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh; }
+  .hero-section .slick-slide {
+    min-height: 100vh !important; }
+  .hero-section .slick-initialized,
+  .hero-section .slick-slider,
+  .hero-section .slick-list {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    min-height: 100vh;
+    outline: none;
+    z-index: 0; }
+  .hero-section .slick-arrow {
+    position: absolute;
+    bottom: 10%;
+    right: 50px;
+    z-index: 100;
+    transform: translateY(-10%);
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .25s ease-in-out; }
+  .hero-section .slick-next {
+    background-image: url("img/next.svg"); }
+  .hero-section .slick-prev {
+    background-image: url("img/prev.svg");
+    margin-right: 50px; }
+  .hero-section .slick-dots {
+    position: absolute;
+    transform: translateY(-10%);
+    display: flex;
+    bottom: 10%;
+    left: 160px;
+    z-index: 100;
+    padding: 0;
+    font-size: 0; }
+    .hero-section .slick-dots li {
+      width: 8px;
+      height: 8px;
+      background-color: #a2a9b0;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 17px;
+      overflow: hidden;
+      cursor: pointer;
+      outline: none;
+      transition: background-color .25s ease-in-out; }
+    .hero-section .slick-dots li .slick-active {
+      background-color: #ffffff; }
+
+.intro-section {
+  position: relative;
+  min-height: 979px;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  .intro-section .intro-section__container {
+    max-width: 624px;
+    text-align: center; }
+    .intro-section .intro-section__container h2 {
+      margin-bottom: 65px; }
+    .intro-section .intro-section__container p {
+      margin-bottom: 59px; }
+
+.breathe-section {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(82, 87, 89, 0.1) 0%, rgba(82, 87, 89, 0.1) 100%), url("img/averie-woodard-205419-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 979px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+  .breathe-section .breathe-section__container {
+    max-width: 475px;
+    margin-left: 60%;
+    padding: 20px; }
+    .breathe-section .breathe-section__container h2,
+    .breathe-section .breathe-section__container p {
+      color: #ffffff; }
+    .breathe-section .breathe-section__container h2 {
+      font-size: 35px;
+      line-height: 1.4;
+      margin-bottom: 54px; }
+
+.time-section {
+  position: relative;
+  min-height: 979px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center; }
+  .time-section .time-section__article {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 338px; }
+    .time-section .time-section__article .time-section__article-description {
+      max-width: 609px;
+      margin-right: 5%; }
+      .time-section .time-section__article .time-section__article-description h2 {
+        margin-bottom: 50px; }
+      .time-section .time-section__article .time-section__article-description p {
+        color: #a2a9b0; }
+    .time-section .time-section__article .time-section__article-img {
+      background: rgba(255, 255, 255, 0.2) url("img/priscilla-du-preez-1046214-unsplash.jpg") no-repeat center;
+      background-size: cover;
+      width: 869px;
+      height: 581px; }
+
+.recipes-section .recipes-section__container .slick-slider .slick-arrow {
+  position: absolute;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0; }
+.recipes-section .recipes-section__container .slick-slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  margin-bottom: 114px; }
+  .recipes-section .recipes-section__container .slick-slider .slick-dots li {
+    width: 8px;
+    height: 8px;
+    background-color: #a2a9b0;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 17px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .25s ease-in-out; }
+  .recipes-section .recipes-section__container .slick-slider .slick-dots li .slick-active {
+    background-color: #ffffff; }
+.recipes-section .recipes-section__container .recipes-section__item {
+  padding: 0 18px;
+  max-height: 618px;
+  max-width: 616px;
+  position: relative; }
+  .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    width: 473px;
+    height: 319px;
+    padding: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title strong {
+      color: #525759;
+      font-family: "Chronicle Display";
+      font-size: 30px;
+      letter-spacing: .03rem;
+      line-height: 1.3;
+      text-transform: uppercase;
+      margin-bottom: 39px; }
+    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title a {
+      display: block; }
+
+.quote-section {
+  background: url("img/alexandre-chambon-140035-unsplash_(1).jpg") no-repeat center;
+  background-size: cover;
+  min-height: 761px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .quote-section .quote-section__container {
+    max-width: 723px; }
+    .quote-section .quote-section__container svg {
+      margin-bottom: 112px; }
+    .quote-section .quote-section__container p {
+      margin-bottom: 57px;
+      color: #ffffff;
+      font-family: "Apercu Light";
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.59; }
+    .quote-section .quote-section__container cite {
+      font-style: normal;
+      color: #ffffff;
+      font-family: Verlag;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: .25rem;
+      text-transform: uppercase; }
+
+.consultation-section {
+  min-height: 780px;
+  background: rgba(255, 255, 255, 0.8) url("img/247-layers.png") no-repeat center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .consultation-section .consultation-section__caption {
+    background-color: #ffffff;
+    min-height: 319px; }
 
 /*# sourceMappingURL=style.css.map */

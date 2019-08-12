@@ -6,54 +6,50 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Be Health Happy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 </head>
 <body>
 <!--header-->
 <header class="header-section">
-    <div class="header-section__container">
-        <div class="header-section__brand-logo">
-            <img src="" alt="Be health happy">
+    <div class="header-section__container container">
+        <div class="header-section__row row">
+            <div class="header-section__brand-logo">
+                <a href="#"><img src="img/brand-logo.svg" alt="Be health happy"></a>
+            </div>
+            <nav class="header-section__navigation-wrapper">
+                <ul class="header-section__navigation">
+                    <li class="header-section__navigation-item">
+                        <a href="index.html" class="btn">Home</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a href="about.html" class="btn">About</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a href="#" class="btn">Blog</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a href="#" class="btn">Recipes</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a href="#" class="btn">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav class="header-section__navigation-wrapper">
-            <ul class="header-section__navigation">
-                <li class="header-section__navigation-item">
-                    <a href="#">Home</a>
-                </li>
-                <li class="header-section__navigation-item">
-                    <a href="#">About</a>
-                </li>
-                <li class="header-section__navigation-item">
-                    <a href="#">Blog</a>
-                </li>
-                <li class="header-section__navigation-item">
-                    <a href="#">Recipes</a>
-                </li>
-                <li class="header-section__navigation-item">
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 </header>
 <!--main section-->
 <div class="main">
     <!--hero-->
     <section class="hero-section">
-        <div class="hero-section__container container">
             <div class="hero-section__slider">
-                <div class="hero-section__slider-item">
-                    <img src="" alt="">
-                </div>
-                <div class="hero-section__slider-item">
-                    <img src="" alt="">
-                </div>
-                <div class="hero-section__slider-item">
-                    <img src="" alt="">
-                </div>
-                <div class="hero-section__slider-item">
-                    <img src="" alt="">
-                </div>
+                <div class="hero-section__slider-item"></div>
+                <div class="hero-section__slider-item"></div>
+                <div class="hero-section__slider-item"></div>
+                <div class="hero-section__slider-item"></div>
             </div>
+        <div class="hero-section__container container">
             <div class="hero-section__caption">
                 <h1>SLOW DOWN. SWITCH OFF</h1>
                 <ul>
@@ -90,24 +86,25 @@
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et
                 dolore magna aliquyam erat.</p>
-            <a href="#" class="btn">LEARN MORE</a>
         </div>
     </section>
     <!--  time  -->
     <section class="time-section">
         <div class="time-section__container container">
             <article class="time-section__article">
-                <h2>BREATHE IN.
-                    BREAHTE OUT.</h2>
-                <p>Switch off your phones. Lay down your schedules.
-                    Let go of your daily routine.  As we take care
-                    of all your practical needs, you come back to yourself.
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et
-                    dolore magna aliquyam erat.</p>
-                <a href="#" class="btn">LEARN MORE</a>
+                <div class="time-section__article-description">
+                    <h2>TAKE TIME FOR YOURSELF.</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna aliquyam erat, sed diam voluptua.
+                        At vero eos et accusam et justo duo dolores et ea rebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                        consetetur sadipscing elitr, sed diam nonumy eirmod
+                        tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+                <div class="time-section__article-img"></div>
             </article>
-            <img src="" alt="">
         </div>
     </section>
     <!--  recipes slider  -->
@@ -115,18 +112,42 @@
         <div class="recipes-section__container container">
             <div class="recipes-section__slider">
                 <div class="recipes-section__item">
-                    <div class="recipes-section__item-title">
-                        <strong class="recipes-section__item-title_recipe-name">ZERO SUGAR OATMEAL COOKIES</strong>
-                        <a href="#" class="btn">VIEW</a>
-                    </div>
+                <img src="img/taylor-kiser-373451-unsplash.jpg" alt="">
+                <div class="recipes-section__item-title">
+                    <strong class="recipes-section__item-title_recipe-name">ZERO SUGAR OATMEAL COOKIES</strong>
+                    <a href="#" class="btn">VIEW</a>
                 </div>
+            </div>
                 <div class="recipes-section__item">
+                    <img src="img/alexandra-golovac-781073-unsplash.jpg" alt="">
                     <div class="recipes-section__item-title">
                         <strong class="recipes-section__item-title_recipe-name">THE NOURISH AND GLOW MIRACLE BOWL</strong>
                         <a href="#" class="btn">VIEW</a>
                     </div>
                 </div>
                 <div class="recipes-section__item">
+                    <img src="img/jan-sedivy-1111007-unsplash.jpg" alt="">
+                    <div class="recipes-section__item-title">
+                        <strong class="recipes-section__item-title_recipe-name">GREEN BREAKFAST SMOOTHIE</strong>
+                        <a href="#" class="btn">VIEW</a>
+                    </div>
+                </div>
+                <div class="recipes-section__item">
+                    <img src="img/taylor-kiser-373451-unsplash.jpg" alt="">
+                    <div class="recipes-section__item-title">
+                        <strong class="recipes-section__item-title_recipe-name">ZERO SUGAR OATMEAL COOKIES</strong>
+                        <a href="#" class="btn">VIEW</a>
+                    </div>
+                </div>
+                <div class="recipes-section__item">
+                    <img src="img/alexandra-golovac-781073-unsplash.jpg" alt="">
+                    <div class="recipes-section__item-title">
+                        <strong class="recipes-section__item-title_recipe-name">THE NOURISH AND GLOW MIRACLE BOWL</strong>
+                        <a href="#" class="btn">VIEW</a>
+                    </div>
+                </div>
+                <div class="recipes-section__item">
+                    <img src="img/jan-sedivy-1111007-unsplash.jpg" alt="">
                     <div class="recipes-section__item-title">
                         <strong class="recipes-section__item-title_recipe-name">GREEN BREAKFAST SMOOTHIE</strong>
                         <a href="#" class="btn">VIEW</a>
@@ -138,6 +159,7 @@
     <!--  quote  -->
     <section class="quote-section">
         <div class="quote-section__container container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="33" viewBox="0 0 50 33"><g><g><path fill="#fff" d="M40.102.362h9.232l-6.612 10.44c-1.802 2.211-1.413 3.214.798 4.217 3.01 1.413 5.016 4.012 5.016 8.434 0 5.814-3.603 9.437-9.622 9.437-6.018 0-9.62-4.012-9.62-10.624 0-4.81 2.21-8.823 5.015-13.04zm-29.294 0h9.233l-6.612 10.44c-1.822 2.19-1.413 3.194.798 4.197 3.01 1.412 5.015 4.012 5.015 8.434 0 5.813-3.603 9.436-9.62 9.436C3.601 32.87 0 28.857 0 22.245c0-4.81 2.21-8.823 5.015-13.04z"/></g></g></svg>
             <blockquote class="quote-section__item">
                 <p>"Wellness encompasses a healthy body,
                     a sound mind, and a tranquil spirit.
@@ -154,8 +176,8 @@
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                     sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                     magna aliquyam erat, sed diam voluptua. </p>
+                <a href="#" class="btn">SAY HELLO</a>
             </div>
-            <a href="#" class="btn">SAY HELLO</a>
         </div>
     </section>
 </div>
@@ -217,5 +239,10 @@
         </div>
     </div>
 </footer>
+<!--Vendor script-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<!--Main script-->
+<script src="js/script.js"></script>
 </body>
 </html>
