@@ -6,7 +6,7 @@ $(document).ready(function(){
         slidesToShow: 1
 });
     $('.recipes-section__slider').slick({
-        centerMode: true,
+        // centerMode: true,
         dots: true,
         slidesToShow: 3,
         slidesToScroll: 3,

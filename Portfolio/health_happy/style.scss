@@ -15,12 +15,6 @@
   src: url("/fonts/ApercuPro.ttf") format("ttf");
 }
 
-
-
-
-
-
-
 *,
 *::before,
 *::after {
@@ -45,7 +39,7 @@ time, mark, audio, video {
   font-size: 100%;
 }
 body {
-  font-family: 'Overpass', sans-serif;
+  font-family: "Apercu Light", sans-serif;
   overflow-x: hidden;
   a {
     text-decoration: none;
@@ -111,12 +105,21 @@ body {
     box-shadow: none;
     resize: none!important;
   }
-  a.btn {
-    position: relative;
-    display: inline-block;
+  .nav-btn {
     color: #525759;
     font-size: 16px;
     line-height: 2.2;
+  }
+  .btn-primary {
+    color: #cbbcb8;
+    font-family: "Verlag-Book";
+    font-size: 12px;
+    letter-spacing: .25rem;
+    line-height: 2.3;
+  }
+  a.btn {
+    position: relative;
+    display: inline-block;
     text-transform: uppercase;
     white-space: nowrap;
     transition: all .5s;
@@ -134,7 +137,7 @@ body {
       width: 0%;
       content: '.';
       color: transparent;
-      background: #aaa;
+      background: #a2a9b0;
       height: 1px;
     }
     &:hover::after {
@@ -181,6 +184,7 @@ body {
   }
 
 }
+
 .header-section {
   position: fixed;
   top: 0;
@@ -220,32 +224,46 @@ body {
     }
   }
 }
-
-
 .hero-section {
   position: relative;
-  display: block;
+  display: flex;
   min-height: 100vh;
-  .hero-section__caption {
-    position: relative;
-    min-height: 100vh;
+  .hero-section__container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 10%;
-    z-index: 0;
-
+    z-index: 1;
+    .hero-section__caption {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 8px;
+        li {
+          color: #ffffff;
+          font-size: 16px;
+          letter-spacing: .4rem;
+          text-transform: uppercase;
+        }
+        li:after {
+          content: '|';
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+        li:last-of-type:after {
+          content: '';
+        }
+      }
+  }
   }
   .hero-section__slider-item {
     background-image: linear-gradient(to bottom, rgba(82,87,89,0.2) 0%, rgba(82,87,89,0.2) 100%), url("img/aditya-saxena-410663-unsplash.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
   }
   .slick-slide {
-    min-height: 100vh!important;
+    min-height: 100vh;
   }
   .slick-initialized,
   .slick-slider,
@@ -262,7 +280,7 @@ body {
   }
   .slick-arrow {
     position: absolute;
-    bottom: 10%;
+    bottom: 88px;
     right: 50px;
     z-index: 100;
     transform: translateY(-10%);
@@ -290,15 +308,16 @@ body {
   }
   .slick-dots {
     position: absolute;
-    transform: translateY(-10%);
+    transform: translateY(-100%);
     display: flex;
-    bottom: 10%;
+    bottom: 100px;
     left: 160px;
     z-index: 100;
     padding: 0;
     font-size: 0;
 
-    li {
+    button:before {
+      content: '';
       width: 8px;
       height: 8px;
       background-color: #a2a9b0;
@@ -309,15 +328,18 @@ body {
       cursor: pointer;
       outline: none;
       transition: background-color .25s ease-in-out;
-    }
 
-    li .slick-active {
+    }
+    .slick-active button:before {
       background-color: #ffffff;
     }
+    button {
+      font-size: 0;
+    }
+
   }
 
 }
-
 .intro-section {
   position: relative;
   min-height: 979px;
@@ -369,32 +391,45 @@ body {
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  .time-section__article {
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 338px;
-    .time-section__article-description {
-      max-width: 609px;
-      margin-right: 5%;
-      h2 {
-        margin-bottom: 50px;
-      }
-      p {
-        color: #a2a9b0;
-      }
+  .time-section__container {
+    width: 1920px;
+    .time-section__article {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .time-section__article-description {
+        max-width: 609px;
+        margin-right: 5%;
+        padding: 20px;
+        h2 {
+          margin-bottom: 50px;
+        }
+        p {
+          color: #a2a9b0;
+        }
 
 
-    }
-    .time-section__article-img {
-      background: rgba(255,255,255,.2) url("img/priscilla-du-preez-1046214-unsplash.jpg") no-repeat center;
-      background-size: cover;
-      width: 869px;
-      height: 581px;
+      }
+      .time-section__article-img {
+        background: url("img/priscilla-du-preez-1046214-unsplash.jpg") no-repeat center;
+        background-size: cover;
+        width: 869px;
+        height: 581px;
+      }
+      .time-section__article-img:before {
+        content: '';
+        position: absolute;
+        background-color: rgba(255,255,255,.2);
+        width: 869px;
+        min-height: 581px;
+      }
     }
   }
+
 }
 .recipes-section {
   .recipes-section__container {
+    padding: 0 50px;
     .slick-slider {
       .slick-arrow {
         position: absolute;
@@ -407,7 +442,8 @@ body {
         justify-content: center;
         margin-top: 34px;
         margin-bottom: 114px;
-        li {
+        button:before {
+          content: '';
           width: 8px;
           height: 8px;
           background-color: #a2a9b0;
@@ -418,10 +454,13 @@ body {
           cursor: pointer;
           outline: none;
           transition: background-color .25s ease-in-out;
-        }
 
-        li .slick-active {
-          background-color: #ffffff;
+        }
+        .slick-active button:before {
+          background-color: #c6c6c6;
+        }
+        button {
+          font-size: 0;
         }
       }
     }
@@ -489,7 +528,7 @@ body {
     cite {
       font-style: normal;
       color: #ffffff;
-      font-family: Verlag;
+      font-family: "Verlag-Book";
       font-size: 16px;
       font-weight: 300;
       letter-spacing: .25rem;
@@ -497,16 +536,241 @@ body {
     }
   }
 }
-
 .consultation-section {
   min-height: 780px;
-  background: rgba(255,255,255,.8) url("img/247-layers.png") no-repeat center;
+  background: url("img/247-layers.png") no-repeat center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border-bottom: 2px solid #c6c6c6;;
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: rgba(255,255,255,.8);
+    width: 100%;
+    min-height: 780px;
+  }
+  .consultation-section__container {
+    z-index: 1;
+    width: 1290px;
+  }
   .consultation-section__caption {
     background-color: #ffffff;
     min-height: 319px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .consultation-section__caption-title {
+      h2 {
+        margin-bottom: 55px;
+      }
+
+      p {
+        max-width: 654px;
+      }
+    }
+      a {
+        display: block;
+      }
   }
+}
+.footer-section {
+  min-height: 285px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .footer-section__container {
+    width: 1290px;
+    position: relative;
+    .footer-section__row {
+      display: flex;
+      justify-content: space-between;
+      .footer-section__item {
+        padding: 10px;
+        width: calc(100%/5 - 20px);
+        .footer-section__title {
+          color: #525759;
+          font-family: "Chronicle Display Roman";
+          font-size: 14px;
+          letter-spacing: .3rem;
+          line-height: 1.78;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+        .footer-section__navigation li a{
+          color: #525759;
+          font-family: "Apercu Light";
+          font-size: 14px;
+          letter-spacing: .03rem;
+          line-height: 1.78;
+          transition: font-size .3s ease;
+        }
+        .footer-section__follow{
+          display: flex;
+          flex-wrap: wrap;
+          .footer-section__follow-item {
+            margin-right: 9px;
+          }
+        }
+        .footer-section__privacy {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 61px;
+          .footer-section__privacy-item {
+            white-space: nowrap;
+            a {
+              color: #c6c6c6;
+              font-family: "Apercu Light";
+              font-size: 12px;
+              line-height: 1.5;
+            }
+          }
+        }
+        .footer-section__address,
+        .footer-section__connection a {
+          color: #7b8287;
+          font-family: "Apercu Light";
+          font-size: 12px;
+
+        }
+        .footer-section__address {
+          line-height: 1.6;
+          max-width: 114px;
+        }
+        .footer-section__connection a{
+          line-height: 2;
+
+        }
+        .footer-section__privacy a:hover,
+        .footer-section__connection a:hover {
+          color: #525759;
+        }
+        .footer-section__navigation a:hover {
+          color: #7b8287;
+          font-size: large;
+        }
+      }
+
+      .text-right {
+        text-align: right;
+        text-align: -webkit-right;
+      }
+    }
+    & a:hover path{
+      color: #525759;
+      fill: #525759;
+    }
+    .digital-logo {
+      position: absolute;
+      right: 0;
+    }
+
+  }
+
+}
+
+.bookmark__promo-section {
+  position: relative;
+  min-height: 100vh;
+  .bookmark__promo-section__col {
+    max-height: 100vh;
+    h1 {
+      color: #525759;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+      li {
+        color: #cbbcb8;
+        font-size: 16px;
+        letter-spacing: .4rem;
+        text-transform: uppercase;
+      }
+      li:after {
+        content: '|';
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+      li:last-of-type:after {
+        content: '';
+      }
+    }
+
+  }
+  .about-bookmark__promo-section__col:first-child{
+    background: url("img/scott-webb-258760-unsplash.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .blog-bookmark__promo-section__col:first-child{
+    background: url("img/imani-clovis-23005-unsplash.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .bookmark__promo-section__col:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.article-section {
+  padding-top: 200px;
+  padding-bottom: 150px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  .article-section__container {
+    width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .article-section__row {
+      width: 100%;
+      display: flex;
+
+      &:first-child {
+        margin-bottom: 157px;
+        justify-content: flex-end;
+      }
+      &:last-child {
+        justify-content: flex-start;
+      }
+      .article-section__col {
+        align-self: center;
+        img{
+          max-width: 869px;
+        }
+        .article-section_text-wrapper {
+          width: calc(495px + 20%);
+          padding: 10%;
+        }
+      }
+    }
+  }
+}
+
+.blog-section {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  .blog-section__container{
+    max-width: 1290px;
+    .blog-section__articles-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .blog-section__article-item {
+        width: calc(100%/2 - 40px);
+      }
+    }
+
+
+  }
+
 }
