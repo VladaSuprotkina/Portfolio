@@ -11,6 +11,13 @@
     <div class="header">
         <h1>Image Grid</h1>
         <p>Click on the button to change the grid view</p>
+        <div class="button-group">
+            <button class="button hollow filter-simple-button is-active" data-filter="all">All</button>
+            <button class="button hollow filter-simple-button" data-filter="nature">Nature</button>
+            <button class="button hollow filter-simple-button" data-filter="animals">Animals</button>
+            <button class="button hollow filter-simple-button" data-filter="people">People</button>
+            <button class="button hollow filter-simple-button" data-filter="decor">Decor</button>
+        </div>
         <div class="icons">
             <i class="fas fa-square" onclick="full()"></i>
             <i class="fas fa-th-large" onclick="twoColumn()"></i>
@@ -19,73 +26,74 @@
     </div>
     <div class="row">
         <div id="column1">
-            <img src="images/img-1.jpg" alt="">
-            <img src="images/img-2.jpg" alt="">
-            <img src="images/img-3.jpg" alt="">
-            <img src="images/img-4.jpg" alt="">
-            <img src="images/img-5.jpg" alt="">
-            <img src="images/img-6.jpg" alt="">
-            <img src="images/img-7.jpg" alt="">
-            <img src="images/img-8.jpg" alt="">
-            <img src="images/img-9.jpg" alt="">
-            <img src="images/img-10.jpg" alt="">
-            <img src="images/img-56.jpg" alt="">
-            <img src="images/img-57.jpg" alt="">
-            <img src="images/img-58.jpg" alt="">
+            <img src="images/img-1.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-2.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-3.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-4.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-5.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-6.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-7.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-8.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-9.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-10.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-56.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-57.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-58.jpg" class="filter-simple-item people" alt="">
         </div>
         <div id="column2">
-            <img src="images/img-11.jpg" alt="">
-            <img src="images/img-12.jpg" alt="">
-            <img src="images/img-13.jpg" alt="">
-            <img src="images/img-14.jpg" alt="">
-            <img src="images/img-15.jpg" alt="">
-            <img src="images/img-16.jpg" alt="">
-            <img src="images/img-17.jpg" alt="">
-            <img src="images/img-18.jpg" alt="">
-            <img src="images/img-19.jpg" alt="">
-            <img src="images/img-20.jpg" alt="">
-            <img src="images/img-41.jpg" alt="">
-            <img src="images/img-42.jpg" alt="">
-            <img src="images/img-43.jpg" alt="">
-            <img src="images/img-44.jpg" alt="">
-            <img src="images/img-45.jpg" alt="">
+            <img src="images/img-11.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-12.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-13.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-14.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-15.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-16.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-17.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-18.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-19.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-20.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-41.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-42.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-43.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-44.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-45.jpg" class="filter-simple-item nature" alt="">
         </div>
         <div id="column3">
-            <img src="images/img-21.jpg" alt="">
-            <img src="images/img-22.jpg" alt="">
-            <img src="images/img-23.jpg" alt="">
-            <img src="images/img-24.jpg" alt="">
-            <img src="images/img-25.jpg" alt="">
-            <img src="images/img-26.jpg" alt="">
-            <img src="images/img-27.jpg" alt="">
-            <img src="images/img-28.jpg" alt="">
-            <img src="images/img-29.jpg" alt="">
-            <img src="images/img-30.jpg" alt="">
-            <img src="images/img-46.jpg" alt="">
-            <img src="images/img-47.jpg" alt="">
-            <img src="images/img-48.jpg" alt="">
-            <img src="images/img-49.jpg" alt="">
-            <img src="images/img-50.jpg" alt="">
-            <img src="images/img-51.jpg" alt="">
+            <img src="images/img-21.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-22.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-23.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-24.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-25.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-26.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-27.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-28.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-29.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-30.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-46.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-47.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-48.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-49.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-50.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-51.jpg" class="filter-simple-item decor" alt="">
         </div>
         <div id="column4">
-            <img src="images/img-31.jpg" alt="">
-            <img src="images/img-32.jpg" alt="">
-            <img src="images/img-33.jpg" alt="">
-            <img src="images/img-34.jpg" alt="">
-            <img src="images/img-35.jpg" alt="">
-            <img src="images/img-36.jpg" alt="">
-            <img src="images/img-37.jpg" alt="">
-            <img src="images/img-38.jpg" alt="">
-            <img src="images/img-39.jpg" alt="">
-            <img src="images/img-40.jpg" alt="">
-            <img src="images/img-52.jpg" alt="">
-            <img src="images/img-53.jpg" alt="">
-            <img src="images/img-54.jpg" alt="">
-            <img src="images/img-55.jpg" alt="">
+            <img src="images/img-31.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-32.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-33.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-34.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-35.jpg" class="filter-simple-item people" alt="">
+            <img src="images/img-36.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-37.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-38.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-39.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-40.jpg" class="filter-simple-item nature" alt="">
+            <img src="images/img-52.jpg" class="filter-simple-item decor" alt="">
+            <img src="images/img-53.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-54.jpg" class="filter-simple-item animals" alt="">
+            <img src="images/img-55.jpg" class="filter-simple-item animals" alt="">
         </div>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="script.js"></script>
     <script>
         function full() {
             document.getElementById('column1').style.width = '100%';

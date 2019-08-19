@@ -3,6 +3,13 @@
     padding: 0;
     font-family: sans-serif;
 }
+button {
+    border-radius: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
 .header {
     margin: 20px auto;
     text-align: center;
@@ -10,6 +17,28 @@
 }
 .header h1 {
     padding: 10px 0;
+}
+.button-group {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.filter-simple-button.hollow {
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px solid #ee8373;
+    border-radius: 10px;
+    color: #5e5390;
+}
+.filter-simple-button.hollow.is-active,
+.filter-simple-button.hollow:focus,
+.filter-simple-button.hollow:hover,
+.filter-simple-button.hollow:active {
+    background-color: #5e5390;
+    color: #ee8373;
+    padding: 16px;
+    border: 1px solid #ee8373;
+    border-radius: 10px;
 }
 .icons {
     background-color: #ee8373;

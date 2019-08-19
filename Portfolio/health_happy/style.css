@@ -299,7 +299,7 @@ body {
   .hero-section .slick-arrow {
     position: absolute;
     bottom: 88px;
-    right: 160px;
+    right: 10%;
     z-index: 100;
     transform: translateY(-10%);
     padding: 0;
@@ -324,7 +324,7 @@ body {
     transform: translateY(-100%);
     display: flex;
     bottom: 100px;
-    left: 160px;
+    left: 10%;
     z-index: 100;
     padding: 0;
     font-size: 0; }
@@ -571,15 +571,15 @@ body {
     position: relative; }
     .footer-section .footer-section__container .footer-section__row {
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      align-items: center; }
       @media screen and (max-width: 1024px) {
         .footer-section .footer-section__container .footer-section__row {
           flex-direction: column; } }
       .footer-section .footer-section__container .footer-section__row .col-3 {
         width: calc(100% / 3 - 20px);
         display: flex;
-        justify-content: space-around;
-        align-items: center; }
+        justify-content: space-around; }
         @media screen and (max-width: 1024px) {
           .footer-section .footer-section__container .footer-section__row .col-3 {
             width: 100%; } }
@@ -634,8 +634,7 @@ body {
           .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item .footer-section__connection a:hover {
             color: #525759; }
           .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item .footer-section__navigation a:hover {
-            color: #7b8287;
-            font-size: large; }
+            color: #7b8287; }
       .footer-section .footer-section__container .footer-section__row .text-right {
         text-align: right;
         text-align: -webkit-right; }
@@ -649,10 +648,21 @@ body {
 .bookmark__promo-section {
   position: relative;
   min-height: 100vh; }
+  @media screen and (max-width: 540px) {
+    .bookmark__promo-section .col {
+      width: 100%;
+      text-align: center; } }
   .bookmark__promo-section .bookmark__promo-section__col {
     max-height: 100vh; }
     .bookmark__promo-section .bookmark__promo-section__col h1 {
-      color: #525759; }
+      color: #525759;
+      transition: font-size .9s ease; }
+      @media screen and (max-width: 1240px) {
+        .bookmark__promo-section .bookmark__promo-section__col h1 {
+          font-size: 2em; } }
+      @media screen and (max-width: 540px) {
+        .bookmark__promo-section .bookmark__promo-section__col h1 {
+          font-size: 1.5em; } }
     .bookmark__promo-section .bookmark__promo-section__col ul {
       display: flex;
       flex-wrap: wrap;
@@ -663,6 +673,9 @@ body {
         font-size: 16px;
         letter-spacing: .4rem;
         text-transform: uppercase; }
+        @media screen and (max-width: 540px) {
+          .bookmark__promo-section .bookmark__promo-section__col ul li {
+            color: #525759; } }
       .bookmark__promo-section .bookmark__promo-section__col ul li:after {
         content: '|';
         padding-right: 8px;
@@ -679,6 +692,9 @@ body {
       background-color: rgba(255, 255, 255, 0.2);
       height: 100vh;
       width: 100%; }
+      @media screen and (max-width: 540px) {
+        .bookmark__promo-section .about-bookmark__promo-section__col:first-child:before {
+          background-color: transparent; } }
   .bookmark__promo-section .blog-bookmark__promo-section__col:first-child {
     background: url("img/imani-clovis-23005-unsplash.jpg") no-repeat center;
     background-size: cover;
@@ -689,6 +705,9 @@ body {
       background-color: rgba(255, 255, 255, 0.2);
       height: 100vh;
       width: 100%; }
+      @media screen and (max-width: 540px) {
+        .bookmark__promo-section .blog-bookmark__promo-section__col:first-child:before {
+          background-color: transparent; } }
   .bookmark__promo-section .recipes-bookmark__promo-section__col:first-child {
     background: url("img/alexandra-golovac-781073-unsplash.jpg") no-repeat center;
     background-size: cover;
@@ -699,6 +718,9 @@ body {
       background-color: rgba(255, 255, 255, 0.2);
       height: 100vh;
       width: 100%; }
+      @media screen and (max-width: 540px) {
+        .bookmark__promo-section .recipes-bookmark__promo-section__col:first-child:before {
+          background-color: transparent; } }
   .bookmark__promo-section .contact-bookmark__promo-section__col:first-child {
     background: url("img/haley-phelps-119782-unsplash.jpg") no-repeat center;
     background-size: cover;
@@ -709,11 +731,24 @@ body {
       background-color: rgba(255, 255, 255, 0.2);
       height: 100vh;
       width: 100%; }
+      @media screen and (max-width: 540px) {
+        .bookmark__promo-section .contact-bookmark__promo-section__col:first-child:before {
+          background-color: transparent; } }
   .bookmark__promo-section .bookmark__promo-section__col:last-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    padding: 20px;
+    transition: background-color .9s ease; }
+    @media screen and (max-width: 1224px) {
+      .bookmark__promo-section .bookmark__promo-section__col:last-child {
+        width: 100%;
+        position: absolute;
+        min-height: 20%;
+        top: 50%;
+        transform: translate(0, -50%);
+        background-color: rgba(255, 255, 255, 0.8); } }
 
 .article-section {
   padding-top: 200px;
@@ -722,11 +757,23 @@ body {
   .article-section .article-section__container {
     display: flex;
     flex-direction: column; }
+    @media screen and (max-width: 948px) {
+      .article-section .article-section__container .article-section__row .col {
+        width: 80%; } }
     .article-section .article-section__container .article-section__row:first-child {
       margin-bottom: 157px; }
+      @media screen and (max-width: 948px) {
+        .article-section .article-section__container .article-section__row:first-child {
+          flex-direction: column-reverse; } }
       .article-section .article-section__container .article-section__row:first-child .article-section__col {
         display: flex;
         justify-content: flex-end; }
+        @media screen and (max-width: 948px) {
+          .article-section .article-section__container .article-section__row:first-child .article-section__col {
+            justify-content: center; } }
+    @media screen and (max-width: 948px) {
+      .article-section .article-section__container .article-section__row {
+        flex-direction: column; } }
     .article-section .article-section__container .article-section__row .article-section__col {
       align-self: center; }
       .article-section .article-section__container .article-section__row .article-section__col img {
@@ -734,6 +781,9 @@ body {
       .article-section .article-section__container .article-section__row .article-section__col .article-section_text-wrapper {
         max-width: calc(495px + 20%);
         padding: 10%; }
+        @media screen and (max-width: 948px) {
+          .article-section .article-section__container .article-section__row .article-section__col .article-section_text-wrapper {
+            width: 100%; } }
 
 .blog-section {
   padding: 130px 30px; }
@@ -762,9 +812,15 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
+      @media screen and (max-width: 948px) {
+        .blog-section .blog-section__container .blog-section__articles-wrapper {
+          flex-direction: column; } }
       .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item {
         width: calc(100%/2 - 40px);
         margin-bottom: 65px; }
+        @media screen and (max-width: 948px) {
+          .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item {
+            width: 100%; } }
         .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item img {
           opacity: .8; }
         .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description {
@@ -839,6 +895,12 @@ body {
         width: calc(100% / 3 - 40px);
         margin-bottom: 35px;
         position: relative; }
+        @media screen and (max-width: 1240px) {
+          .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item {
+            width: calc(100% / 2 - 40px); } }
+        @media screen and (max-width: 769px) {
+          .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item {
+            width: 100%; } }
         .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item img {
           opacity: .8; }
         .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item .recipes-bookmark__articles-section_recipes-item_description {
@@ -929,10 +991,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
+    @media screen and (max-width: 948px) {
+      .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper {
+        flex-direction: column; } }
     .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item {
       width: calc(100% / 2 - 40px);
       margin-bottom: 65px;
       position: relative; }
+      @media screen and (max-width: 948px) {
+        .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item {
+          width: 100%; } }
       .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item img {
         opacity: .8; }
       .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item .blog-detail__more-articles_item-title {
@@ -985,11 +1053,23 @@ body {
         margin-bottom: 84px;
         border-bottom: 1px solid #cbbcb8;
         padding-bottom: 50px; }
+        @media screen and (max-width: 769px) {
+          .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row:first-of-type {
+            margin-bottom: 21px; } }
       .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col {
         width: calc(100% / 2 - 40px); }
+        @media screen and (max-width: 1240px) {
+          .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col {
+            width: calc(100% / 2 - 20px); } }
+        @media screen and (max-width: 769px) {
+          .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col {
+            width: 100%; } }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col h2 {
           max-width: 613px;
           margin-bottom: 46px; }
+          @media screen and (max-width: 769px) {
+            .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col h2 {
+              margin-top: 21px; } }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col h4 {
           color: #7b8287;
           font-family: "Chronicle Display Roman";
@@ -998,6 +1078,9 @@ body {
           line-height: 1.1;
           text-transform: uppercase;
           margin-bottom: 36px; }
+          @media screen and (max-width: 1240px) {
+            .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col h4 {
+              margin-top: 21px; } }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col .title {
           color: #cbbcb8;
           font-size: 16px;
@@ -1008,6 +1091,9 @@ body {
           color: #525759;
           line-height: 1.5;
           margin-bottom: 131px; }
+          @media screen and (max-width: 1240px) {
+            .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col p {
+              margin-bottom: 61px; } }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col .recipes-detail__article_cook-info {
           display: flex;
           justify-content: space-around;
@@ -1060,6 +1146,9 @@ body {
       width: calc(100% / 2 - 40px);
       margin-bottom: 65px;
       position: relative; }
+      @media screen and (max-width: 948px) {
+        .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item {
+          width: 100%; } }
       .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item img {
         opacity: .8;
         max-height: 360px;
@@ -1095,8 +1184,14 @@ body {
     max-width: 1290px;
     display: flex;
     justify-content: space-between; }
+    @media screen and (max-width: 948px) {
+      .contact-form__section .contact-form__section__container {
+        flex-direction: column; } }
     .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper {
       width: calc(100% / 2 - 40px); }
+      @media screen and (max-width: 948px) {
+        .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper {
+          width: 100%; } }
       .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper h2 {
         margin-bottom: 42px; }
       .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper .contact-form__section_form-wrapper {

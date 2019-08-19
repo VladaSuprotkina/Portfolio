@@ -386,7 +386,7 @@ body {
   .slick-arrow {
     position: absolute;
     bottom: 88px;
-    right: 160px;
+    right: 10%;
     z-index: 100;
     transform: translateY(-10%);
     padding: 0;
@@ -401,7 +401,6 @@ body {
     cursor: pointer;
     outline: none;
     transition: background-color .25s ease-in-out;
-
   }
   .slick-next {
     background-image: url("img/next.svg");
@@ -416,7 +415,7 @@ body {
     transform: translateY(-100%);
     display: flex;
     bottom: 100px;
-    left: 160px;
+    left: 10%;
     z-index: 100;
     padding: 0;
     font-size: 0;
@@ -720,6 +719,7 @@ body {
     .footer-section__row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       @media screen and (max-width: 1024px) {
         flex-direction: column;
 
@@ -728,7 +728,6 @@ body {
   width: calc(100% / 3 - 20px);
   display: flex;
   justify-content: space-around;
-  align-items: center;
         @media screen and (max-width: 1024px) {
           width: 100%;
         }
@@ -811,7 +810,6 @@ body {
 
     .footer-section__navigation a:hover {
       color: $base-gray-links;
-      font-size: large;
     }
   }
 }
@@ -835,21 +833,39 @@ body {
 .bookmark__promo-section {
   position: relative;
   min-height: 100vh;
+  .col {
+    @media screen and (max-width: 540px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
   .bookmark__promo-section__col {
+
     max-height: 100vh;
     h1 {
       color: $base-gray-text;
+      transition: font-size .9s ease;
+      @media screen and (max-width: $desktop) {
+        font-size: 2em;
+      }
+      @media screen and (max-width: 540px) {
+        font-size: 1.5em;
+      }
     }
     ul {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 8px;
+
       li {
         color: $base-decor;
         font-size: 16px;
         letter-spacing: .4rem;
         text-transform: uppercase;
+        @media screen and (max-width: 540px) {
+          color: $base-gray-text;
+        }
       }
       li:after {
         content: '|';
@@ -876,6 +892,9 @@ body {
       background-color: $base-white-trans;
       height: 100vh;
       width: 100%;
+      @media screen and (max-width: 540px) {
+        background-color: transparent;
+      }
     }
   }
   .blog-bookmark__promo-section__col:first-child {
@@ -888,6 +907,9 @@ body {
       background-color: $base-white-trans;
       height: 100vh;
       width: 100%;
+      @media screen and (max-width: 540px) {
+        background-color: transparent;
+      }
     }
   }
   .recipes-bookmark__promo-section__col:first-child{
@@ -900,6 +922,9 @@ body {
         background-color: $base-white-trans;
         height: 100vh;
         width: 100%;
+        @media screen and (max-width: 540px) {
+          background-color: transparent;
+        }
       }
   }
   .contact-bookmark__promo-section__col:first-child{
@@ -912,6 +937,9 @@ body {
       background-color: $base-white-trans;
       height: 100vh;
       width: 100%;
+      @media screen and (max-width: 540px) {
+        background-color: transparent;
+      }
     }
   }
   //
@@ -923,6 +951,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    transition: background-color .9s ease;
+    @media screen and (max-width: 1224px) {
+      width: 100%;
+      position: absolute;
+      min-height: 20%;
+      top: 50%;
+      transform: translate(0, -50%);
+      background-color: $base-white-bg;
+    }
   }
 }
 .article-section {
@@ -933,12 +971,26 @@ body {
     display: flex;
     flex-direction: column;
     .article-section__row {
+      .col {
+        @media screen and (max-width: 948px) {
+          width: 80%;
+        }
+      }
       &:first-child {
         margin-bottom: 157px;
+        @media screen and (max-width: 948px) {
+          flex-direction: column-reverse;
+        }
         .article-section__col {
           display: flex;
           justify-content: flex-end;
+          @media screen and (max-width: 948px) {
+            justify-content: center;
+          }
         }
+      }
+      @media screen and (max-width: 948px) {
+        flex-direction: column;
       }
       .article-section__col {
         align-self: center;
@@ -948,6 +1000,9 @@ body {
         .article-section_text-wrapper {
           max-width: calc(495px + 20%);
           padding: 10%;
+          @media screen and (max-width: 948px) {
+            width: 100%;
+          }
         }
       }
     }
@@ -985,9 +1040,15 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media screen and (max-width: 948px) {
+        flex-direction: column;
+      }
       .blog-section__article-item {
         width: calc(100%/2 - 40px);
         margin-bottom: 65px;
+        @media screen and (max-width: 948px) {
+          width: 100%;
+        }
         img {
           opacity: .8;
         }
@@ -1088,10 +1149,17 @@ body {
       flex-wrap: wrap;
       justify-content: space-between;
 
+
       .recipes-bookmark__articles-section_recipes-item {
         width: calc(100% / 3 - 40px);
         margin-bottom: 35px;
         position: relative;
+        @media screen and (max-width: $desktop) {
+          width: calc(100% / 2 - 40px);
+        }
+        @media screen and (max-width: $tablet) {
+          width: 100%;
+        }
         img {
           opacity: .8;
         }
@@ -1204,8 +1272,14 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media screen and (max-width: 948px) {
+        flex-direction: column;
+      }
       .blog-detail__more-articles_item {
         width: calc(100% / 2 - 40px);
+        @media screen and (max-width: 948px) {
+          width: 100%;
+        }
         margin-bottom: 65px;
         position: relative;
         img {
@@ -1273,12 +1347,24 @@ body {
           margin-bottom: 84px;
           border-bottom: 1px solid $base-decor;
           padding-bottom: 50px;
+          @media screen and (max-width: $tablet) {
+           margin-bottom: 21px;
+          }
         }
         .col {
           width: calc(100% / 2 - 40px);
+          @media screen and (max-width: $desktop) {
+            width: calc(100% / 2 - 20px);
+          }
+          @media screen and (max-width: $tablet) {
+            width: 100%;
+          }
           h2 {
             max-width: 613px;
             margin-bottom: 46px;
+            @media screen and (max-width: $tablet) {
+              margin-top: 21px;
+            }
           }
           h4 {
             color: $base-gray-links;
@@ -1288,6 +1374,9 @@ body {
             line-height: 1.1;
             text-transform: uppercase;
             margin-bottom: 36px;
+            @media screen and (max-width: $desktop) {
+              margin-top: 21px;
+            }
           }
           .title {
             color: $base-decor;
@@ -1300,6 +1389,9 @@ body {
             color: $base-gray-text;
             line-height: 1.5;
             margin-bottom: 131px;
+            @media screen and (max-width: $desktop) {
+              margin-bottom: 61px;
+            }
           }
           .recipes-detail__article_cook-info {
             display: flex;
@@ -1374,6 +1466,9 @@ body {
         width: calc(100% / 2 - 40px);
         margin-bottom: 65px;
         position: relative;
+        @media screen and (max-width: 948px) {
+          width: 100%;
+        }
         img {
           opacity: .8;
           max-height: 360px;
@@ -1417,9 +1512,14 @@ body {
     max-width: 1290px;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 948px) {
+      flex-direction: column;
+    }
     .contact-form__section__col-wrapper {
       width: calc(100% / 2 - 40px);
-
+      @media screen and (max-width: 948px) {
+        width: 100%;
+      }
       h2 {
         margin-bottom: 42px;
       }
