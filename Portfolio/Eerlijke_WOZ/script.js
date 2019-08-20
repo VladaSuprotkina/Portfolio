@@ -3,7 +3,7 @@ var currentImageIndex = 0;
 var maxImageIndex = imagesArray.length;
 
 setInterval(function(){
-    var slideShowElement = $('.top-slide');
+    var slideShowElement = $('.intro-section');
     var currentImageName = imagesArray[currentImageIndex];
     slideShowElement.css('background-image', 'url(img/bg/Rectangle.png), url(img/bg/' + currentImageName + ')');
     slideShowElement.focusin();
@@ -40,4 +40,7 @@ $('[data-comment]').click(function(){
     $('.reviews').find('p').html(currentComment.comment);
     $('.reviews').find('span').html(currentComment.author);
     
+});
+$('.sub-menu').on('click', function () {
+    $('.header-section__navigation_sub-menu').toggleClass('open-menu');
 });
