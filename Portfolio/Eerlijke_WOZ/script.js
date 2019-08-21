@@ -1,18 +1,18 @@
-var imagesArray = ['second-main.jpg', 'first-main.jpg'];
-var currentImageIndex = 0;
-var maxImageIndex = imagesArray.length;
-
-setInterval(function(){
-    var slideShowElement = $('.intro-section');
-    var currentImageName = imagesArray[currentImageIndex];
-    slideShowElement.css('background-image', 'url(img/bg/Rectangle.png), url(img/bg/' + currentImageName + ')');
-    slideShowElement.focusin();
-    currentImageIndex++;
-    if(currentImageIndex == maxImageIndex) {
-        currentImageIndex = 0;
-    }
-}, 5000);
-
+// var imagesArray = ['second-main.jpg', 'first-main.jpg'];
+// var currentImageIndex = 0;
+// var maxImageIndex = imagesArray.length;
+//
+// setInterval(function(){
+//     var slideShowElement = $('.intro-section');
+//     var currentImageName = imagesArray[currentImageIndex];
+//     slideShowElement.css('background-image', 'url(../img/bg/Rectangle.png), url(../img/bg/' + currentImageName + ')');
+//     slideShowElement.focusin();
+//     currentImageIndex++;
+//     if(currentImageIndex == maxImageIndex) {
+//         currentImageIndex = 0;
+//     }
+// }, 5000);
+//
 
 
 var commentsArray = [{comment:'lorem ipsum 1', author:'Liza Podliza, Amsterdam'}, {comment:'lorem ipsum 2', author:'Vlada Dorada, IJ'}, {comment:'lorem ipsum 3', author:'Meshok Kishok, Den Haag'}];
