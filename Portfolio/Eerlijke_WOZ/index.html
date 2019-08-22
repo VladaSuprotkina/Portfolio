@@ -49,6 +49,35 @@
                     </li>
                 </ul>
             </nav>
+            <nav class="header-section__navigation-wrapper-mobile">
+                <ul class="header-section__navigation">
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link" href="#home">Home</a></li>
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link sub-menu" href="#sub-menu">Alles over WOZ
+                            <svg aria-hidden="true" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/></svg>
+                        </a>
+                        <ul class="header-section__navigation_sub-menu">
+                            <li><a class="nav-link" href="#" target="_blank">Wat is WOZ</a></li>
+                            <li><a class="nav-link" href="#" target="_blank">WOZ verlagen</a></li>
+                            <li><a class="nav-link" href="#" target="_blank">WOZ verhogen</a></li>
+                            <li><a class="nav-link" href="#" target="_blank">WOZ bezwaar</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link" href="#">WOZ-nieuws</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link" href="#">Gemeentes</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link" href="#">Over ons</a>
+                    </li>
+                    <li class="header-section__navigation-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
@@ -57,7 +86,8 @@
     <section class="intro-section" id="home">
         <div class="intro-section__container container">
             <div class="intro-section__row">
-                <div class="intro-section__caption">
+                <div class="intro-section-wrapper">
+                    <div class="intro-section__caption">
                     <h1>1,6 miljoen te hoge<br>WOZ-waardes in 2019</h1>
                     <p>Wist u dat er een grote kans bestaat dat u te veel belasting betaalt door een te hoge WOZ-waarde? Dat blijkt uit ons landelijk WOZ-onderzoek. Controleer uw WOZ-waarde eenvoudig en snel met onze gratis WOZ Check. U ziet dan direct hoeveel u kunt besparen.</p>
                     <ul class="intro-section__caption-buttons">
@@ -65,7 +95,9 @@
                         <li><a href="#" class="btn-primary">Bekijk ons onderzoek</a></li>
                     </ul>
                 </div>
-                <div class="intro-section__outer-form">
+                </div>
+                <div class="intro-section-wrapper">
+                    <div class="intro-section__outer-form">
                     <div class="intro-section__outer-form_description-text">
                         <h2>Doe hier de gratis<br>WOZ Check.</h2>
                         <p>Een taxatie van de WOZ-waarde van uw woning binnen enkele stappen. Bekijk hier direct uw mogelijke besparing en maak eventueel gratis bezwaar.</p>
@@ -73,12 +105,12 @@
                     <form action="">
                         <label for="woonsituatie">Woonsituatie:</label>
                         <select id="woonsituatie" name="woonsituatie" class="input-field dropdown"><span class="caret-down"></span>
-                                    <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
-                                    <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
-                                    <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
-                                    <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
-                                    <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
-                                </select>
+                            <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
+                            <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
+                            <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
+                            <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
+                            <option value="eigenaar">Ik ben de (mede-) eigenaar.</option>
+                        </select>
                         <div class="form-row">
                             <div class="col-3">
                                 <label for="postcode">Postcode</label>
@@ -97,6 +129,8 @@
                     </form>
                     <a href="#" class="btn">Doe de gratis check</a>
                 </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -162,7 +196,7 @@
         </div>
     </section>
 <!--  custom section  -->
-    <section class="custom-section" id="nieuws">
+    <section class="custom-section">
             <div class="custom-section__container container">
                 <div class="custom-section__row row">
                     <div class="custom-section__review-wrapper col">
@@ -173,11 +207,11 @@
                         </blockquote>
                         <ul class="custom-section__review-switches">
                             <li>
-                                <a href="">
+                                <a>
                                     <svg class="bg-arrow long-arrow-alt-left" data-comment='left' viewBox="0 0 448 512"><path d="M134 296h302a12 12 0 0 0 12-12v-56a12 12 0 0 0-12-12H134v-46a24 24 0 0 0-41-17L7 239a24 24 0 0 0 0 34l86 86a24 24 0 0 0 41-17v-46z"/></svg>
                                 </a>
                             </li>
-                            <li><a href="">
+                            <li><a>
                                 <svg class="bg-arrow" data-comment='right' viewBox="0 0 448 512"><path d="M314 216H12a12 12 0 0 0-12 12v56a12 12 0 0 0 12 12h302v46a24 24 0 0 0 41 17l86-86a24 24 0 0 0 0-34l-86-86a24 24 0 0 0-41 17v46z"/></svg>
                             </a></li>
                         </ul>
@@ -195,7 +229,7 @@
             </div>
     </section>
 <!--  holding section  -->
-    <section class="holding-section" id="gemeentes">
+    <section class="holding-section">
         <div class="holding-section__wrapper">
             <div class="holding-section__container container">
             <div class="holding-section__row row">
@@ -255,8 +289,6 @@
         </div>
         </div>
     </section>
-
-
 <!--  survey section  -->
     <section class="survey-section">
         <div class="survey-section__container container">
@@ -264,7 +296,7 @@
                 <h2>Het Jaarlijkse WOZ<br>Onderzoek.</h2>
                 <p>Eerlijke WOZ heeft voor het jaar 2019 onderzocht of de WOZ-waarde van woningen in Nederland juist zijn.</p>
                 <p>Op basis van ons taxatiesysteem, dat wij conform de Wet WOZ en jurisprudentie hebben ontworpen, hebben wij de eerlijke WOZ-waarde berekend en die vergeleken met de WOZ-waarde van de gemeente.<br>Bij een grote afwijking nemen wij aan dat de WOZ-waarde zoals door gemeente is vastgesteld onjuist is.</p>
-                <button>Bekijk de uitkomsten</button>
+                <a href="#" class="btn">Bekijk de uitkomsten</a>
             </div>
             <div class="survey-section__description-img">
                 <img src="img/illustration/woz-illustration-1.png" alt="">
@@ -278,11 +310,11 @@
 </div>
 
 <!--  footer  -->
-<footer class="footer-section" id="contact">
-    <div class="footer-section__container container">
-        <div class="footer-section__sitemap_row row">
-            <div class="footer-section__col"></div>
-            <div class="footer-section__col">
+<footer class="footer-section">
+        <div class="footer-section__sitemap_row">
+            <div class="footer-section__container container">
+            <div class="footer-section__col-2"></div>
+            <div class="footer-section__col-10">
                 <div class="footer-section__sitemap_item">
                     <a href="#home"><img src="img/Bitmap.png" alt="Eerlijke WOZ"></a>
                     <p>Iedereen verdient een eerlijke<br>WOZ-waarde. Met onze WOZ Check voorkomt u gratis en eenvoudig dat u te veel betaalt.</p>
@@ -320,14 +352,16 @@
                     <form action="">
                         <input name="email" id="email" class="email-holder" type="email" placeholder="Uw email..." required>
                         <a href="" class="btn">Verzenden
-                            <svg class="btn-arrow" viewBox="0 0 31.5 31.5"><path d="M21.2 5c-.4-.4-1.1-.4-1.6 0-.4.4-.4 1.1 0 1.6l8 8H1.2c-.6 0-1.1.5-1.1 1.1 0 .7.5 1.2 1.1 1.2h26.6l-8 8c-.5.4-.5 1.2 0 1.6.4.4 1 .4 1.5 0l10-10a1 1 0 0 0 0-1.5l-10-10z"/></svg>
+                            <svg viewBox="0 0 31.5 31.5"><path fill="currentColor" d="M21.2 5c-.4-.4-1.1-.4-1.6 0-.4.4-.4 1.1 0 1.6l8 8H1.2c-.6 0-1.1.5-1.1 1.1 0 .7.5 1.2 1.1 1.2h26.6l-8 8c-.5.4-.5 1.2 0 1.6.4.4 1 .4 1.5 0l10-10a1 1 0 0 0 0-1.5l-10-10z"/></svg>
                         </a>
                     </form>
                 </div>
             </div>
+            </div>
         </div>
-        <div class="footer-section__contact_row row">
-            <div class="footer-section__col">
+        <div class="footer-section__contact_row">
+            <div class="footer-section__container container">
+            <div class="footer-section__col-2">
                 <ul class="footer-section__contact-item">
                     <li><a href="#" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9" height="20"><path fill="#233488" d="M9 6.491l-.355 3.52H5.941V20H1.906v-9.989H0v-3.52h1.906V4.206c0-.656.104-1.257.31-1.806.267-.716.673-1.272 1.22-1.669C4.101.244 4.943 0 5.963 0l2.993.023V3.45H6.783a.842.842 0 0 0-.554.183c-.192.168-.288.427-.288.777v2.08z"/></svg>
@@ -344,16 +378,15 @@
                 </ul>
             </div>
 
-            <div class="footer-section__col">
+            <div class="footer-section__col-10">
                 <ul class="footer-section__contact-item">
                     <li>Privacy Policy</li>
                     <li>Algemene Voorwaarden</li>
-                    <li>© Copyright 2018, Eerlijke WOZ B.V.</li>
+                    <li>&copy; Copyright 2018, Eerlijke WOZ B.V.</li>
                 </ul>
             </div>
-
+            </div>
         </div>
-    </div>
 </footer>
 
 
