@@ -99,7 +99,7 @@ textarea {
     line-height: 1.3;
     text-transform: uppercase;
     padding: 15px 30px;
-    white-space: nowrap;
+    transition: color .5s ease-in-out;
 }
 .btn:hover {
     border: 1px solid #ffffff;
@@ -135,6 +135,8 @@ textarea {
 }
 .column-2:only-of-type {
     width: 100%;
+    text-align: center;
+    padding-left: 0;
 }
 .pagination {
     display: block;
@@ -274,9 +276,10 @@ a.links:hover {
 }
 .nav-bar_nav li {
     padding: 3px 30px 10px 21px;
+    cursor: pointer;
 }
 .nav-bar_nav li:before {
-    display: inline-block;
+    display: inline;
     content: '';
     width: 10px;
     height: 3px;
@@ -290,6 +293,8 @@ a.links:hover {
     font-weight: 700;
     letter-spacing: .07rem;
     line-height: 20px;
+    width: 100%;
+    display: inline;
 }
 .nav-bar_nav li:hover {
     border-radius: 20px;
@@ -339,7 +344,11 @@ a.links:hover {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .07rem;
-    line-height: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .scrolled .active:before,
@@ -455,11 +464,11 @@ a.links:hover {
     margin: 0 auto;
 }
 
-.about_section_description h1 {
+.about_section_wrapper h1 {
     color: #135334;
     padding-bottom: 20px;
 }
-.about_section_description p {
+.about_section_wrapper p {
     color: #0d4027;
     padding-bottom: 20px;
 }
@@ -653,15 +662,15 @@ a.links:hover {
 .buyers_section_first-column_parallax-element {
     position: absolute;
     display: block;
-    z-index: 1;
     top: 50%;
     left: -15%;
+    z-index: 1;
 
 }
 .suppliers_section_first-column_parallax-element {
     position: absolute;
     display: block;
-    top: 65%;
+    top: 75%;
     left: -15%;
     z-index: 1;
 }
@@ -747,7 +756,7 @@ a.links:hover {
 }
 .slick-initialized .slick-slide {
     display: flex !important;
-    height: 510px;
+    min-height: 510px;
 }
 .news_section_img {
     display: block;
@@ -766,7 +775,7 @@ a.links:hover {
 }
 .news_section_second-column {
     width: 70%;
-    max-height: 510px;
+    min-height: 510px;
 }
 .news_section_second-column_description {
     background-color: #ffffff;
@@ -921,7 +930,7 @@ input[type="checkbox"]:checked {
 .dropdown {
     display: inline;
     width: 100%;
-    background: url('../img/dropdown.svg') no-repeat 95% 50%;
+    background: url('../img/dropdown.svg') no-repeat 98% 50%;
     background-size: 13px;
 }
 option {
@@ -1024,18 +1033,21 @@ option {
         flex-direction: column;
         align-items: flex-end;
     }
+    .suppliers_section_description,
+    .buyers_section_description,
+    .leader_section_description {
+        max-width: 100%;
+    }
     .leader_section_wrapper-row {
         flex-wrap: wrap;
     }
     .leader_section_wrapper-row:last-child {
         flex-direction: column-reverse;
     }
-
-    .leader_section_second-column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    .leader_section_img {
+        max-width: 100%;
     }
+
     .leader_section_second-column,
     .leader_section_first-column {
         padding-bottom: 20px;
@@ -1050,7 +1062,7 @@ option {
     }
     .news_section_second-column {
         width: 100%;
-        height: 560px;
+        min-height: 560px;
     }
     .news_section_description {
         padding-bottom: 50px;
@@ -1060,7 +1072,7 @@ option {
         flex-direction: column;
     }
     .slick-initialized .slick-slide {
-        height: 560px;
+        min-height: 560px;
 
     }
     .news_section_wrapper {
@@ -1069,7 +1081,8 @@ option {
     .news_section_img {
         display: block;
         width: 100%;
-        height: 235px;
+        min-height: 235px;
+        padding-top: 50%;
     }
     .news_section_second-column_description {
         width: 100%;
@@ -1094,8 +1107,8 @@ option {
     }
     .suppliers_section_first-column_parallax-element,
     .buyers_section_first-column_parallax-element {
-        top: 120%;
-        left: -40%;
+        top: 140%;
+        left: -45%;
     }
     .footer_section-container {
         padding: 36px 72px;
