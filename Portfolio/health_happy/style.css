@@ -43,7 +43,8 @@ body {
   body li {
     list-style: none; }
   body a:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    transition: all .3s ease-in-out; }
   body article, body aside, body figcaption, body figure, body footer, body header, body hgroup, body main, body nav, body section {
     display: block; }
   body img {
@@ -94,7 +95,6 @@ body {
   body a.btn {
     position: relative;
     display: inline-block;
-    white-space: nowrap;
     transition: all .5s; }
     body a.btn, body a.btn::after, body a.btn::before {
       transition: all .5s; }
@@ -130,17 +130,27 @@ body {
     letter-spacing: .4rem;
     color: #ffffff;
     text-transform: uppercase; }
+    @media screen and (max-width: 320px) {
+      body h1 {
+        font-size: 22px; } }
   body h2 {
     font-size: 30px;
     font-family: "Chronicle Display Roman";
     letter-spacing: .4rem;
     color: #525759;
     text-transform: uppercase; }
+    @media screen and (max-width: 320px) {
+      body h2 {
+        font-size: 18px; } }
   body p {
     font-size: 16px;
     font-family: "Apercu Light";
     line-height: 1.75;
-    color: #a2a9b0; }
+    color: #a2a9b0;
+    margin-bottom: 20px; }
+    @media screen and (max-width: 320px) {
+      body p {
+        font-size: 14px; } }
   body .slick-initialized,
   body .slick-slider,
   body .slick-list,
@@ -190,23 +200,35 @@ body {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+          transition: background-color .5s ease; }
           .header-section .header-section__container .header-section__row .nav-bar_toggler .nav-bar_toggler-icon::before {
             content: '';
             height: 2px;
             width: 27px;
             background-color: #ffffff;
             position: absolute;
-            top: -10px; }
+            top: -10px;
+            transition: .5s ease; }
           .header-section .header-section__container .header-section__row .nav-bar_toggler .nav-bar_toggler-icon::after {
             content: '';
             height: 2px;
             width: 27px;
             background-color: #ffffff;
             position: absolute;
-            top: 10px; }
+            top: 10px;
+            transition: .5s ease; }
+        .header-section .header-section__container .header-section__row .nav-bar_toggler .active-nav-bar {
+          background-color: transparent; }
+          .header-section .header-section__container .header-section__row .nav-bar_toggler .active-nav-bar::before {
+            transform: rotate(45deg);
+            top: 0; }
+          .header-section .header-section__container .header-section__row .nav-bar_toggler .active-nav-bar::after {
+            transform: rotate(-45deg);
+            top: 0; }
       .header-section .header-section__container .header-section__row .header-section__brand-logo {
-        max-width: 435px; }
+        max-width: 435px;
+        padding-right: 10px; }
         @media screen and (max-width: 769px) {
           .header-section .header-section__container .header-section__row .header-section__brand-logo {
             max-width: 235px; } }
@@ -236,11 +258,8 @@ body {
             .header-section .header-section__container .header-section__row .open.open-menu {
               right: 30px; } }
           .header-section .header-section__container .header-section__row .open.open-menu ul {
-            display: flex;
-            flex-direction: column;
-            text-align: right; }
-            .header-section .header-section__container .header-section__row .open.open-menu ul li {
-              line-height: 20px; }
+            text-align: right;
+            mix-blend-mode: difference; }
 
 .scrolled {
   background-image: linear-gradient(180deg, #959595 0%, rgba(238, 234, 234, 0.5) 100%); }
@@ -330,7 +349,7 @@ body {
 
 .intro-section {
   position: relative;
-  min-height: 979px;
+  min-height: 80vh;
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
@@ -379,10 +398,13 @@ body {
       font-size: 35px;
       line-height: 1.4;
       margin-bottom: 54px; }
+      @media screen and (max-width: 320px) {
+        .breathe-section .breathe-section__container h2 {
+          font-size: 20px; } }
 
 .time-section {
   position: relative;
-  min-height: 979px;
+  min-height: 90vh;
   background-color: #ffffff;
   display: flex;
   align-items: center; }
@@ -426,6 +448,8 @@ body {
   justify-content: center;
   margin-top: 34px;
   margin-bottom: 114px; }
+  .recipes-section .recipes-section__container .slick-slider .slick-dots li:hover button:before {
+    background-color: #525759; }
   .recipes-section .recipes-section__container .slick-slider .slick-dots button:before {
     content: '';
     width: 8px;
@@ -461,7 +485,7 @@ body {
     min-width: 80%;
     min-height: 319px;
     padding: 8%; }
-    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title small {
+    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title .title {
       color: #cbbcb8;
       font-size: 12px;
       letter-spacing: .25rem;
@@ -469,7 +493,7 @@ body {
       text-transform: uppercase;
       display: block;
       margin-bottom: 31px; }
-    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title strong {
+    .recipes-section .recipes-section__container .recipes-section__item .recipes-section__item-title .recipes-section__item-title_recipe-name {
       color: #525759;
       font-family: "Chronicle Display Roman";
       font-size: 30px;
@@ -482,7 +506,7 @@ body {
 .quote-section {
   background: url("img/alexandre-chambon-140035-unsplash_(1).jpg") no-repeat center;
   background-size: cover;
-  min-height: 761px;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -491,26 +515,30 @@ body {
   .quote-section .quote-section__container {
     max-width: 723px;
     padding: 0 30px; }
-    .quote-section .quote-section__container svg {
-      margin-bottom: 112px; }
-    .quote-section .quote-section__container p {
-      margin-bottom: 57px;
-      color: #ffffff;
-      font-family: "Apercu Light";
-      font-size: 22px;
-      font-weight: 300;
-      line-height: 1.59; }
-    .quote-section .quote-section__container cite {
-      font-style: normal;
-      color: #ffffff;
-      font-family: "Verlag-Book";
-      font-size: 16px;
-      font-weight: 300;
-      letter-spacing: .25rem;
-      text-transform: uppercase; }
+    .quote-section .quote-section__container .quote-section__item {
+      position: relative; }
+      .quote-section .quote-section__container .quote-section__item::before {
+        content: url("img/quote.svg");
+        display: block;
+        margin-bottom: 112px; }
+      .quote-section .quote-section__container .quote-section__item p {
+        margin-bottom: 57px;
+        color: #ffffff;
+        font-family: "Apercu Light";
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.59; }
+      .quote-section .quote-section__container .quote-section__item cite {
+        font-style: normal;
+        color: #ffffff;
+        font-family: "Verlag-Book";
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: .25rem;
+        text-transform: uppercase; }
 
 .consultation-section {
-  min-height: 780px;
+  min-height: 70vh;
   background: url("img/247-layers.png") no-repeat center;
   display: flex;
   align-items: center;
@@ -520,7 +548,7 @@ body {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
-    min-height: 780px; }
+    min-height: 70vh; }
   .consultation-section .consultation-section__container {
     z-index: 1;
     width: 1290px;
@@ -566,6 +594,9 @@ body {
         @media screen and (max-width: 1024px) {
           .footer-section .footer-section__container .footer-section__row .col-3 {
             width: 100%; } }
+        @media screen and (max-width: 320px) {
+          .footer-section .footer-section__container .footer-section__row .col-3 {
+            display: block; } }
         .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item {
           padding: 10px; }
           .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item .footer-section__title {
@@ -607,7 +638,8 @@ body {
             font-size: 12px; }
           .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item .footer-section__address {
             line-height: 1.6;
-            max-width: 114px; }
+            max-width: 114px;
+            font-style: normal; }
           .footer-section .footer-section__container .footer-section__row .col-3 .footer-section__item .footer-section__connection {
             display: flex;
             flex-direction: column; }
@@ -658,7 +690,8 @@ body {
         text-transform: uppercase; }
         @media screen and (max-width: 540px) {
           .bookmark__promo-section .bookmark__promo-section__col ul li {
-            color: #525759; } }
+            color: #525759;
+            font-size: 14px; } }
       .bookmark__promo-section .bookmark__promo-section__col ul li:after {
         content: '|';
         padding-right: 8px;
@@ -764,6 +797,8 @@ body {
       .article-section .article-section__container .article-section__row .article-section__col .article-section_text-wrapper {
         max-width: calc(495px + 20%);
         padding: 10%; }
+        .article-section .article-section__container .article-section__row .article-section__col .article-section_text-wrapper h2 {
+          margin-bottom: 50px; }
         @media screen and (max-width: 948px) {
           .article-section .article-section__container .article-section__row .article-section__col .article-section_text-wrapper {
             width: 100%; } }
@@ -805,18 +840,18 @@ body {
           .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item {
             width: 100%; } }
         .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item img {
-          opacity: .8; }
+          opacity: .8;
+          margin-bottom: 25px; }
         .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description {
-          margin-top: 25px;
           font-family: "Apercu Light";
           letter-spacing: .03rem; }
-          .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description small {
+          .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description strong {
             display: block;
             color: #cbbcb8;
             font-size: 10px;
             line-height: 2.5;
             margin-bottom: 19px; }
-            .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description small strong {
+            .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description strong b {
               color: #7b8287; }
           .blog-section .blog-section__container .blog-section__articles-wrapper .blog-section__article-item .blog-section__article-item_description h5 {
             color: #525759;
@@ -833,23 +868,24 @@ body {
           letter-spacing: .25rem;
           line-height: 2.3;
           text-transform: uppercase; }
-    .blog-section .blog-section__container .blog-detail__article-wrapper small {
+    .blog-section .blog-section__container .blog-detail__article-wrapper strong {
       display: block;
       color: #cbbcb8;
       font-size: 10px;
       line-height: 2.5;
       margin-bottom: 19px; }
-      .blog-section .blog-section__container .blog-detail__article-wrapper small strong {
+      .blog-section .blog-section__container .blog-detail__article-wrapper strong b {
         color: #7b8287; }
+    .blog-section .blog-section__container .blog-detail__article-wrapper p {
+      margin-bottom: 55px; }
     .blog-section .blog-section__container .blog-detail__article-wrapper .blog-detail__article-rubric h5 {
-      margin-top: 60px;
       color: #525759; }
     .blog-section .blog-section__container .blog-detail__article-wrapper .blog-detail__article-rubric p {
       font-size: 16px;
       margin-bottom: 25px; }
     .blog-section .blog-section__container .blog-detail__article-wrapper .blog-detail__article-rubric img {
-      margin-top: 55px;
-      opacity: .8; }
+      opacity: .8;
+      margin-bottom: 60px; }
     .blog-section .blog-section__container .blog-detail__article-wrapper .blog-detail__article-wrapper_share-links {
       display: flex;
       width: 150px;
@@ -897,11 +933,18 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: space-around; }
+          @media screen and (max-width: 320px) {
+            .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item .recipes-bookmark__articles-section_recipes-item_description {
+              position: relative; } }
           .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item .recipes-bookmark__articles-section_recipes-item_description h5 {
             color: #525759;
             font-size: 16px;
             letter-spacing: .03rem;
             margin-bottom: 20px; }
+            @media screen and (max-width: 600px) {
+              .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item .recipes-bookmark__articles-section_recipes-item_description h5 {
+                font-size: 16px;
+                margin-bottom: 20px; } }
           .recipes-bookmark__articles-section .recipes-bookmark__articles-section__container .recipes-bookmark__articles-section_recipes-wrapper .recipes-bookmark__articles-section_recipes-item .recipes-bookmark__articles-section_recipes-item_description p {
             font-size: 13px;
             line-height: 1.5; }
@@ -994,11 +1037,18 @@ body {
         background-color: rgba(255, 255, 255, 0.8);
         min-height: 165px;
         padding: 5%; }
+        @media screen and (max-width: 600px) {
+          .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item .blog-detail__more-articles_item-title {
+            position: relative; } }
         .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item .blog-detail__more-articles_item-title h5 {
           color: #525759;
           font-size: 20px;
           letter-spacing: .03rem;
           margin-bottom: 40px; }
+          @media screen and (max-width: 600px) {
+            .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item .blog-detail__more-articles_item-title h5 {
+              font-size: 16px;
+              margin-bottom: 20px; } }
         .blog-detail .blog-detail__more-articles .blog-detail__more-articles-wrapper .blog-detail__more-articles_item .blog-detail__more-articles_item-title a {
           color: #a2a9b0;
           font-size: 12px;
@@ -1071,11 +1121,9 @@ body {
           margin-bottom: 50px; }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col p {
           color: #525759;
-          line-height: 1.5;
-          margin-bottom: 131px; }
-          @media screen and (max-width: 1240px) {
-            .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col p {
-              margin-bottom: 61px; } }
+          line-height: 1.5; }
+          .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col p:last-of-type {
+            margin-bottom: 131px; }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col .recipes-detail__article_cook-info {
           display: flex;
           justify-content: space-around;
@@ -1102,6 +1150,7 @@ body {
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col .recipes-detail__article_method {
           line-height: 1.4; }
           .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col .recipes-detail__article_method li {
+            list-style: decimal inside;
             padding-bottom: 20px; }
         .recipes-detail .recipes-detail__section .recipes-detail__container .recipes-detail__article-wrapper .row .col img {
           max-width: 520px; }
@@ -1144,11 +1193,18 @@ body {
         background-color: rgba(255, 255, 255, 0.8);
         min-height: 165px;
         padding: 5%; }
+        @media screen and (max-width: 600px) {
+          .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item .recipes-detail__more-articles_item-title {
+            position: relative; } }
         .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item .recipes-detail__more-articles_item-title h5 {
           color: #525759;
           font-size: 20px;
           letter-spacing: .03rem;
           margin-bottom: 40px; }
+          @media screen and (max-width: 600px) {
+            .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item .recipes-detail__more-articles_item-title h5 {
+              font-size: 16px;
+              margin-bottom: 20px; } }
         .recipes-detail .recipes-detail__more-articles .recipes-detail__more-articles-wrapper .recipes-detail__more-articles_item .recipes-detail__more-articles_item-title a {
           color: #a2a9b0;
           font-size: 12px;
@@ -1157,10 +1213,13 @@ body {
           text-transform: uppercase; }
 
 .contact-form__section {
-  min-height: 974px;
+  min-height: 80vh;
   position: relative;
   background-color: #ffffff;
   padding-top: 257px; }
+  @media screen and (max-width: 948px) {
+    .contact-form__section {
+      padding-top: 57px; } }
   .contact-form__section .contact-form__section__container {
     padding: 0 30px;
     max-width: 1290px;
@@ -1178,7 +1237,8 @@ body {
         margin-bottom: 42px; }
       .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper .contact-form__section_form-wrapper {
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        margin-bottom: 34px; }
         .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper .contact-form__section_form-wrapper input,
         .contact-form__section .contact-form__section__container .contact-form__section__col-wrapper .contact-form__section_form-wrapper textarea {
           border: 1px solid #cbbcb8;

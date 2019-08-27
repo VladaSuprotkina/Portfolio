@@ -32,6 +32,7 @@ $(document).ready(function(){
         ]
     });
     $('.nav-bar_toggler').on('click', function () {
+        $('.nav-bar_toggler-icon').toggleClass('active-nav-bar');
         $('.open').toggleClass('open-menu');
     });
     $(document).scroll(function () {

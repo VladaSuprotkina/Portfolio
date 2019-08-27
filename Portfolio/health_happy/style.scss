@@ -63,6 +63,7 @@ body {
   }
   a:hover {
     text-decoration: none;
+    transition: all .3s ease-in-out;
   }
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
@@ -125,7 +126,6 @@ body {
   a.btn {
     position: relative;
     display: inline-block;
-    white-space: nowrap;
     transition: all .5s;
     &,
     &::after,
@@ -172,6 +172,9 @@ body {
     letter-spacing: .4rem;
     color: $base-white;
     text-transform: uppercase;
+    @media screen and (max-width: $mobile) {
+      font-size: 22px;
+    }
   }
   h2 {
     font-size: 30px;
@@ -179,12 +182,19 @@ body {
     letter-spacing: .4rem;
     color: $base-gray-text;
     text-transform: uppercase;
+    @media screen and (max-width: $mobile) {
+      font-size: 18px;
+    }
   }
   p {
     font-size: 16px;
     font-family: "Apercu Light";
     line-height: 1.75;
     color: $base-lightgray;
+    margin-bottom: 20px;
+    @media screen and (max-width: $mobile) {
+      font-size: 14px;
+    }
   }
   .slick-initialized,
   .slick-slider,
@@ -237,6 +247,7 @@ body {
         &:hover {
           background-color: #7b8287;
         }
+
         .nav-bar_toggler-icon {
           content: '';
           height: 2px;
@@ -246,6 +257,8 @@ body {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          transition: background-color .5s ease;
+
           &::before{
             content: '';
             height: 2px;
@@ -253,6 +266,7 @@ body {
             background-color: #ffffff;
             position: absolute;
             top: -10px;
+            transition: .5s ease;
             }
           &::after {
             content: '';
@@ -261,12 +275,29 @@ body {
             background-color: #ffffff;
             position: absolute;
             top: 10px;
+            transition: .5s ease;
+          }
+
+        }
+        .active-nav-bar{
+          background-color: transparent;
+          &::before {
+            transform: rotate(45deg);
+            top: 0;
+          }
+          &::after {
+            transform: rotate(-45deg);
+            top: 0;
           }
         }
 
+
+
       }
+
     .header-section__brand-logo {
       max-width: 435px;
+      padding-right: 10px;
       @media screen and (max-width: $tablet) {
         max-width: 235px;
       }
@@ -274,6 +305,7 @@ body {
       .header-section__navigation-wrapper{
         align-items: center;
         display: block;
+
         @media screen and (max-width: $desktop) {
           display: none;
         }
@@ -285,7 +317,6 @@ body {
           font-family: "Chronicle Display Roman";
           font-size: 16px;
           letter-spacing: .4rem;
-
           li {
             padding-left: 43px;
           }
@@ -293,7 +324,6 @@ body {
       }
       .open {
         display: none;
-
         &.open-menu {
           display: block;
           position: absolute;
@@ -303,13 +333,9 @@ body {
             right: 30px;
           }
           ul {
-            display: flex;
-            flex-direction: column;
             text-align: right;
-            li {
-              line-height: 20px;
+            mix-blend-mode: difference;
 
-            }
           }
         }
       }
@@ -318,6 +344,7 @@ body {
   }
 
 }
+
 .scrolled{
   background-image: linear-gradient(180deg, rgb(149, 149, 149) 0%, rgba(238, 234, 234, .5) 100%);
 }
@@ -362,7 +389,6 @@ body {
       }
   }
   }
-
   .slick-arrow {
     position: absolute;
     bottom: 88px;
@@ -383,12 +409,10 @@ body {
     transition: opacity .25s ease-in-out;
     &:hover {
       opacity: .5;
-
     }
   }
   .slick-next {
     background-image: url("img/next.svg");
-
   }
   .slick-prev {
     background-image: url("img/prev.svg");
@@ -406,7 +430,6 @@ body {
     li:hover button:before {
       background-color: $base-border;
     }
-
     button:before {
       content: '';
       width: 8px;
@@ -419,16 +442,12 @@ body {
       cursor: pointer;
       outline: none;
       transition: background-color .25s ease-in-out;
-
-
-
     }
     .slick-active button:before {
       background-color: $base-white;
     }
     button {
       font-size: 0;
-
     }
 
   }
@@ -436,7 +455,7 @@ body {
 }
 .intro-section {
   position: relative;
-  min-height: 979px;
+  min-height: 80vh;
   background-color: $base-white;
   display: flex;
   flex-wrap: wrap;
@@ -492,12 +511,15 @@ body {
       font-size: 35px;
       line-height: 1.4;
       margin-bottom: 54px;
+      @media screen and (max-width: $mobile) {
+        font-size: 20px;
+      }
     }
   }
 }
 .time-section {
   position: relative;
-  min-height: 979px;
+  min-height: 90vh;
   background-color: $base-white;
   display: flex;
   align-items: center;
@@ -553,7 +575,9 @@ body {
         justify-content: center;
         margin-top: 34px;
         margin-bottom: 114px;
-
+        li:hover button:before {
+          background-color: $base-gray-text;
+        }
         button:before {
           content: '';
           width: 8px;
@@ -597,7 +621,7 @@ body {
         min-width: 80%;
         min-height: 319px;
         padding: 8%;
-        small {
+        .title {
           color: $base-decor;
           font-size: 12px;
           letter-spacing: .25rem;
@@ -606,7 +630,7 @@ body {
           display: block;
           margin-bottom: 31px;
         }
-        strong {
+        .recipes-section__item-title_recipe-name {
           color: $base-gray-text;
           font-family: "Chronicle Display Roman";
           font-size: 30px;
@@ -625,7 +649,7 @@ body {
 .quote-section {
   background: url("img/alexandre-chambon-140035-unsplash_(1).jpg") no-repeat center;
   background-size: cover;
-  min-height: 761px;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -634,30 +658,38 @@ body {
   .quote-section__container {
     max-width: 723px;
     padding: 0 30px;
-    svg {
-      margin-bottom: 112px;
-    }
-    p {
-      margin-bottom: 57px;
-      color: $base-white;
-      font-family: "Apercu Light";
-      font-size: 22px;
-      font-weight: 300;
-      line-height: 1.59;
-    }
-    cite {
-      font-style: normal;
-      color: $base-white;
-      font-family: "Verlag-Book";
-      font-size: 16px;
-      font-weight: 300;
-      letter-spacing: .25rem;
-      text-transform: uppercase;
-    }
+   .quote-section__item {
+     position: relative;
+     &::before {
+       content: url("img/quote.svg");
+       display: block;
+       margin-bottom: 112px;
+
+
+     }
+     p {
+       margin-bottom: 57px;
+       color: $base-white;
+       font-family: "Apercu Light";
+       font-size: 22px;
+       font-weight: 300;
+       line-height: 1.59;
+     }
+     cite {
+       font-style: normal;
+       color: $base-white;
+       font-family: "Verlag-Book";
+       font-size: 16px;
+       font-weight: 300;
+       letter-spacing: .25rem;
+       text-transform: uppercase;
+     }
+   }
+
   }
 }
 .consultation-section {
-  min-height: 780px;
+  min-height: 70vh;
   background: url("img/247-layers.png") no-repeat center;
   display: flex;
   align-items: center;
@@ -667,7 +699,7 @@ body {
     position: absolute;
     background-color: $base-white-bg;
     width: 100%;
-    min-height: 780px;
+    min-height: 70vh;
   }
   .consultation-section__container {
     z-index: 1;
@@ -717,11 +749,14 @@ body {
 
       }
       .col-3 {
-  width: calc(100% / 3 - 20px);
-  display: flex;
-  justify-content: space-around;
+        width: calc(100% / 3 - 20px);
+        display: flex;
+        justify-content: space-around;
         @media screen and (max-width: 1024px) {
           width: 100%;
+        }
+        @media screen and (max-width: $mobile) {
+          display: block;
         }
 
   .footer-section__item {
@@ -784,6 +819,7 @@ body {
     .footer-section__address {
       line-height: 1.6;
       max-width: 114px;
+      font-style: normal;
     }
     .footer-section__connection {
       display: flex;
@@ -857,6 +893,7 @@ body {
         text-transform: uppercase;
         @media screen and (max-width: 540px) {
           color: $base-gray-text;
+          font-size: 14px;
         }
       }
       li:after {
@@ -992,6 +1029,9 @@ body {
         .article-section_text-wrapper {
           max-width: calc(495px + 20%);
           padding: 10%;
+          h2 {
+            margin-bottom: 50px;
+          }
           @media screen and (max-width: 948px) {
             width: 100%;
           }
@@ -1043,18 +1083,18 @@ body {
         }
         img {
           opacity: .8;
+          margin-bottom: 25px;
         }
         .blog-section__article-item_description {
-          margin-top: 25px;
           font-family: "Apercu Light";
           letter-spacing: .03rem;
-          small {
+          strong {
             display: block;
             color: $base-decor;
             font-size: 10px;
             line-height: 2.5;
             margin-bottom: 19px;
-            strong{
+            b {
               color: $base-gray-links;
             }
           }
@@ -1083,19 +1123,23 @@ body {
     }
 
     .blog-detail__article-wrapper {
-      small {
+      strong {
         display: block;
         color: $base-decor;
         font-size: 10px;
         line-height: 2.5;
         margin-bottom: 19px;
-        strong{
+        b {
           color: $base-gray-links;
         }
       }
+      p {
+        margin-bottom: 55px;
+      }
+
       .blog-detail__article-rubric {
         h5 {
-          margin-top: 60px;
+
           color: $base-gray-text;
         }
         p {
@@ -1103,8 +1147,8 @@ body {
           margin-bottom: 25px;
         }
         img {
-          margin-top: 55px;
           opacity: .8;
+          margin-bottom: 60px;
         }
       }
 
@@ -1163,11 +1207,18 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          @media screen and (max-width: $mobile) {
+            position: relative;
+          }
           h5 {
             color: $base-gray-text;
             font-size: 16px;
             letter-spacing: .03rem;
             margin-bottom: 20px;
+            @media screen and (max-width: 600px) {
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
           }
           p{
             font-size: 13px;
@@ -1282,11 +1333,18 @@ body {
           background-color: $base-white-bg;
           min-height: 165px;
           padding: 5%;
+          @media screen and (max-width: 600px) {
+            position: relative;
+          }
           h5 {
             color: $base-gray-text;
             font-size: 20px;
             letter-spacing: .03rem;
             margin-bottom: 40px;
+            @media screen and (max-width: 600px) {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
           }
           a {
             color: $base-lightgray;
@@ -1376,9 +1434,8 @@ body {
           p {
             color: $base-gray-text;
             line-height: 1.5;
-            margin-bottom: 131px;
-            @media screen and (max-width: $desktop) {
-              margin-bottom: 61px;
+            &:last-of-type {
+              margin-bottom: 131px;
             }
           }
           .recipes-detail__article_cook-info {
@@ -1415,9 +1472,14 @@ body {
           }
           .recipes-detail__article_method {
             line-height: 1.4;
-            li {
-              padding-bottom: 20px;
-            }
+
+
+              li {
+                list-style: decimal inside;
+                padding-bottom: 20px;
+              }
+
+
           }
 
           img {
@@ -1471,11 +1533,18 @@ body {
           background-color: $base-white-bg;
           min-height: 165px;
           padding: 5%;
+          @media screen and (max-width: 600px) {
+            position: relative;
+          }
           h5 {
             color: $base-gray-text;
             font-size: 20px;
             letter-spacing: .03rem;
             margin-bottom: 40px;
+            @media screen and (max-width: 600px) {
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
           }
           a {
             color: $base-lightgray;
@@ -1491,10 +1560,13 @@ body {
   }
 }
 .contact-form__section {
-  min-height: 974px;
+  min-height: 80vh;
   position: relative;
   background-color: $base-white;
   padding-top: 257px;
+  @media screen and (max-width: 948px) {
+    padding-top: 57px;
+  }
   .contact-form__section__container {
     padding: 0 30px;
     max-width: 1290px;
@@ -1513,9 +1585,9 @@ body {
       }
 
       .contact-form__section_form-wrapper {
-
         display: flex;
         flex-direction: column;
+        margin-bottom: 34px;
 
         input,
         textarea {
