@@ -407,7 +407,9 @@ body {
   min-height: 90vh;
   background-color: #ffffff;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding-bottom: 83px;
+  padding-top: 83px; }
   .time-section .time-section__container {
     width: 1920px; }
     .time-section .time-section__container .time-section__article {

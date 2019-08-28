@@ -294,7 +294,10 @@ a.links:hover {
     padding: 0 30px 0 21px;
 }
 .nav-bar_nav li a:hover {
+    border-radius: 20px;
     background-color: rgba(255,255,255,.15);
+    padding: 3px 30px 10px 21px;
+
 }
 .nav-item a:before {
     content: '_';
