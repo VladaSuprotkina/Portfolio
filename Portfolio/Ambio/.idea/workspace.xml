@@ -4,14 +4,12 @@
     <list default="true" id="86689662-d911-46be-aded-43d0e856954e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../health_happy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../health_happy/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/.sass-cache/0c9febdcff9303ad510b879d7fb4a581c67bbf87/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.sass-cache/0c9febdcff9303ad510b879d7fb4a581c67bbf87/style.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../health_happy/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../health_happy/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../health_happy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile_first/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile_first/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,17 +23,18 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.2200957">
+    <splitter split-orientation="horizontal" split-proportion="0.45119864">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-22">
-                  <caret line="492" column="26" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
+                <state relative-caret-position="459">
+                  <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="31" />
                   <folding>
                     <element signature="n#span#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
+                    <element signature="e#24079#24085#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -44,8 +43,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="101">
-                  <caret line="703" column="18" selection-start-line="703" selection-start-column="18" selection-end-line="703" selection-end-column="18" />
+                <state relative-caret-position="11951">
+                  <caret line="716" column="18" selection-start-line="716" selection-start-column="18" selection-end-line="716" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -53,8 +52,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/script/script.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="27" column="11" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="27" selection-end-column="11" />
+                <state relative-caret-position="476">
+                  <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -66,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="411">
-                  <caret line="934" column="1" lean-forward="true" selection-start-line="934" selection-start-column="1" selection-end-line="934" selection-end-column="1" />
+                <state relative-caret-position="128">
+                  <caret line="342" column="19" selection-start-line="342" selection-start-column="19" selection-end-line="342" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -105,9 +104,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="7" />
-    <option name="width" value="1135" />
+    <option name="x" value="592" />
+    <option name="width" value="1033" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -116,6 +114,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,7 +131,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,16 +202,18 @@
       <workItem from="1566375383832" duration="566000" />
       <workItem from="1566557503523" duration="8024000" />
       <workItem from="1566568891791" duration="948000" />
+      <workItem from="1566890233914" duration="251000" />
+      <workItem from="1566979536080" duration="6064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194461000" />
+    <option name="totallyTimeSpent" value="200776000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="7" width="1135" height="1047" extended-state="0" />
+    <frame x="592" y="0" width="1033" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.027906977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.030832477" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -313,26 +313,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="11" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="703" column="18" selection-start-line="703" selection-start-column="18" selection-end-line="703" selection-end-column="18" />
+        <state relative-caret-position="476">
+          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="492" column="26" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
+        <state relative-caret-position="459">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="31" />
           <folding>
             <element signature="n#span#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#24079#24085#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="342" column="19" selection-start-line="342" selection-start-column="19" selection-end-line="342" selection-end-column="19" />
         </state>
       </provider>
     </entry>

@@ -36,6 +36,7 @@ li {
 }
 a:hover {
     text-decoration: none;
+    transition: .3s ease;
 }
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
@@ -190,7 +191,7 @@ a.links:hover {
     bottom: auto;
     width: 100%;
     z-index: 100;
-    transition: background-color 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .nav-bar {
     max-width: 1440px;
@@ -214,6 +215,7 @@ a.links:hover {
 }
 .nav-bar_green-logo {
     display: none;
+    transition: 1s ease-in-out;
 }
 .menu-bar {
     display: none;
@@ -248,6 +250,15 @@ a.links:hover {
     right: 0;
     bottom: 0;
     margin: auto;
+    transition: background-color .5s ease;
+}
+.nav-bar_toggler .nav-bar_toggler-icon::before {
+    top: -20px;
+    transition: .5s ease;
+}
+.nav-bar_toggler .nav-bar_toggler-icon::after {
+    top: 20px;
+    transition: .5s ease;
 }
 .collapse {
     background-color: rgba(0,0,0,.7);
@@ -265,41 +276,40 @@ a.links:hover {
     transform: scale(1);
     opacity: 1;
 }
-.nav-bar_toggler .nav-bar_toggler-icon::before {
-    top: -20px;
-}
-.nav-bar_toggler .nav-bar_toggler-icon::after {
-    top: 20px;
-}
+
 .nav-bar_nav {
     display: flex;
 }
 .nav-bar_nav li {
-    padding: 3px 30px 10px 21px;
-    cursor: pointer;
-}
-.nav-bar_nav li:before {
-    display: inline;
-    content: '';
-    width: 10px;
-    height: 3px;
-    position: relative;
-    background-color: #ffffff;
-    opacity: 0;
+    border-radius: 20px;
+    padding: 3px 0 10px 0;
 }
 .nav-bar_nav li a{
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .07rem;
-    line-height: 20px;
-    width: 100%;
-    display: inline;
+    line-height: 22px;
+    position: relative;
+    padding: 0 30px 0 21px;
 }
-.nav-bar_nav li:hover {
-    border-radius: 20px;
+.nav-bar_nav li a:hover {
     background-color: rgba(255,255,255,.15);
 }
+.nav-item a:before {
+    content: '_';
+    color: #ffffff;
+    font-weight: bold;
+    opacity: 0;
+}
+.active a:before {
+    opacity: 1;
+}
+.scrolled .active a:before {
+    opacity: 1;
+    color: #0b4220;
+}
+
 /*----------------nav active-------------------*/
 .active-bar {
     position: relative;
@@ -312,17 +322,25 @@ a.links:hover {
 .active-bar .nav-bar_white-logo {
     display: none;
 }
-.active-bar .nav-bar_toggler-icon,
+.active-bar .nav-bar_toggler-icon{
+    background-color: transparent;
+}
 .active-bar .nav-bar_toggler-icon::before,
 .active-bar .nav-bar_toggler-icon::after {
     background-color: #0d4027;
+    top: 0;
+}
+.active-bar .nav-bar_toggler-icon::before {
+    transform: rotate(45deg);
+}
+.active-bar .nav-bar_toggler-icon::after {
+    transform: rotate(-45deg);
 }
 .active-bar .menu-bar {
     color: #0d4027;
 }
 .active-bar .nav-bar_green-logo {
     display: block;
-    width: 100%;
 }
 
 .active-bar .nav-bar_collapse{
@@ -351,14 +369,6 @@ a.links:hover {
 
 }
 
-.scrolled .active:before,
-.active-bar .nav-bar_nav li:before {
-    opacity: 1;
-
-}
-.scrolled .active:before {
-    background-color: #0b4220;
-}
 /*---------------nav on scroll---------------------*/
 .scrolled {
     width: 100%;
@@ -378,6 +388,9 @@ a.links:hover {
 .scrolled .nav-bar_toggler-icon::before,
 .scrolled .nav-bar_toggler-icon::after {
     background-color: #0d4027;
+}
+.scrolled .active-bar .nav-bar_toggler-icon {
+    background-color: transparent;
 }
 .scrolled .nav-bar_nav li:hover {
     background-color: rgba(13,64,39,.06);
