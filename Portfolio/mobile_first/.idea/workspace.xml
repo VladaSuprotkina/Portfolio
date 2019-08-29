@@ -3,7 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="995455d5-5af0-41b9-b6b1-f0eee21ed7f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Ambio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ambio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ambio/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Ambio/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ambio/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Ambio/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/css/.sass-cache/ec3e31241da6fb3cd94f4c96fa11706327de6a5c/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/css/.sass-cache/ec3e31241da6fb3cd94f4c96fa11706327de6a5c/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/.sass-cache/0c9febdcff9303ad510b879d7fb4a581c67bbf87/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.sass-cache/0c9febdcff9303ad510b879d7fb4a581c67bbf87/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_happy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/style.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +35,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+                <state relative-caret-position="137">
+                  <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -102,7 +114,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../health_happy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -135,16 +147,18 @@
       <workItem from="1565949890916" duration="12000" />
       <workItem from="1566890571170" duration="2219000" />
       <workItem from="1566978046768" duration="20000" />
+      <workItem from="1567069809549" duration="1130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6541000" />
+    <option name="totallyTimeSpent" value="7671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="3" width="751" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2561505" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2633864" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -169,24 +183,20 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
         </state>
       </provider>
     </entry>

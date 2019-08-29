@@ -101,10 +101,10 @@ textarea {
     text-transform: uppercase;
     padding: 15px 30px;
     transition: color .5s ease-in-out;
+    border: 1px solid transparent;
 }
 .btn:hover {
-    border: 1px solid #ffffff;
-    padding: 14px 29px;
+    border-color: #ffffff;
 }
 .btn:before {
     content: '';
@@ -138,6 +138,7 @@ textarea {
     width: 100%;
     text-align: center;
     padding-left: 0;
+    padding-right: 0;
 }
 .pagination {
     display: block;
@@ -147,22 +148,25 @@ textarea {
     letter-spacing: .14rem;
     line-height: 20px;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 h1 {
     font-size: 44px;
     line-height: 50px;
     font-weight: 700;
+    margin-bottom: 20px;
 }
 h3 {
     font-size: 22px;
     font-weight: 700;
     line-height: 26px;
+    margin-bottom: 20px;
 }
 p {
     font-size: 16px;
     font-weight: 700;
     line-height: 1.625;
+    margin-bottom: 20px;
 }
 .about_section_wrapper,
 .principles_section,
@@ -207,9 +211,7 @@ a.links:hover {
     align-items: center;
 
 }
-.nav-bar_nav {
-    max-width: 990px;
-}
+
 .logo_brand img{
     width: 187px;
 }
@@ -226,6 +228,7 @@ a.links:hover {
     line-height: 20px;
     text-transform: uppercase;
     align-items: center;
+    cursor: pointer;
 }
 
 .nav-bar_toggler {
@@ -279,25 +282,26 @@ a.links:hover {
 
 .nav-bar_nav {
     display: flex;
+    flex-wrap: wrap;
+    max-width: 990px;
 }
-.nav-bar_nav li {
-    border-radius: 20px;
-    padding: 3px 0 10px 0;
-}
-.nav-bar_nav li a{
+
+.nav-bar_nav a{
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .07rem;
     line-height: 22px;
     position: relative;
-    padding: 0 30px 0 21px;
-}
-.nav-bar_nav li a:hover {
-    border-radius: 20px;
-    background-color: rgba(255,255,255,.15);
     padding: 3px 30px 10px 21px;
-
+    border-radius: 20px;
+    background-color: transparent;
+    margin: 5px 0;
+    display: inline-block;
+}
+.nav-bar_nav a:hover {
+    background-color: rgba(255,255,255,.15);
+    border-radius: 20px;
 }
 .nav-item a:before {
     content: '_';
@@ -357,19 +361,16 @@ a.links:hover {
     flex-direction: column;
     text-align: center;
 }
-.active-bar .nav-bar_nav li:hover {
+.active-bar .nav-bar_nav a:hover {
     background-color: rgba(13,64,39,.06);
+    border-radius: 20px;
+
 }
-.active-bar .nav-bar_nav li a {
+.active-bar .nav-bar_nav a {
     color: #0d4027;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .07rem;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
 }
 
 /*---------------nav on scroll---------------------*/
@@ -384,7 +385,7 @@ a.links:hover {
 .scrolled .nav-bar_green-logo {
     display: block;
 }
-.scrolled .nav-bar_nav li a {
+.scrolled .nav-bar_nav a {
     color: #0b4220;
 }
 .scrolled .nav-bar_toggler-icon,
@@ -395,7 +396,7 @@ a.links:hover {
 .scrolled .active-bar .nav-bar_toggler-icon {
     background-color: transparent;
 }
-.scrolled .nav-bar_nav li:hover {
+.scrolled .nav-bar_nav a:hover {
     background-color: rgba(13,64,39,.06);
 }
 .scrolled .menu-bar {
@@ -404,32 +405,31 @@ a.links:hover {
 /*------------------header-------------------*/
 .intro {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .48) 100%),url("../img/header-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+}
+.intro-title {
+    width: 100vw;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    min-height: 100vh;
     padding: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.intro-title {
-    color: #ffffff;
-    font-weight: 700;
-    text-align: center;
-    max-height: 80vh;
-}
 .intro-title h1 {
-    padding-bottom: 20px;
     max-width: 630px;
 }
 .intro-title p {
     max-width: 490px;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 auto;
-    padding-bottom: 20px;
 }
 .intro-title-btn {
     margin-bottom: 37px;
@@ -440,7 +440,6 @@ a.links:hover {
     background: url("../img/Group_32.png") no-repeat center;
     background-size: cover;
     position: relative;
-    margin: 0 auto;
     animation-name: rotation;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -457,7 +456,7 @@ a.links:hover {
 .intro-title img {
     width: 36px;
     position: relative;
-    bottom: 42px;
+    bottom: 47px;
 }
 
 .intro_parallax-element {
@@ -482,18 +481,16 @@ a.links:hover {
 
 .about_section_wrapper h1 {
     color: #135334;
-    padding-bottom: 20px;
 }
 .about_section_wrapper p {
     color: #0d4027;
-    padding-bottom: 20px;
 }
 .green-btn {
+    border: 1px solid transparent;
     color: #135334;
 }
 .green-btn:hover {
-    border: 1px solid #135334;
-    padding: 14px 29px;
+    border-color: #135334;
 }
 .about_section .btn:before {
     background-color: #135334;
@@ -532,9 +529,7 @@ a.links:hover {
     margin: 0 auto;
     padding: 0 30px;
 }
-.vision_section-description h1 {
-    padding-bottom: 20px;
-}
+
 /*-------------------principles-------------------*/
 .principles_section_decor-element {
     position: absolute;
@@ -551,12 +546,12 @@ a.links:hover {
 }
 .principles_section_title h1{
     color: #135334;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .principles_section_title p {
     color: #0d4027;
-    padding-bottom: 88px;
+    padding-bottom: 68px;
 }
 .principles_section_cards-wrapper {
     display: flex;
@@ -569,11 +564,11 @@ a.links:hover {
 }
 .principles_section_card img {
     max-width: 125px;
-    padding-bottom: 28px;
+    margin-bottom: 28px;
 }
 .principles_section_card h3 {
     color: #135334;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .principles_section_card p {
     color: #000000;
@@ -595,11 +590,10 @@ a.links:hover {
 }
 .info_section_title h1{
     color: #135334;
-    padding-bottom: 20px;
 }
 .info_section_title p{
     color: #0d4027;
-    padding-bottom: 49px;
+    margin-bottom: 49px;
 }
 .info_section_infographic {
     padding-bottom: 29px;
@@ -623,10 +617,6 @@ a.links:hover {
 .suppliers_section_description,
 .buyers_section_description {
     max-width: 360px;
-}
-.suppliers_section_description h1,
-.buyers_section_description h1 {
-    padding-bottom: 20px;
 }
 .buyers_section_description h1 {
     color: #135334;
@@ -678,7 +668,7 @@ a.links:hover {
 .buyers_section_first-column_parallax-element {
     position: absolute;
     display: block;
-    top: 50%;
+    top: 60%;
     left: -15%;
     z-index: 1;
 
@@ -725,11 +715,9 @@ a.links:hover {
 }
 .leader_section_description h1 {
     color: #135334;
-    padding-bottom: 20px;
 }
 
 .leader_section_description p {
-    padding-bottom: 20px;
     color: #0d4027;
 }
 .leader_section_wrapper-row {
@@ -805,15 +793,12 @@ a.links:hover {
     letter-spacing: .15rem;
     line-height: 20px;
     display: block;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .news_section_second-column_description h3 {
     color: #135334;
-    padding-bottom: 20px;
 }
-.news_section_second-column_description p {
-    padding-bottom: 30px;
-}
+
 .news_section .btn:before {
     background-color: #135334;
 }
@@ -864,18 +849,16 @@ a.links:hover {
 .contact_section_description {
     color: #ffffff;
 }
-.contact_section_description h1 {
-    padding-bottom: 20px;
-}
+
 .contact_section_description p:last-child {
-    padding-bottom: 54px;
+    margin-bottom: 54px;
 }
 .contact_section_form-wrapper label {
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 .contact-section-btn {
     margin-top: 30px;
@@ -965,7 +948,7 @@ option {
 }
 
 .footer_section-row:first-child {
-    padding-bottom: 29px;
+    margin-bottom: 29px;
 }
 .footer_section-button {
     color: #ffffff;
@@ -1027,7 +1010,6 @@ option {
     }
     .vision_section .row {
         flex-direction: column;
-
     }
 
     .principles_section_decor-element {
@@ -1037,17 +1019,40 @@ option {
         flex-wrap: wrap;
     }
     .principles_section_card {
-        padding-bottom: 44px;
+        margin-bottom: 44px;
      }
+    .buyers_section_first-column,
+    .suppliers_section_first-column {
+        text-align: center;
+    }
     .buyers_section_second-column,
     .suppliers_section_second-column {
-        margin-top: 85px;
+        margin-top: 0;
+    }
+    .suppliers_section_card,
+    .buyers_section_card {
+        flex-direction: column;
+        margin-bottom: 50px;
+        margin-top: 0;
     }
     .suppliers_section_cards-wrapper,
     .buyers_section_cards-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+    }
+    .suppliers_section_card-img,
+    .buyers_section_card-img {
+        width: 100px;
+        padding-bottom: 18px;
+        margin: 0 auto;
+    }
+    .buyers_section_second-column,
+    .suppliers_section_second-column {
+        margin-top: 50px;
+    }
+    .suppliers_section_card-description,
+    .buyers_section_card-description {
+        text-align: center;
+        margin: 0 auto;
     }
     .suppliers_section_description,
     .buyers_section_description,
@@ -1135,6 +1140,13 @@ option {
 
 
 }
+@media screen and (max-width: 840px) {
+    .buyers_section_first-column_parallax-element,
+    .suppliers_section_first-column_parallax-element {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 769px) {
     .container {
         padding-right: 30px;
@@ -1166,36 +1178,11 @@ option {
         max-width: 100px;
         padding-bottom: 14px;
     }
-    .suppliers_section_card,
-    .buyers_section_card {
-        flex-direction: column;
-        margin: 0;
-        padding-bottom: 50px;
-    }
-    .suppliers_section_cards-wrapper,
-    .buyers_section_cards-wrapper {
-        align-items: center;
-    }
-    .suppliers_section_card-img,
-    .buyers_section_card-img {
-        width: 100px;
-        padding-bottom: 18px;
-        margin: 0 auto;
-    }
-    .buyers_section_second-column,
-    .suppliers_section_second-column {
-        margin-top: 50px;
-    }
-    .suppliers_section_card-description,
-    .buyers_section_card-description {
-        text-align: center;
-    }
+
 
     .vision_section_first-column_parallax-element,
     .vision_section_second-column_parallax-element,
     .header_parallax-element,
-    .buyers_section_first-column_parallax-element,
-    .suppliers_section_first-column_parallax-element,
     .info_section_parallax-element,
     .news_section_parallax-element {
         display: none;
