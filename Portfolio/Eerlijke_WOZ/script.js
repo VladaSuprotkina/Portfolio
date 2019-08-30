@@ -46,4 +46,5 @@ $('.sub-menu').on('click', function () {
 });
 $('.nav-bar_toggler').on('click', function () {
     $('.header-section__navigation-wrapper-mobile').toggleClass('active');
+    $('.nav-bar_toggler-icon').toggleClass('active-nav-bar');
 });
