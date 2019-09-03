@@ -4,7 +4,7 @@ $(document).ready(function(){
         infinite: true,
         speed: 300,
         slidesToShow: 1
-});
+    });
     $('.recipes-section__slider').slick({
         // centerMode: true,
         dots: true,

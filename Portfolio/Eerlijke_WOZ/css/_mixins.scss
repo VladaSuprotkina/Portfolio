@@ -1,0 +1,179 @@
+//
+//@include pseudo();
+//
+
+@mixin pseudo($content: '', $pos: absolute, $display: block) {
+	content: '#{$content}';
+    position: $pos;
+    display: $display;
+}
+
+//
+// @include z-i(absolute, 9999);
+//
+
+@mixin z-i($pos: relative, $count: 999) {
+	position: $pos;
+	z-index: $count;
+}
+
+// div {
+//    @include absolute(100px, 100px, auto, auto);
+// }
+
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+   position: absolute; 
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+}
+
+//
+// @include flex(center, justify-content);
+//
+
+@mixin flex($align: center, $justify: center) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+/// .foo {
+///    @include size(10em);
+///  }
+///
+///  .bar {
+///    @include size(100%, 10em);
+///  }
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+//
+// @include bg(contain);
+//
+
+@mixin bg($size: cover, $pos: 50% 50%) {
+	background-repeat: no-repeat;
+	background-position: $pos;
+	background-size: $size;
+}
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   @include placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     @include placeholder {
+///      color: red;
+///     }
+///   }
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder {opacity: 1; @content}
+	&:-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+	&.placeholder {@content}
+}
+
+
+// @include animate(color width);
+// @include animate(color width, 1s, linear);
+
+$animation-speed: .3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out) {
+	$list:();
+	@each $prop in $properties {
+		$str: #{$prop} #{$duration} #{$easing};
+		$list: join($list, #{$str}, comma);
+	}
+	transition: $list;
+}
+
+/// Creates a visual triangle.
+/// Mixin takes ($size, $color, $direction)
+/// The $size argument can take one or two values—width height.
+/// The $color argument can take one or two
+/// values—foreground-color background-color.
+///
+/// @author http://bourbon.io/docs/#triangle
+///
+/// $direction:
+/// up, down, left, right, up-right, up-left, down-right, down-left
+/// @example scss - Usage
+///   @include triangle(12px, gray, down);
+///   @include triangle(12px 6px, gray blue, up-left);
+///
+@mixin triangle($size, $color, $direction) {
+	$width: nth($size, 1);
+	$height: nth($size, length($size));
+	$foreground-color: nth($color, 1);
+	$background-color: if(length($color) == 2, nth($color, 2), transparent);
+	height: 0;
+	width: 0;
+
+	@if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+		$width: $width / 2;
+		$height: if(length($size) > 1, $height, $height/2);
+
+		@if $direction == up {
+			border-bottom: $height solid $foreground-color;
+			border-left: $width solid $background-color;
+			border-right: $width solid $background-color;
+		} @else if $direction == right {
+			border-bottom: $width solid $background-color;
+			border-left: $height solid $foreground-color;
+			border-top: $width solid $background-color;
+		} @else if $direction == down {
+			border-left: $width solid $background-color;
+			border-right: $width solid $background-color;
+			border-top: $height solid $foreground-color;
+		} @else if $direction == left {
+			border-bottom: $width solid $background-color;
+			border-right: $height solid $foreground-color;
+			border-top: $width solid $background-color;
+		}
+	} @else if ($direction == up-right) or ($direction == up-left) {
+		border-top: $height solid $foreground-color;
+
+		@if $direction == up-right {
+			border-left:  $width solid $background-color;
+		} @else if $direction == up-left {
+			border-right: $width solid $background-color;
+		}
+	} @else if ($direction == down-right) or ($direction == down-left) {
+		border-bottom: $height solid $foreground-color;
+
+		@if $direction == down-right {
+			border-left:  $width solid $background-color;
+		} @else if $direction == down-left {
+			border-right: $width solid $background-color;
+		}
+	} @else if ($direction == inset-up) {
+		border-color: $background-color $background-color $foreground-color;
+		border-style: solid;
+		border-width: $height $width;
+	} @else if ($direction == inset-down) {
+		border-color: $foreground-color $background-color $background-color;
+		border-style: solid;
+		border-width: $height $width;
+	} @else if ($direction == inset-right) {
+		border-color: $background-color $background-color $background-color $foreground-color;
+		border-style: solid;
+		border-width: $width $height;
+	} @else if ($direction == inset-left) {
+		border-color: $background-color $foreground-color $background-color $background-color;
+		border-style: solid;
+		border-width: $width $height;
+	}
+}

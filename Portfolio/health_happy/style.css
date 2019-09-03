@@ -442,7 +442,7 @@ body {
       @media screen and (max-width: 1240px) {
         .time-section .time-section__container .time-section__article .col {
           width: 100%; } }
-      .time-section .time-section__container .time-section__article .col .col:only-of-type {
+      .time-section .time-section__container .time-section__article .col:only-of-type {
         width: 100%; }
       .time-section .time-section__container .time-section__article .time-section__article-description {
         max-width: 609px;
