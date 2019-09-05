@@ -8,6 +8,7 @@
     <title>Eerlijke WOZ</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="slick/slick.css">
 </head>
 <body>
 <!--header-->
@@ -121,7 +122,7 @@
         <div class="specialize-section__container container">
             <div class="specialize-section__col-wrapper">
                 <div class="specialize-section__description-text">
-                    <h2>Een Eerlijke WOZ </h2>
+                    <h2 data-title="Een Eerlijke WOZ">Een Eerlijke WOZ </h2>
                     <p>U betaalt ieder jaar belasting op basis van de WOZ-waarde van uw huis. Maar zonder een grondige
                         taxtie van uw WOZ-waarde weet u eigenlijk niet zeker of u te veel betaalt.</p>
                     <p>Met de WOZ Check van Eerlijke WOZ doet u gratis en snel een WOZ-taxatie van uw woning op basis
@@ -135,46 +136,30 @@
             </div>
 
             <div class="specialize-section__col-wrapper ">
-                <div class="specialize-section__cards_row">
+                <div class="specialize-section__cards_row row">
                     <div class="specialize-section__card-item">
-                        <div class="top-card">
-                            <img src="img/icons/icon-1.svg" alt="in a minute">
-                        </div>
-                        <div class="bottom-card">
-                            <h4>Binnen één minuutje</h4>
-                            <p>Omdat wij niet meer informatie vragen dan strikt noodzakelijk is, bent u zo klaar. Uw
-                                WOZ-waarde controleren en aanmelden voor een bezwaar ging nog nooit zo snel.</p>
-                        </div>
+                        <div class="card-img"><img src="img/icons/icon-1.svg" alt="in a minute"></div>
+                        <h4>Binnen één minuutje</h4>
+                        <p>Omdat wij niet meer informatie vragen dan strikt noodzakelijk is, bent u zo klaar. Uw
+                            WOZ-waarde controleren en aanmelden voor een bezwaar ging nog nooit zo snel.</p>
                     </div>
                     <div class="specialize-section__card-item">
-                        <div class="top-card">
-                            <img src="img/icons/icon-2.svg" alt="free">
-                        </div>
-                        <div class="bottom-card">
-                            <h4>Volledig gratis</h4>
-                            <p>Er worden voor onze diensten nooit kosten in rekening gebracht door ons of uw gemeente.
-                                Of het nu gaat om de WOZ Check, een WOZ bezwaar of een eventuele beroepsprocedure.</p>
-                        </div>
+                        <div class="card-img"><img src="img/icons/icon-2.svg" alt="free"></div>
+                        <h4>Volledig gratis</h4>
+                        <p>Er worden voor onze diensten nooit kosten in rekening gebracht door ons of uw gemeente.
+                            Of het nu gaat om de WOZ Check, een WOZ bezwaar of een eventuele beroepsprocedure.</p>
                     </div>
                     <div class="specialize-section__card-item">
-                        <div class="top-card">
-                            <img src="img/icons/icon-3.svg" alt="without obligations">
-                        </div>
-                        <div class="bottom-card">
-                            <h4>Volledig vrijblijvend</h4>
-                            <p>U kunt uw inschrijving bij ons altijd direct stopzetten. Op die manier weten wij zeker
-                                dat u altijd tevreden over onze dienstverlening. </p>
-                        </div>
+                        <div class="card-img"><img src="img/icons/icon-3.svg" alt="without obligations"></div>
+                        <h4>Volledig vrijblijvend</h4>
+                        <p>U kunt uw inschrijving bij ons altijd direct stopzetten. Op die manier weten wij zeker
+                            dat u altijd tevreden over onze dienstverlening. </p>
                     </div>
                     <div class="specialize-section__card-item">
-                        <div class="top-card">
-                            <img src="img/icons/icon-4.svg" alt="transparent">
-                        </div>
-                        <div class="bottom-card">
-                            <h4>Transparant &amp; persoonlijk</h4>
-                            <p>Informatie en communicatie van Eerlijke WOZ is altijd duidelijk en begrijpelijk. Zo
-                                blijft u altijd goed geïnformeerd over onze adviezen en procedures.</p>
-                        </div>
+                        <div class="card-img"><img src="img/icons/icon-4.svg" alt="transparent"></div>
+                        <h4>Transparant &amp; persoonlijk</h4>
+                        <p>Informatie en communicatie van Eerlijke WOZ is altijd duidelijk en begrijpelijk. Zo
+                            blijft u altijd goed geïnformeerd over onze adviezen en procedures.</p>
                     </div>
                 </div>
                 <ul class="specialize-section__buttons">
@@ -189,28 +174,30 @@
         <div class="custom-section__container container">
             <div class="custom-section__row row">
                 <div class="custom-section__review-wrapper col">
-                    <h2>Onze klanten</h2>
-                    <blockquote class="custom-section__review-text">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesqu” eu, pretium quis, sem. Nulla
-                            consequat massa quis enim.</p>
-                        <cite>Ridder Drost, Utrecht</cite>
-                    </blockquote>
-                    <ul class="custom-section__review-switches">
-                        <li>
-                            <a>
-                                <svg class="bg-arrow long-arrow-alt-left" data-comment='left' viewBox="0 0 448 512">
-                                    <path d="M134 296h302a12 12 0 0 0 12-12v-56a12 12 0 0 0-12-12H134v-46a24 24 0 0 0-41-17L7 239a24 24 0 0 0 0 34l86 86a24 24 0 0 0 41-17v-46z"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li><a>
-                            <svg class="bg-arrow" data-comment='right' viewBox="0 0 448 512">
-                                <path d="M314 216H12a12 12 0 0 0-12 12v56a12 12 0 0 0 12 12h302v46a24 24 0 0 0 41 17l86-86a24 24 0 0 0 0-34l-86-86a24 24 0 0 0-41 17v46z"/>
-                            </svg>
-                        </a></li>
-                    </ul>
+                    <h2 data-title="Onze klanten">Onze klanten</h2>
+                    <div class="custom-section__review-slider">
+                        <blockquote class="custom-section__review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesqu” eu, pretium quis, sem. Nulla
+                                consequat massa quis enim.</p>
+                            <cite>Ridder Drost, Utrecht</cite>
+                        </blockquote>
+                        <blockquote class="custom-section__review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesqu” eu, pretium quis, sem. Nulla
+                                consequat massa quis enim.</p>
+                            <cite>John Doe, Amsterdam</cite>
+                        </blockquote>
+                        <blockquote class="custom-section__review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesqu” eu, pretium quis, sem. Nulla
+                                consequat massa quis enim.</p>
+                            <cite>Sandra Li, IJ</cite>
+                        </blockquote>
+                    </div>
                 </div>
                 <div class="custom-section__review-wrapper col">
                     <div class="custom-section__review-img">
@@ -317,7 +304,7 @@
                 <a href="#" class="btn">Bekijk de uitkomsten</a>
             </div>
             <div class="survey-section__description-img">
-                <img src="img/illustration/woz-illustration-1.png" alt="">
+                <img src="img/illustration/woz-illustration-1.png" alt="illustartion">
             </div>
         </div>
 
@@ -424,6 +411,7 @@
 
 
 <script src="jquery-3.4.0.min.js"></script>
+<script src="slick/slick.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
