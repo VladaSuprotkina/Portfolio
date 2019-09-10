@@ -93,7 +93,7 @@
                     <p>30 дней пробуйте, тестируйте, проверяйте. Покупать без рисков всегда выгоднее.</p>
                     <span>Предложение действует только до конца месяца</span>
                     <div class="timer">
-                        <script src="//megatimer.ru/get/2d22e405aca1c544461b46e0fbaee3b2.js"></script>
+                        <script src="http://megatimer.ru/get/2d22e405aca1c544461b46e0fbaee3b2.js"></script>
                     </div>
                     <a href="#" class="btn">Уточнить детали у менеджера</a>
                 </div>
@@ -138,14 +138,77 @@
             <a href="#" class="btn">Посмотреть все аппараты</a>
         </div>
     </section>
-    <section class="picker">
+    <section class="survey">
         <div class="container">
             <h2>ВЫБИРАЙТЕ ИНВЕРТОР ПОД СВОИ ЗАДАЧИ</h2>
             <p>Мы дадим Вам идеальную модель споттера конкретно под Ваши задачи. <br>
                 Для этого ответьте всего на 8 вопросов:</p>
-            <div class="picker-item">
-                <h3>Шаг 1.  Класс оборудования</h3>
-            </div>
+                <form action="">
+                    <div class="survey-item" data-survey-step="1">
+                        <div class="survey-item__title">
+                            <h3>Шаг 1. Класс оборудования</h3>
+                        </div>
+                
+                        <input type="radio" name="tool-class" id="home" value="home">
+                        <label for="home">бытовые</label>
+                        <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
+                        <label for="semi-prof">полупрофессиональные</label>
+                        <input type="radio" name="tool-class" id="prof" value="prof">
+                        <label for="prof">профессиональные</label>
+                        <input type="radio" name="tool-class" id="any" value="any">
+                        <label for="any">не имеет значения</label>
+                        <button>следующий вопрос</button>
+                
+                    </div>
+                    <div class="survey-item" style="display: none" data-survey-step="2">
+                            <div class="survey-item__title">
+                                <h3>Шаг 2. Класс оборудования</h3>
+                            </div>
+                    
+                            <input type="radio" name="tool-class" id="home" value="home">
+                            <label for="home">бытовые</label>
+                            <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
+                            <label for="semi-prof">полупрофессиональные</label>
+                            <input type="radio" name="tool-class" id="prof" value="prof">
+                            <label for="prof">профессиональные</label>
+                            <input type="radio" name="tool-class" id="any" value="any">
+                            <label for="any">не имеет значения</label>
+                            <button>следующий вопрос</button>
+                    
+                        </div>
+                        <div class="survey-item" style="display: none" data-survey-step="3">
+                                <div class="survey-item__title">
+                                    <h3>Шаг 3. Класс оборудования</h3>
+                                </div>
+                        
+                                <input type="radio" name="tool-class" id="home" value="home">
+                                <label for="home">бытовые</label>
+                                <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
+                                <label for="semi-prof">полупрофессиональные</label>
+                                <input type="radio" name="tool-class" id="prof" value="prof">
+                                <label for="prof">профессиональные</label>
+                                <input type="radio" name="tool-class" id="any" value="any">
+                                <label for="any">не имеет значения</label>
+                                <!-- <button>следующий вопрос</button> -->
+                        
+                            </div>
+                            <div class="survey-item" style="display: none" data-survey-step="4">
+                                    <div class="survey-item__title">
+                                        <h3>Шаг 4. Класс оборудования</h3>
+                                    </div>
+                            
+                                    <input type="radio" name="tool-class" id="home" value="home">
+                                    <label for="home">бытовые</label>
+                                    <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
+                                    <label for="semi-prof">полупрофессиональные</label>
+                                    <input type="radio" name="tool-class" id="prof" value="prof">
+                                    <label for="prof">профессиональные</label>
+                                    <input type="radio" name="tool-class" id="any" value="any">
+                                    <label for="any">не имеет значения</label>
+                                    <button>следующий вопрос</button>
+                            
+                                </div>
+                </form>
         </div>
     </section>
     <section class="test-drive">
@@ -205,6 +268,7 @@
 <footer>
 
 </footer>
-
+<script src="js/jQuery.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
