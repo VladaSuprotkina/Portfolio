@@ -1,71 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2628ee41-8d6c-4cb3-8095-ba58b96f31e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Ambio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ambio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/.sass-cache/ec3e31241da6fb3cd94f4c96fa11706327de6a5c/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/css/.sass-cache/ec3e31241da6fb3cd94f4c96fa11706327de6a5c/style.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/.idea/monoblan_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/.sass-cache/db6ea00d01baf46f98cebe9ec0f87200058eb1a9/fonts.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/.sass-cache/db6ea00d01baf46f98cebe9ec0f87200058eb1a9/style.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/datepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/fonts.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/fonts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/css/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/HelveticaNeue.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/MyriadPro-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/MyriadPro-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/MyriadPro-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Semibold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Semibold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/ProximaNova-Semibold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/fonts/icomoon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/ic_favorite_black_24dp_2x.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/ic_mode_comment_black_24dp_2x.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/ic_play_arrow_black_24dp_2x.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/img9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/img/video.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/js/datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/mono-test/monblanproject.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/mono-test/monblanproject.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monoblan_test/mono-test/monblanproject_drop.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="2628ee41-8d6c-4cb3-8095-ba58b96f31e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="669" />
     <option name="width" value="1258" />
     <option name="height" value="1047" />
@@ -219,15 +155,15 @@
       <workItem from="1567502747913" duration="2554000" />
       <workItem from="1567513846891" duration="1202000" />
       <workItem from="1567584342082" duration="23560000" />
-      <workItem from="1567667908098" duration="1197000" />
+      <workItem from="1567667908098" duration="1235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143676000" />
+    <option name="totallyTimeSpent" value="143714000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="669" y="0" width="1258" height="1047" extended-state="1" />
+    <frame x="669" y="0" width="1258" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2681202" />

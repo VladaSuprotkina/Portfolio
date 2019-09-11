@@ -1,0 +1,155 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Assistant:300,400&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+body {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+  a {
+    text-decoration: none;
+    background-color: transparent;
+    &:hover {
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+    }
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+  }
+  address {
+    font-style: normal;
+  }
+  img {
+    position: relative;
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+  }
+  button:focus,
+  a:focus,
+  input:focus {
+    outline: 0;
+  }
+  svg {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  button {
+    border-radius: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none!important;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 14px;
+    border: 1px solid transparent;
+    display: inline-block;
+    border-radius: 2px;
+    transition: background-color .3s ease, color .3s ease;
+    &:hover {
+      background-color: transparent;
+      background-image: none;
+
+    }
+  }
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  h1 {
+    font-family: sans-serif;
+    font-size: 50px;
+    @media screen and (max-width: 992px) {
+      font-size: 36px;
+    }
+  }
+  h2 {
+    font-family: sans-serif;
+    font-size: 36px;
+    @media screen and (max-width: 992px) {
+      font-size: 24px;
+    }
+  }
+  h3 {
+    font-family:  sans-serif;
+    font-size: 24px;
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+    }
+  }
+  h4 {
+    font-family:  sans-serif;
+    font-size: 18px;
+    @media screen and (max-width: 992px) {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-family:  sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+    @media screen and (max-width: 992px) {
+      font-size: 16px;
+    }
+
+  }
+}

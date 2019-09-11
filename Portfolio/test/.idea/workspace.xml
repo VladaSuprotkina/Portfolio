@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7573207-91c8-4cba-9314-432d7c2dcb98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brg-test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brg-test/css/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brg-test/css/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brg-test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eerlijke_WOZ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_happy/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -10,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Тестовое задание/Прелоадер (Loader)/п2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/img/п2.gif" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +42,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../health_happy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -76,7 +78,9 @@
       <option name="presentableId" value="Default" />
       <updated>1568100335988</updated>
       <workItem from="1568100337115" duration="27204000" />
-      <workItem from="1568187158176" duration="15132000" />
+      <workItem from="1568187158176" duration="15815000" />
+      <workItem from="1568210544022" duration="50000" />
+      <workItem from="1568211890871" duration="1456000" />
     </task>
     <servers />
   </component>
@@ -88,7 +92,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
