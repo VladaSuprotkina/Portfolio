@@ -14,8 +14,11 @@
 <body>
 <header class="header">
     <div class="container">
-        <nav class="main-navigation">
-            <ul>
+        <nav class="main-navigation navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="collapse navbar-collapse">
                 <li><a href="#">Продукция</a></li>
                 <li><a href="#">О компании</a></li>
                 <li><a href="#">Акции</a></li>
@@ -31,15 +34,21 @@
             <div class="col-sm-10 col-xs-6 header-row">
                 <div class="search_form">
                     <input type="text" class="search_none input-block-level search-query ui-autocomplete-input" placeholder="Поиск" name="search" value="">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966"><path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/></svg></a>
                 </div>
                 <div class="contact-form row">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480.56 480.56"><path d="M365.354 317.9c-15.7-15.5-35.3-15.5-50.9 0-11.9 11.8-23.8 23.6-35.5 35.6-3.2 3.3-5.9 4-9.8 1.8-7.7-4.2-15.9-7.6-23.3-12.2-34.5-21.7-63.4-49.6-89-81-12.7-15.6-24-32.3-31.9-51.1-1.6-3.8-1.3-6.3 1.8-9.4 11.9-11.5 23.5-23.3 35.2-35.1 16.3-16.4 16.3-35.6-.1-52.1-9.3-9.4-18.6-18.6-27.9-28-9.6-9.6-19.1-19.3-28.8-28.8-15.7-15.3-35.3-15.3-50.9.1-12 11.8-23.5 23.9-35.7 35.5-11.3 10.7-17 23.8-18.2 39.1-1.9 24.9 4.2 48.4 12.8 71.3 17.6 47.4 44.4 89.5 76.9 128.1 43.9 52.2 96.3 93.5 157.6 123.3 27.6 13.4 56.2 23.7 87.3 25.4 21.4 1.2 40-4.2 54.9-20.9 10.2-11.4 21.7-21.8 32.5-32.7 16-16.2 16.1-35.8.2-51.8-19-19.1-38.1-38.1-57.2-57.1zM346.254 238.2l36.9-6.3c-5.8-33.9-21.8-64.6-46.1-89-25.7-25.7-58.2-41.9-94-46.9l-5.2 37.1c27.7 3.9 52.9 16.4 72.8 36.3 18.8 18.8 31.1 42.6 35.6 68.8zM403.954 77.8c-42.6-42.6-96.5-69.5-156-77.8l-5.2 37.1c51.4 7.2 98 30.5 134.8 67.2 34.9 34.9 57.8 79 66.1 127.5l36.9-6.3c-9.7-56.2-36.2-107.2-76.6-147.7z"/></svg>
                     </span>
-                    <ul data-text="Принимаем заказы круглосуточно 7 дней в неделю" data-call="Заказать обратный звонок">
+                    <ul class="tell-list">
                         <li><a href="tell:+380777777777">(077)77-77-777</a></li>
                         <li><a href="tell:+380777777777">(077)77-77-777</a></li>
                         <li><a href="tell:+380777777777">(077)77-77-777</a></li>
+
+                    </ul>
+                    <ul class="tell-list__description">
+                        <li>Принимаем заказы круглосуточно 7 дней в неделю</li>
+                        <li><a href="#">Заказать обратный звонок</a></li>
                     </ul>
                 </div>
                 <div class="lang">
@@ -85,7 +94,7 @@
     <section class="intro">
         <div class="container">
             <div class="row">
-                <div class="col-8 intro-text">
+                <div class="col-lg-8 intro-text">
                     <h1>СВАРОЧНЫЕ АППАРАТЫ РУЧНОЙ <br>ДУГОВОЙ СВАРКИ (MMA)</h1>
                     <strong>Отдаем на 30-дневный тест-драйв бесплатно</strong>
                     <p>Мы уверены в их качестве и готовы поручиться, что с этой техникой Вы не захотите расстаться.
@@ -97,7 +106,7 @@
                     </div>
                     <a href="#" class="btn">Уточнить детали у менеджера</a>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <img src="img/intro.png" alt="image description">
                 </div>
             </div>
@@ -148,66 +157,87 @@
                         <div class="survey-item__title">
                             <h3>Шаг 1. Класс оборудования</h3>
                         </div>
-                
-                        <input type="radio" name="tool-class" id="home" value="home">
-                        <label for="home">бытовые</label>
-                        <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
-                        <label for="semi-prof">полупрофессиональные</label>
-                        <input type="radio" name="tool-class" id="prof" value="prof">
-                        <label for="prof">профессиональные</label>
-                        <input type="radio" name="tool-class" id="any" value="any">
-                        <label for="any">не имеет значения</label>
-                        <button>следующий вопрос</button>
-                
+                        <div class="survey-form">
+                            <div class="survey-form__item">
+                                <input type="radio" name="tool-class" id="home" value="home">
+                                <label for="home">бытовые</label>
+                            </div>
+                            <div class="survey-form__item">
+                                <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
+                                <label for="semi-prof">полупрофессиональные</label>
+                            </div>
+                            <div class="survey-form__item">
+                                <input type="radio" name="tool-class" id="prof" value="prof">
+                                <label for="prof">профессиональные</label>
+                            </div>
+                            <div class="survey-form__item">
+                                <input type="radio" name="tool-class" id="any" value="any">
+                                <label for="any">не имеет значения</label>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="primary-btn">следующий вопрос</button>
                     </div>
                     <div class="survey-item" style="display: none" data-survey-step="2">
                             <div class="survey-item__title">
-                                <h3>Шаг 2. Класс оборудования</h3>
+                                <h3>Шаг 2. Напряжение питания</h3>
                             </div>
-                    
-                            <input type="radio" name="tool-class" id="home" value="home">
-                            <label for="home">бытовые</label>
-                            <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
-                            <label for="semi-prof">полупрофессиональные</label>
-                            <input type="radio" name="tool-class" id="prof" value="prof">
-                            <label for="prof">профессиональные</label>
-                            <input type="radio" name="tool-class" id="any" value="any">
-                            <label for="any">не имеет значения</label>
-                            <button>следующий вопрос</button>
-                    
+                        <div class="survey-form">
+                            <div class="survey-form__item">
+                            <input type="radio" name="tool-class" id="airbrushing" value="airbrushing">
+                            <label for="airbrushing">для аэрографии</label>
+                            </div>
+                            <div class="survey-form__item">
+                            <input type="radio" name="tool-class" id="painting" value="painting">
+                            <label for="painting">для покраски</label>
+                            </div>
+                            <div class="survey-form__item">
+                            <input type="radio" name="tool-class" id="car-service" value="car-service">
+                            <label for="car-service">для автосервиса</label>
+                            </div>
+                            <div class="survey-form__item">
+                            <input type="radio" name="tool-class" id="plasma-cutting" value="plasma-cutting">
+                            <label for="plasma-cutting">для плазменной резки</label>
+                            </div>
+                            <div class="survey-form__item">
+                            <input type="radio" name="tool-class" id="other" value="other">
+                            <label for="other">другое</label>
+                            </div>
+
                         </div>
-                        <div class="survey-item" style="display: none" data-survey-step="3">
+                        <button type="submit" class="primary-btn">далее</button>
+                    </div>
+                    <div class="survey-item" style="display: none" data-survey-step="3">
                                 <div class="survey-item__title">
-                                    <h3>Шаг 3. Класс оборудования</h3>
+                                    <h3>Спасибо за уделенное время!</h3>
                                 </div>
+                            <img src="img/п2.gif" alt="Загрузка...">
+                            <p class="loader-text">Мы уже подбираем для Вас аппарат...</p>
                         
-                                <input type="radio" name="tool-class" id="home" value="home">
-                                <label for="home">бытовые</label>
-                                <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
-                                <label for="semi-prof">полупрофессиональные</label>
-                                <input type="radio" name="tool-class" id="prof" value="prof">
-                                <label for="prof">профессиональные</label>
-                                <input type="radio" name="tool-class" id="any" value="any">
-                                <label for="any">не имеет значения</label>
-                                <!-- <button>следующий вопрос</button> -->
-                        
-                            </div>
-                            <div class="survey-item" style="display: none" data-survey-step="4">
+                        </div>
+                    <div class="survey-item" style="display: none" data-survey-step="4">
                                     <div class="survey-item__title">
-                                        <h3>Шаг 4. Класс оборудования</h3>
+                                        <h3>Данные будут отправлены на обработку</h3>
                                     </div>
-                            
-                                    <input type="radio" name="tool-class" id="home" value="home">
-                                    <label for="home">бытовые</label>
-                                    <input type="radio" name="tool-class" id="semi-prof" value="semi-prof">
-                                    <label for="semi-prof">полупрофессиональные</label>
-                                    <input type="radio" name="tool-class" id="prof" value="prof">
-                                    <label for="prof">профессиональные</label>
-                                    <input type="radio" name="tool-class" id="any" value="any">
-                                    <label for="any">не имеет значения</label>
-                                    <button>следующий вопрос</button>
-                            
-                                </div>
+                                <p>Для подтверждения заявки оставьте свои данные.
+                                    Наш менеджер свяжется с Вами в течение 10 мин.</p>
+                                <div class="survey-form">
+                                    <div class="survey-form__item-wrap">
+                                        <label for="tell">*Ваш телефон</label>
+                                        <input type="text" id="tell">
+                                    </div>
+                                    <div class="survey-form__item-wrap">
+                                        <label for="name">Ваше имя</label>
+                                        <input type="text" id="name">
+                                    </div>
+                                    <div class="survey-form__item-wrap">
+                                        <label for="email">Ваш Email</label>
+                                        <input type="text" id="email">
+                                    </div>
+
+                            </div>
+                        <button type="submit" class="primary-btn">следующий вопрос</button>
+                            </div>
                 </form>
         </div>
     </section>
@@ -215,10 +245,10 @@
         <div class="container">
             <h2>ПРЕИМУЩЕСТВА ТЕСТ-ДРАЙВА</h2>
             <div class="row">
-                <div class="col">
+                <div class="test-drive__col">
                     <img src="img/illustr.jpg" alt="image description">
                 </div>
-                <div class="col">
+                <div class="test-drive__col">
                     <ol class="test-drive__advantages">
                         <li>
                             <strong>Никаких рисков</strong>
@@ -246,11 +276,11 @@
                 <form action="" class="form-row">
                     <div class="input-field">
                         <label for="name"></label>
-                        <input type="text" id="name" placeholder="Имя">
+                        <input type="text" id="test-form-name" placeholder="Имя">
                     </div>
                     <div class="input-field">
                         <label for="tell"></label>
-                        <input type="text" id="tell" placeholder="Телефон">
+                        <input type="text" id="test-form-tell" placeholder="Телефон">
                     </div>
                     <div class="input-field">
                         <button type="submit" class="primary-btn">Перезвоните</button>
