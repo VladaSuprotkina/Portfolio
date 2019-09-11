@@ -7,7 +7,7 @@ $('[data-survey-step] button').click(function(e){
     var currentStep = +stepBlock.attr('data-survey-step');
     var nextStep = currentStep == 4 ? 1 : currentStep + 1;
 
-    $(`[data-survey-step=${nextStep}]`).show(handleThirdStepTimeout);
+    $(`[data-survey-step=${nextStep}]`).fadeIn(1000,handleThirdStepTimeout);
 });
 
 function handleThirdStepTimeout(){
@@ -15,7 +15,7 @@ function handleThirdStepTimeout(){
         var that = this;
         setTimeout(function(){
             $(that).hide();
-            $('[data-survey-step=4]').show();
+            $('[data-survey-step=4]').fadeIn(1000);
         }, 3000);
     }
 };
