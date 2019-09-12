@@ -28,14 +28,20 @@ body {
   font-size: 16px;
   overflow-x: hidden; }
   body a {
+    color: #b4b4b3;
     text-decoration: none;
     background-color: transparent; }
     body a:hover {
+      color: #565656;
       text-decoration: none;
-      transition: all .3s ease-in-out; }
+      transition: color .3s ease-in-out; }
   body ul,
   body li {
     list-style: none; }
+  body ol,
+  body li {
+    list-style: decimal inside;
+    color: #008fff; }
   body article, body aside, body figcaption, body figure, body footer, body header, body hgroup, body main, body nav, body section {
     display: block; }
   body address {
@@ -49,6 +55,13 @@ body {
   body a:focus,
   body input:focus {
     outline: 0; }
+  body input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #b4b4b3;
+    max-width: 300px;
+    padding: 5px 0;
+    border-radius: 0; }
   body svg {
     overflow: hidden;
     vertical-align: middle; }
@@ -75,16 +88,19 @@ body {
     text-align: center;
     margin-bottom: 10px;
     font-size: 16px;
-    padding: 14px;
-    border: 1px solid transparent;
-    display: inline-block;
+    padding: 15px;
+    display: block;
     border-radius: 2px;
-    transition: background-color .3s ease, color .3s ease; }
+    background-color: #eeaa79;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    transition: background-color .3s ease, color .3s ease;
+    color: #fff;
+    min-width: 220px; }
     body .btn:hover {
-      background-color: transparent;
-      background-image: none; }
+      background-color: #e37222; }
   body .container {
     width: 100%;
+    max-width: 1360px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -93,39 +109,166 @@ body {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px; }
+    flex-wrap: wrap; }
   body h1 {
-    font-family: sans-serif;
-    font-size: 50px; }
-    @media screen and (max-width: 992px) {
-      body h1 {
-        font-size: 36px; } }
-  body h2 {
-    font-family: sans-serif;
-    font-size: 36px; }
-    @media screen and (max-width: 992px) {
-      body h2 {
-        font-size: 24px; } }
-  body h3 {
-    font-family: sans-serif;
-    font-size: 24px; }
-    @media screen and (max-width: 992px) {
-      body h3 {
-        font-size: 18px; } }
-  body h4 {
-    font-family: sans-serif;
-    font-size: 18px; }
-    @media screen and (max-width: 992px) {
-      body h4 {
-        font-size: 16px; } }
-  body p {
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-bottom: 15px; }
-    @media screen and (max-width: 992px) {
-      body p {
-        font-size: 16px; } }
+    font-family: Assistant, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #008fff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e37222;
+    width: fit-content; }
+
+.header {
+  min-height: 60px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 99999; }
+  .header .row {
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 60px; }
+    .header .row li {
+      display: inline-block;
+      padding: 10px; }
+      .header .row li .customer-name {
+        font-family: "Segoe UI Emoji", sans-serif;
+        font-weight: 400;
+        color: #565656; }
+
+.main {
+  padding-top: 60px; }
+  .main .container {
+    position: relative; }
+    .main .container .sidebar {
+      transform: translate3d(-50px, 0px, 0px);
+      position: relative;
+      left: 0;
+      height: 100%;
+      transition: all .3s; }
+      .main .container .sidebar li {
+        list-style: none; }
+    .main .container .first-step__wrapper {
+      width: 100%;
+      transition: width .3s ease;
+      background-color: #fff;
+      min-height: 700px;
+      padding-top: 20px; }
+      .main .container .first-step__wrapper strong {
+        color: #008fff;
+        font-weight: 400;
+        margin-bottom: 50px;
+        display: inline-block; }
+      .main .container .first-step__wrapper .shipper-details {
+        margin-bottom: 40px; }
+        .main .container .first-step__wrapper .shipper-details .shipper-details__row {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+          .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field {
+            margin-right: 20px; }
+            .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field input {
+              display: block;
+              min-width: 300px; }
+              .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field input:focus {
+                outline: 0;
+                border-bottom: 1px solid #565656; }
+            .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field label {
+              color: #b4b4b3;
+              position: absolute;
+              transform: translateY(-25px);
+              transition: all .3s;
+              font-weight: 300; }
+            .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field input:focus + label {
+              transform: translateY(-40px);
+              cursor: pointer;
+              font-size: 12px; }
+      .main .container .first-step__wrapper .checkbox-field {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
+        .main .container .first-step__wrapper .checkbox-field input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0; }
+        .main .container .first-step__wrapper .checkbox-field .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          border: 1px solid #b4b4b3;
+          border-radius: 2px; }
+          .main .container .first-step__wrapper .checkbox-field .checkmark:after {
+            content: "\2714";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            color: #008fff;
+            font-weight: bold;
+            font-size: 20px; }
+        .main .container .first-step__wrapper .checkbox-field:hover input ~ .checkmark {
+          opacity: .5; }
+        .main .container .first-step__wrapper .checkbox-field input:checked ~ .checkmark {
+          border-color: transparent; }
+        .main .container .first-step__wrapper .checkbox-field input:checked ~ .checkmark:after {
+          display: block; }
+      .main .container .first-step__wrapper .shipment-details {
+        border-bottom: 1px solid #eaeced;
+        padding-bottom: 40px;
+        color: #565656; }
+        .main .container .first-step__wrapper .shipment-details table {
+          border: 0;
+          width: 100%; }
+          .main .container .first-step__wrapper .shipment-details table td {
+            padding: 10px 0; }
+          .main .container .first-step__wrapper .shipment-details table .table-titles th {
+            border-bottom: 1px solid #eaeced;
+            font-size: 14px;
+            color: #b4b4b3;
+            font-weight: 300; }
+          .main .container .first-step__wrapper .shipment-details table input::placeholder {
+            color: #b4b4b3; }
+          .main .container .first-step__wrapper .shipment-details table input:focus {
+            border-color: #565656; }
+          .main .container .first-step__wrapper .shipment-details table select {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #b4b4b3;
+            color: #b4b4b3; }
+            .main .container .first-step__wrapper .shipment-details table select:focus {
+              border-color: #565656; }
+      .main .container .first-step__wrapper .save-form {
+        padding: 20px 0 120px; }
+        .main .container .first-step__wrapper .save-form .row {
+          justify-content: flex-end; }
+          .main .container .first-step__wrapper .save-form .row .save-form__wrapper label {
+            color: #b4b4b3;
+            display: block;
+            margin-bottom: 20px;
+            padding-left: 30px; }
+            .main .container .first-step__wrapper .save-form .row .save-form__wrapper label a {
+              color: #008fff;
+              border-bottom: 1px solid; }
+              .main .container .first-step__wrapper .save-form .row .save-form__wrapper label a:hover {
+                color: #b4b4b3; }
+          .main .container .first-step__wrapper .save-form .row .save-form__wrapper button {
+            float: right;
+            clear: right; }
 
 /*# sourceMappingURL=app.css.map */

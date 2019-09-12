@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
     <title>Title</title>
 </head>
 <body>
@@ -13,43 +14,189 @@
         <div class="row">
             <ul>
                 <li><a href="#">Help</a></li>
-                <li><a href="#">Jane Jansons</a></li>
+                <li><a href="#" class="customer-name">Jane Jansons</a></li>
             </ul>
         </div>
 
     </div>
 </header>
 <div class="main">
-    <div class="step-wrapper">
-        <section class="shipper-details">
-            <div class="container">
-                <h1>Some Details</h1>
-                <div class="row">
-                    <div class="shipper-details__item-wrap">
-                        <label for="search">Company Autocomplete</label>
-                        <input type="search" name="search" placeholder="Search.." id="search" autocomplete="on">
-                    </div>
-                    <div class="shipper-details__item-wrap">
-                        <label for="company name">Company name</label>
-                        <input type="text" id="company name">
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">aaaa</a>
+                </li>
+                <li>
+                    <a href="#">bbbb</a>
+                </li>
+                <li>
+                    <a href="#">cccc</a>
+                </li>
+            </ul>
+        </nav>
+        <ol>
+            <li class="first-step__wrapper content">
+                <strong>Step</strong>
+                <div class="step-wrapper">
+                    <section class="shipper-details">
+
+                            <h1>Some Details</h1>
+                            <div class="shipper-details__row">
+                                <div class="shipper-details__field">
+
+                                    <input type="search" name="search" id="search" autocomplete="on">
+                                    <label for="search">Company Autocomplete</label>
+
+                                </div>
+                                <div class="shipper-details__field">
+
+                                    <input type="text" id="company name">
+                                    <label for="company name">Company name</label>
+
+                                </div>
+                            </div>
+
+
+                    </section>
+                    <section class="shipment-details">
+                            <h1>Some Details</h1>
+                            <table cellpadding="5" cellspacing="0">
+                                <tbody>
+                                <tr class="table-titles">
+                                    <th>Type</th>
+                                    <th># of H/U</th>
+                                    <th>Size</th>
+                                    <th>In pallet</th>
+                                    <th>Description</th>
+                                    <th>NMFC</th>
+                                    <th>Class</th>
+                                    <th># of Pieces</th>
+                                    <th>Total Weight</th>
+                                    <th>isSub</th>
+                                </tr>
+                                <tr>
+                                    <td>Pallets</td>
+                                    <td>3</td>
+                                    <td>75x48 in</td>
+                                    <td>Yes</td>
+                                    <td>
+                                        <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>400 lbs</td>
+                                    <td>
+                                        <label class="checkbox-field">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>400 lbs</td>
+                                    <td>
+                                        <label class="checkbox-field">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <select name="selectUN" id="selectUN">
+                                            <option value="1">UN</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="numberUN" id="numberUN" min="0" placeholder="UN Number">
+                                    </td>
+                                    <td>
+
+                                        <input type="text" name="shippingName" id="shippingName" placeholder="Proper Shipping Name">
+
+                                    </td>
+                                    <td>
+                                        <input type="text" name="hazardClass" id="hazardClass" placeholder="Hazard Class">
+                                        <span></span>
+                                    </td>
+                                    <td>
+                                        <select name="selectPacking" id="selectPacking">
+                                            <option value="1">Packing Group</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="packingType" id="packingType" placeholder="Packing Type">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pallets</td>
+                                    <td>3</td>
+                                    <td>15x25x23 in</td>
+                                    <td>No</td>
+                                    <td>
+                                        <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>400 lbs</td>
+                                    <td>
+                                        <label class="checkbox-field">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                    </section>
+                    <div class="save-form">
+                        <div class="container">
+                            <div class="row">
+                                <div class="save-form__wrapper">
+                                    <label class="checkbox-field">
+                                        <input type="checkbox" name="terms">
+                                        I agree to the <a href="/terms">Terms and Conditions</a>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <button class="btn">save</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </section>
-        <section class="shipment-details">
-            <div class="container">
-                <h1>Some Details</h1>
-                <div class="row">
-                    <form action="">
-
-                    </form>
-                </div>
-            </div>
-        </section>
+            </li>
+        </ol>
 
     </div>
 </div>
-
 </body>
 </html>
