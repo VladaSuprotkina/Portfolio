@@ -38,10 +38,6 @@ body {
   body ul,
   body li {
     list-style: none; }
-  body ol,
-  body li {
-    list-style: decimal inside;
-    color: #008fff; }
   body article, body aside, body figcaption, body figure, body footer, body header, body hgroup, body main, body nav, body section {
     display: block; }
   body img {
@@ -183,7 +179,9 @@ body {
       transition: width .3s ease;
       background-color: #fff;
       min-height: 700px;
-      padding-top: 20px; }
+      padding-top: 20px;
+      list-style: decimal inside;
+      color: #008fff; }
       .main .container .first-step__wrapper strong {
         color: #008fff;
         font-weight: 400;
@@ -222,7 +220,6 @@ body {
               font-weight: 300; }
             .main .container .first-step__wrapper .shipper-details .shipper-details__row .shipper-details__field input:focus + label {
               transform: translateY(-40px);
-              cursor: pointer;
               font-size: 12px; }
       .main .container .first-step__wrapper .checkbox-field {
         display: block;
@@ -266,29 +263,53 @@ body {
         border-bottom: 1px solid #eaeced;
         padding-bottom: 40px;
         color: #565656; }
-        .main .container .first-step__wrapper .shipment-details table {
-          border: 0;
+        .main .container .first-step__wrapper .shipment-details .shipment-details__table {
           width: 100%; }
-          .main .container .first-step__wrapper .shipment-details table td {
-            padding: 10px 0; }
-            .main .container .first-step__wrapper .shipment-details table td .table-row {
-              width: 100%;
-              justify-content: space-between; }
-          .main .container .first-step__wrapper .shipment-details table .table-titles th {
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .table-titles {
+            width: 100%;
             border-bottom: 1px solid #eaeced;
             font-size: 14px;
             color: #b4b4b3;
-            font-weight: 300; }
-          .main .container .first-step__wrapper .shipment-details table input::placeholder {
-            color: #b4b4b3; }
-          .main .container .first-step__wrapper .shipment-details table input:focus {
-            border-color: #565656; }
-          .main .container .first-step__wrapper .shipment-details table select {
+            font-weight: 300;
+            margin-bottom: 20px;
+            padding-bottom: 5px; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .shipment-details__item-info {
+            margin-bottom: 20px; }
+            .main .container .first-step__wrapper .shipment-details .shipment-details__table .shipment-details__item-info li {
+              padding-right: 5px; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .type {
+            width: 13.5%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .number {
+            width: 5.95%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .size {
+            width: 11.36%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .inPallet {
+            width: 6.35%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .description {
+            width: 34.6%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .nmfc {
+            width: 5.25%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .class {
+            width: 4.85%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .pieces {
+            width: 7.13%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .weight {
+            width: 7.9%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table .isSub {
+            width: 3.11%; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table input {
+            width: 100%; }
+            .main .container .first-step__wrapper .shipment-details .shipment-details__table input::placeholder {
+              color: #b4b4b3; }
+            .main .container .first-step__wrapper .shipment-details .shipment-details__table input:focus {
+              border-color: #565656; }
+          .main .container .first-step__wrapper .shipment-details .shipment-details__table select {
+            min-height: 26px;
             background-color: transparent;
             border: none;
             border-bottom: 1px solid #b4b4b3;
             color: #b4b4b3; }
-            .main .container .first-step__wrapper .shipment-details table select:focus {
+            .main .container .first-step__wrapper .shipment-details .shipment-details__table select:focus {
               border-color: #565656; }
       .main .container .first-step__wrapper .save-form {
         padding: 20px 0 120px; }

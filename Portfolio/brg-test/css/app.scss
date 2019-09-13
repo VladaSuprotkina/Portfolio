@@ -53,13 +53,6 @@ body {
     list-style: none;
   }
 
-  ol,
-  li {
-
-    list-style: decimal inside;
-    color: $color-blue;
-
-  }
 
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
@@ -288,6 +281,8 @@ body {
       background-color: $color-white;
       min-height: 700px;
       padding-top: 20px;
+      list-style: decimal inside;
+      color: $color-blue;
 
       strong {
 
@@ -348,7 +343,7 @@ body {
             input:focus + label {
 
               transform: translateY(-40px);
-              cursor: pointer;
+
               font-size: 12px;
             }
           }
@@ -418,30 +413,61 @@ body {
         color: $color-dark-gray;
 
 
-        table {
+        .shipment-details__table {
 
-          border: 0;
           width: 100%;
-          td {
-            padding: 10px 0;
-            .table-row {
-              width: 100%;
-              justify-content: space-between;
+
+          .table-titles {
+            width: 100%;
+            border-bottom: 1px solid rgb(234, 236, 237);
+            font-size: 14px;
+            color: $color-light-gray;
+            font-weight: 300;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+
+          }
+
+          .shipment-details__item-info {
+            margin-bottom: 20px;
+            li {
+              padding-right: 5px;
             }
           }
-          .table-titles {
 
-            th {
-
-              border-bottom: 1px solid rgb(234, 236, 237);
-              font-size: 14px;
-              color: $color-light-gray;
-              font-weight: 300;
-
-            }
+          .type {
+            width: 13.5%;
+          }
+          .number {
+            width: 5.95%;
+          }
+          .size {
+            width: 11.36%;
+          }
+          .inPallet {
+            width: 6.35%;
+          }
+          .description {
+            width: 34.6%;
+          }
+          .nmfc {
+            width: 5.25%;
+          }
+          .class {
+            width: 4.85%;
+          }
+          .pieces {
+            width: 7.13%;
+          }
+          .weight {
+            width: 7.9%;
+          }
+          .isSub {
+            width: 3.11%;
           }
 
           input {
+            width: 100%;
             &::placeholder {
               color: $color-light-gray;
             }
@@ -452,6 +478,7 @@ body {
           }
 
           select {
+            min-height: 26px;
             background-color: transparent;
             border: none;
             border-bottom: 1px solid rgb(180, 180, 179);

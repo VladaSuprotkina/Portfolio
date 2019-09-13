@@ -58,111 +58,112 @@
                     </section>
                     <section class="shipment-details">
                             <h1>Some Details</h1>
-                            <table cellpadding="5" cellspacing="0">
-                                <tbody>
-                                <tr class="table-titles">
-                                    <th>Type</th>
-                                    <th># of H/U</th>
-                                    <th>Size</th>
-                                    <th>In pallet</th>
-                                    <th>Description</th>
-                                    <th>NMFC</th>
-                                    <th>Class</th>
-                                    <th># of Pieces</th>
-                                    <th>Total Weight</th>
-                                    <th>isSub</th>
-                                </tr>
-                                <tr>
-                                    <td>Pallets</td>
-                                    <td>3</td>
-                                    <td>75x48 in</td>
-                                    <td>Yes</td>
-                                    <td>
+                            <div class="shipment-details__table">
+                                <ul class="table-titles row">
+                                    <li class="type">Type</li>
+                                    <li class="number"># of H/U</li>
+                                    <li class="size">Size</li>
+                                    <li class="inPallet">In pallet</li>
+                                    <li class="description">Description</li>
+                                    <li class="nmfc">NMFC</li>
+                                    <li class="class">Class</li>
+                                    <li class="pieces"># of Pieces</li>
+                                    <li class="weight">Total Weight</li>
+                                    <li class="isSub">isSub</li>
+                                </ul>
+                                <ul class="shipment-details__item-info row">
+                                    <li class="type">Pallets</li>
+                                    <li class="number">3</li>
+                                    <li class="size">75x48 in</li>
+                                    <li class="inPallet">Yes</li>
+                                    <li class="description">
                                         <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
-                                    </td>
-                                    <td>
+                                    </li>
+                                    <li class="nmfc">
                                         <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>400 lbs</td>
-                                    <td>
+                                    </li>
+                                    <li class="class">1</li>
+                                    <li class="pieces">1</li>
+                                    <li class="weight">400 lbs</li>
+                                    <li class="isSub">
                                         <label class="checkbox-field">
                                             <input type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>
+                                    </li>
+                                </ul>
+                                <ul class="shipment-details__item-info row">
+                                    <li class="type"></li>
+                                    <li class="number"></li>
+                                    <li class="size"></li>
+                                    <li class="inPallet"></li>
+                                    <li class="description">
                                         <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
-                                    </td>
-                                    <td>
+                                    </li>
+                                    <li class="nmfc">
                                         <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>400 lbs</td>
-                                    <td>
+                                    </li>
+                                    <li class="class">1</li>
+                                    <li class="pieces">1</li>
+                                    <li class="weight">400 lbs</li>
+                                    <li class="isSub">
                                         <label class="checkbox-field">
                                             <input type="checkbox" checked>
                                             <span class="checkmark"></span>
                                         </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td colspan="6">
-                                        <div class="table-row row">
+                                    </li>
+                                </ul>
+
+                                <ul class="shipment-details__item-info row" style="padding-left: 37.16%">
+                                        <li>
                                             <select name="selectUN" id="selectUN">
                                                 <option value="1">UN</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                             </select>
+                                        </li>
+                                        <li>
                                             <input type="number" name="numberUN" id="numberUN" min="0" placeholder="UN Number">
+                                        </li>
+                                        <li>
                                             <input type="text" name="shippingName" id="shippingName" placeholder="Proper Shipping Name">
+                                        </li>
+                                        <li>
                                             <input type="text" name="hazardClass" id="hazardClass" placeholder="Hazard Class">
-                                            <span></span>
+                                        </li>
+                                        <li>
                                             <select name="selectPacking" id="selectPacking">
                                                 <option value="1">Packing Group</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                             </select>
+                                        </li>
+                                        <li>
                                             <input type="text" name="packingType" id="packingType" placeholder="Packing Type">
-                                        </div>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Pallets</td>
-                                    <td>3</td>
-                                    <td>15x25x23 in</td>
-                                    <td>No</td>
-                                    <td>
+                                        </li>
+                                    </ul>
+                                <ul class="shipment-details__item-info row">
+                                    <li class="type">Pallets</li>
+                                    <li class="number">3</li>
+                                    <li class="size">15x25x23 in</li>
+                                    <li class="inPallet">No</li>
+                                    <li class="description">
                                         <input type="search" name="search" placeholder="Test descriprion..., 800"  autocomplete="on">
-                                    </td>
-                                    <td>
+                                    </li>
+                                    <li class="nmfc">
                                         <input type="text" name="NMFC" id="NMFC" placeholder="NMFC">
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>400 lbs</td>
-                                    <td>
+                                    </li>
+                                    <li class="class">1</li>
+                                    <li class="pieces">1</li>
+                                    <li class="weight">400 lbs</li>
+                                    <li class="isSub">
                                         <label class="checkbox-field">
                                             <input type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                                    </li>
+                                </ul>
+                            </div>
                     </section>
                     <div class="save-form">
                         <div class="container">
