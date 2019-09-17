@@ -125,7 +125,7 @@ body {
   body p {
     font-family: PFDinTextCondPro-Thin, sans-serif;
     font-size: 18px;
-    margin-bottom: 15px; }
+    margin-bottom: 5px; }
     @media screen and (max-width: 992px) {
       body p {
         font-size: 16px; } }
@@ -143,7 +143,7 @@ body {
     .header .container .main-navigation {
       position: absolute;
       right: 0;
-      top: 10px;
+      top: 0;
       z-index: 999;
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
@@ -151,7 +151,8 @@ body {
       .header .container .main-navigation .navbar-toggler {
         background-color: #fff; }
       .header .container .main-navigation li {
-        display: inline-block; }
+        display: inline-block;
+        margin-left: -.36em; }
         .header .container .main-navigation li a {
           color: #fff;
           padding: 8px 15px;
@@ -161,8 +162,7 @@ body {
             color: #fedd00; }
     .header .container .row {
       padding-top: 20px;
-      align-items: center;
-      margin-bottom: 24px; }
+      align-items: center; }
       .header .container .row .logo {
         max-width: 139px; }
         .header .container .row .logo a {
@@ -290,7 +290,7 @@ body {
             color: #fff; }
 
 .intro {
-  min-height: 100vh;
+  min-height: 70vh;
   width: 100%;
   background: url("../img/intro-bg.jpg") no-repeat center;
   background-size: cover;
@@ -301,36 +301,32 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     padding: 220px 0 70px;
-    min-height: 100vh; }
-    .intro .row .intro-text {
-      padding-top: 30px; }
-      @media screen and (max-width: 769px) {
-        .intro .row .intro-text {
-          padding-top: 120px; } }
-      .intro .row .intro-text h1 {
-        color: #fff;
-        margin-bottom: 20px; }
-      .intro .row .intro-text strong {
-        font-family: PFDinTextCondPro-Light, sans-serif;
-        font-size: 30px;
-        margin-bottom: 32px;
-        display: block; }
-      .intro .row .intro-text p {
-        font-size: 16px; }
-        .intro .row .intro-text p:last-of-type {
-          margin-bottom: 25px; }
-      .intro .row .intro-text span {
-        display: block;
-        color: #fedd00;
-        margin-bottom: 10px; }
-      .intro .row .intro-text .timer {
-        display: block;
-        max-width: 316px;
-        min-height: 59px;
-        margin-bottom: 60px; }
-        .intro .row .intro-text .timer span {
-          font-family: PFDinTextCondPro-Medium,sans-serif;
-          color: #fff; }
+    min-height: 70vh; }
+    @media screen and (max-width: 769px) {
+      .intro .row .intro-text {
+        padding-top: 120px; } }
+    .intro .row .intro-text h1 {
+      color: #fff; }
+    .intro .row .intro-text strong {
+      font-family: PFDinTextCondPro-Light, sans-serif;
+      font-size: 30px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      display: block; }
+    .intro .row .intro-text p {
+      font-size: 16px;
+      max-width: 552px; }
+    .intro .row .intro-text span {
+      color: #fedd00;
+      margin-bottom: 10px; }
+    .intro .row .intro-text .timer {
+      display: block;
+      max-width: 316px;
+      min-height: 59px;
+      margin-bottom: 45px; }
+      .intro .row .intro-text .timer span {
+        font-family: PFDinTextCondPro-Medium,sans-serif;
+        color: #fff; }
     .intro .row img {
       max-height: 433px;
       object-fit: contain; }
@@ -437,17 +433,11 @@ body {
     text-align: center; }
   .test-drive .row {
     margin-bottom: 60px; }
-    .test-drive .row .test-drive__col {
-      width: 50%;
-      padding: 0 15px; }
-      @media screen and (max-width: 1200px) {
-        .test-drive .row .test-drive__col {
-          width: 100%; } }
-      @media screen and (max-width: 1200px) {
-        .test-drive .row .test-drive__col img {
-          max-height: 380px;
-          object-fit: contain;
-          margin-bottom: 20px; } }
+    @media screen and (max-width: 1200px) {
+      .test-drive .row .test-drive__col img {
+        max-height: 380px;
+        object-fit: contain;
+        margin-bottom: 20px; } }
     .test-drive .row .test-drive__advantages li {
       list-style: decimal inside;
       font-family: PFDinTextCondPro-Bold, sans-serif;
