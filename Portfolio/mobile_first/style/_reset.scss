@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+section {
+  padding: 50px;
+}
+p {
+  line-height: 1.5;
+}
+h1 {
+  font-family: 'Sacramento', cursive;
+  font-weight: 400;
+  font-size: 66px;
+  color: $grey;
+}
+a {
+  text-decoration: none;
+  color: var(--main-font-color);
+}
+.btn {
+  display: inline-block;
+  transition: all 650ms;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.btn-info {
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 2px solid var(--main-font-color);
+  margin: 20px 0 40px;
+}
+.btn-info:hover {
+  background-color: var(--main-font-color);
+  color: var(--main-white);
+}

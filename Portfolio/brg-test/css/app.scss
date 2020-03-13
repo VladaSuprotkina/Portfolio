@@ -25,31 +25,27 @@ time, mark, audio, video {
   font-size: 100%;
 
 }
-body {
 
+body {
   font-family: 'Assistant', sans-serif;
   font-weight: 400;
   font-size: 16px;
   overflow-x: hidden;
 
   a {
-
     color: $color-light-gray;
     text-decoration: none;
     background-color: transparent;
 
     &:hover {
-
       color: $color-dark-gray;
       text-decoration: none;
       transition: color .3s ease-in-out;
-
     }
   }
 
   ul,
   li {
-
     list-style: none;
   }
 
@@ -60,7 +56,6 @@ body {
 
 
   img {
-
     position: relative;
     vertical-align: middle;
     border-style: none;
@@ -71,30 +66,24 @@ body {
   button:focus,
   a:focus,
   input:focus {
-
     outline: 0;
-
   }
-  input {
 
+  input {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid rgb(180, 180, 179);
     max-width: 300px;
     padding: 5px 0;
     border-radius: 0;
-
   }
 
   svg {
-
     overflow: hidden;
     vertical-align: middle;
-
   }
 
   button {
-
     border-radius: 0;
     background: none;
     border: 0;
@@ -102,7 +91,6 @@ body {
   }
 
   .btn {
-
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
@@ -117,25 +105,20 @@ body {
     min-width: 220px;
 
     &:hover {
-
       background-color: $color-orange;
-
     }
   }
 
   .container {
-
     width: 100%;
     max-width: 1360px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-
   }
 
   .row {
-
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -143,7 +126,6 @@ body {
   }
 
   h1 {
-
     font-family: Assistant, sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -152,14 +134,11 @@ body {
     border-bottom: 1px solid $color-orange;
     width: fit-content;
     display: inline-block;
-
   }
-
 }
 
 
 .header {
-
   min-height: 60px;
   width: 100%;
   background-color: $color-white;
@@ -172,7 +151,6 @@ body {
   z-index: 999;
 
   .row {
-
     align-items: center;
     justify-content: flex-end;
     min-height: 60px;
@@ -180,40 +158,35 @@ body {
     li {
       display: inline-block;
       padding: 10px;
+
       svg {
         width: 17px;
         height: 16px;
       }
+
       .customer-name {
         font-family: "Segoe UI Emoji", sans-serif;
         font-weight: 400;
         color: $color-dark-gray;
       }
-
     }
-
   }
 
   .open-btn {
-
     cursor: pointer;
     position: absolute;
     color: $color-orange;
   }
-
 }
 
 .main {
-
   padding-top: 61px;
   transition: margin-left .5s;
 
   .container {
-
     position: relative;
 
     .sidenav {
-
       height: 100%;
       width: 1px;
       position: fixed;
@@ -227,13 +200,11 @@ body {
       border-right: 1px solid #eee;
 
       li {
-
         list-style: none;
         text-align: center;
         position: relative;
 
         &:hover:after {
-
           content: '';
           position: absolute;
           top: 8px;
@@ -241,41 +212,33 @@ body {
           width: 1px;
           height: 25px;
           background-color: $color-orange;
-
         }
+
         svg {
-
           width: 15px;
-
         }
-
       }
 
       a {
-
         text-decoration: none;
         font-size: 25px;
         color: $color-dark-gray;
         display: block;
 
         &:hover {
-
           color: $color-light-gray;
         }
       }
 
       .closebtn {
-
         position: absolute;
         top: 0;
         right: 0;
         font-size: 20px;
-
       }
     }
 
     .first-step__wrapper {
-
       width: 100%;
       transition: width .3s ease;
       background-color: $color-white;
@@ -285,27 +248,22 @@ body {
       color: $color-blue;
 
       strong {
-
         color: $color-blue;
         font-weight: 400;
         margin-bottom: 50px;
         display: inline-block;
-
       }
 
       .shipper-details {
-
         margin-bottom: 40px;
 
         .shipper-details__row {
-
           display: -ms-flexbox;
           display: flex;
           -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 
           .shipper-details__field{
-
             margin-right: 20px;
             position: relative;
 
@@ -317,7 +275,6 @@ body {
               opacity: .5;
               top: -5px;
               right: 18px;
-
             }
 
             input {
@@ -328,11 +285,10 @@ body {
               &:focus {
                 outline: 0;
                 border-bottom: 1px solid $color-dark-gray;
-
               }
             }
-            label {
 
+            label {
               color: $color-light-gray;
               position: absolute;
               transform: translateY(-25px);
@@ -341,9 +297,7 @@ body {
             }
 
             input:focus + label {
-
               transform: translateY(-40px);
-
               font-size: 12px;
             }
           }
@@ -351,7 +305,6 @@ body {
       }
 
       .checkbox-field {
-
         display: block;
         position: relative;
         cursor: pointer;
@@ -361,17 +314,14 @@ body {
         user-select: none;
 
         input {
-
           position: absolute;
           opacity: 0;
           cursor: pointer;
           height: 0;
           width: 0;
-
         }
 
         .checkmark {
-
           position: absolute;
           top: 0;
           left: 0;
@@ -391,30 +341,27 @@ body {
             font-weight: bold;
             font-size: 20px;
           }
-
         }
 
         &:hover input ~ .checkmark {
           opacity: .5;
         }
+
         & input:checked ~ .checkmark {
           border-color: transparent;
         }
+
         & input:checked ~ .checkmark:after {
           display: block;
         }
-
       }
 
       .shipment-details {
-
         border-bottom: 1px solid rgb(234, 236, 237);
         padding-bottom: 40px;
         color: $color-dark-gray;
 
-
         .shipment-details__table {
-
           width: 100%;
 
           .table-titles {
@@ -425,7 +372,6 @@ body {
             font-weight: 300;
             margin-bottom: 20px;
             padding-bottom: 5px;
-
           }
 
           .shipment-details__item-info {
@@ -474,7 +420,6 @@ body {
             &:focus {
               border-color: $color-dark-gray;
             }
-
           }
 
           select {
@@ -491,11 +436,9 @@ body {
       }
 
       .save-form {
-
         padding: 20px 0 120px;
 
         .row {
-
           justify-content: flex-end;
 
           .save-form__wrapper {
